@@ -1,0 +1,1654 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass scrbook
+\begin_preamble
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\end_preamble
+\use_default_options true
+\begin_modules
+InStar
+\end_modules
+\maintain_unincluded_children false
+\begin_forced_local_layout
+Format 60
+Style "In Preamble"
+	Category "FrontMatter"
+	Margin Static
+	LatexType Paragraph
+	InTitle 0
+	InPreamble 1
+	TocLevel -1000
+	NeedProtect 0
+	KeepEmpty 0
+	NextNoIndent 0
+	CommandDepth 0
+	LatexName "dummy"
+	ItemCommand item
+	LabelType No_Label
+	EndLabelType No_Label
+	ParagraphGroup "0"
+	ParIndent MM
+	ParSkip 0.4
+	ItemSep 0
+	TopSep 0
+	BottomSep 0
+	LabelBottomSep 0
+	ParSep 0
+	NewLine 1
+	Align Block
+	AlignPossible Block, Center, Layout, Left, Right
+	FreeSpacing 0
+	PassThru 0
+	ParbreakIsNewline 0
+	RefPrefix OFF
+	HTMLLabelFirst 0
+	HTMLStyle
+div.standard {
+text-indent: 2em;
+margin-bottom: 2ex;
+}
+	EndHTMLStyle
+	HTMLForceCSS 0
+	HTMLTitle 0
+	Spellcheck 1
+	ForceLocal 1
+End
+Style "In Title"
+	Category "FrontMatter"
+	Margin Static
+	LatexType Paragraph
+	InTitle 1
+	InPreamble 0
+	TocLevel -1000
+	NeedProtect 0
+	KeepEmpty 0
+	NextNoIndent 0
+	CommandDepth 0
+	LatexName "dummy"
+	ItemCommand item
+	LabelType No_Label
+	EndLabelType No_Label
+	ParagraphGroup "0"
+	ParIndent MM
+	ParSkip 0.4
+	ItemSep 0
+	TopSep 0
+	BottomSep 0
+	LabelBottomSep 0
+	ParSep 0
+	NewLine 1
+	Align Block
+	AlignPossible Block, Center, Layout, Left, Right
+	FreeSpacing 0
+	PassThru 0
+	ParbreakIsNewline 0
+	RefPrefix OFF
+	HTMLLabelFirst 0
+	HTMLStyle
+div.standard {
+text-indent: 2em;
+margin-bottom: 2ex;
+}
+	EndHTMLStyle
+	HTMLForceCSS 0
+	HTMLTitle 0
+	Spellcheck 1
+	ForceLocal 1
+End
+\end_forced_local_layout
+\language ngerman
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "helvet" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family sfdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command makeindex
+\float_placement H
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\rightmargin 2.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip bigskip
+\quotes_language polish
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\bullet 0 0 0 -1
+\bullet 1 0 1 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begingroup
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*{
+\backslash
+chapterpagestyle}{empty}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Dokumentation der betrieblichen Projektarbeit
+\end_layout
+
+\begin_layout Subtitle
+Migration eines über einen Dienstleister gehosteten Microservice in die
+ Amazon Web Services-Umgebung
+\end_layout
+
+\begin_layout Titlehead
+Antje Radkiewicz Loher Straße 15b 22149 Hamburg
+\end_layout
+
+\begin_layout Minisec
+Ausbildungsberuf
+\end_layout
+
+\begin_layout Standard
+Fachinformatiker Fachrichtung Systemintegration
+\end_layout
+
+\begin_layout Minisec
+Prüfungsbewerberin
+\end_layout
+
+\begin_layout Standard
+Antje Radkiewicz
+\end_layout
+
+\begin_layout Standard
+Loher Straße 15b
+\end_layout
+
+\begin_layout Standard
+22149 Hamburg
+\end_layout
+
+\begin_layout Minisec
+Ausbildungsbetrieb
+\end_layout
+
+\begin_layout Standard
+OTTO (Gmbh & Co.
+ KG)
+\end_layout
+
+\begin_layout Standard
+Werner-Otto-Straße 1-7
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Enumerate
+Die Dokumentation soll dem Auftrag angemessen sein und Folgendes enthalten:
+ 
+\end_layout
+
+\begin_layout Enumerate
+Name und Ausbildungsberuf des Auszubildenden
+\end_layout
+
+\begin_layout Enumerate
+Angabe des Ausbildungsbetriebes/Prüfbetriebes
+\end_layout
+
+\begin_layout Enumerate
+Thema der Projektarbeit
+\end_layout
+
+\begin_layout Enumerate
+Falls erforderlich eine Beschreibung/Konkretisierung des Auftrages
+\end_layout
+
+\begin_layout Enumerate
+Umfassende Beschreibung der Prozessschritte und der erzielten Ergebnisse
+\end_layout
+
+\begin_layout Enumerate
+Begründung bei ggf.
+ Veränderungen zum Projektantrag (Änderungen zum Projektantrag sind nur
+ im eng begrenzten Rahmen zulässig, Projektinhalte dürfen nicht wesentlich
+ ver- ändert werden)
+\end_layout
+
+\begin_layout Enumerate
+Wenn für das Projekt erforderlich, ein Anhang mit praxisbezogenen Unterlagen
+ und Do- kumenten.
+ Dieser Anhang sollte auf das Minimum beschränkt werden.
+\end_layout
+
+\begin_layout Enumerate
+In allen IT-Berufen ist es erforderlich, dass ein wirtschaftlicher Aspekt
+ berücksichtigt wird, z.
+ B.
+ Kosten-Nutzen-Analyse, Kalkulation, Angebotserstellung, Angebotsvergleich
+ etc.
+ Bei den kaufmännischen IT-Berufen sind auch technische Aspekte zu berücksichtig
+en, z.
+ B.
+ Funktionsbeschreibung, exemplarische Konfiguration etc.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+endgroup
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*{
+\backslash
+thesection}{
+\backslash
+arabic{section}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Dokumentation
+\end_layout
+
+\begin_layout Standard
+Migration eines über einen Dienstleister gehosteten Microservice in die
+ Amazon Web Services-Umgebung
+\end_layout
+
+\begin_layout Section
+Einleitung
+\end_layout
+
+\begin_layout Standard
+Dieses Dokument ist im Rahmen der betrieblichen Projektarbeit für den Ausbildung
+sgang des Fachinformatikers in der Fachrichtung Systemintegration entstanden.
+ Das Projekt wurde im genehmigten Projektzeitraum vom 
+\color red
+27.
+ März 2018 bis zum 14.
+ Mai
+\color inherit
+ 2018 durchgeführt.
+ Weiterhin wurde im Rahmen des Durchführungszeitraumes diese Dokumentation
+ erstellt.
+ 
+\end_layout
+
+\begin_layout Standard
+In dieser Dokumentation werden Fachbegriffe erwähnt, die im Glossar näher
+ erläutert werden.
+ Fachbegriffe, die in dem Glossar enthalten sind, werden 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{unterstrichen}
+\end_layout
+
+\end_inset
+
+ dargestellt.
+\end_layout
+
+\begin_layout Standard
+Es werden mehrmalig Abkürzungen verwendet.
+ Ein Begriff wird einmalig ausgeschrieben und dahinter wird in Klammern
+ die abgekürzte Begrifflichkeit dargestellt.
+ Im weiteren Text wird nur noch der abgekürzte Begriff verwendet.
+ Im Stichwortverzeichnis können die Abkürzungen und ihre ausgeschriebene
+ Variante eingesehen werden.
+\end_layout
+
+\begin_layout Section
+Projektumfeld
+\end_layout
+
+\begin_layout Subsection
+OTTO (GmbH & Co.
+ KG)
+\end_layout
+
+\begin_layout Standard
+Die OTTO (GmbH & Co.
+ KG) ist ein Versandhandelsunternehmen mit Sitz in Hamburg, welches zur
+ Otto Group gehört.
+ Diese agiert mit über 49.000 Mitarbeitern weltweit.
+ Seit 1995 betreibt das Unternehmen die E-Commerce-Plattform www.otto.de.
+\end_layout
+
+\begin_layout Subsection
+E-Commerce
+\end_layout
+
+\begin_layout Standard
+Der Bereich E-Commerce der OTTO Einzelhandelsgesellschaft betreibt und entwickel
+t die Seite www.otto.de.
+ Die Plattform ist in mehrere Vertikalen aufgeteilt.
+ Für jede Vertikale ist ein Entwicklerteam zuständig, welches die Funktionalität
+ der entsprechenden Shop-Segmente verantwortet.
+ Die Teams selber sind interdisziplinär aufgestellt, mit dem Ziel eine möglichst
+ autarke und zielführende Arbeitsweise zu gestatten.
+ Den Teams wird die Möglichkeit gegeben im eigenen Tempo Neuerungen zu entwickel
+n und die Werkzeuge ihrer Wahl zu nutzen.
+\end_layout
+
+\begin_layout Subsection
+Externer Dienstleister
+\end_layout
+
+\begin_layout Standard
+Der Bereich E-Commerce wird derzeit durch einen externen Dienstleister bei
+ der Bereitstellung von www.otto.de unterstützt.
+ Als Lösungspartner für IT-Infrastruktur stellt dieser dem OTTO E-Commerce
+ derzeit nicht nur die notwendige Hardware in einem Rechenzentrum, diverse
+ Applikationen und Schnittstellen, sondern auch personelle Ressourcen bereit.
+\end_layout
+
+\begin_layout Subsection
+IT-Operations (Ops)
+\end_layout
+
+\begin_layout Standard
+Team Ops verwaltet die Infrastrukturdienste, die benötigt werden, damit
+ die fachlich geschnittenen Teams gemeinsam an der Plattform www.otto.de arbeiten
+ können.
+ Zu den Infrastrukturdiensten gehören beispielsweise VM, Logging und Monitoring.
+ Die inhaltlichen Themen werden von den Fachteams selbstverantwortet bereitgeste
+llt und Ops unterstützt diese dabei technisch.
+\end_layout
+
+\begin_layout Standard
+Hierfür sind sie in einem direkten Austausch mit dem externen Dienstleister
+ und stellen zusammen mit diesem für die E-Commerce Mitarbeiter vor Ort
+ einen zentralen Anlaufpunkt für alle 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Live"
+description "Die Live-Umgebung (auch Produktivumgebung) ist die Umgebung, die dem Endkunden zugänglich gemacht wird"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Live}
+\end_layout
+
+\end_inset
+
+-kritischen Support-Anfragen bereit.
+ Für sonstige 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Nonlive"
+description "Die Nonlive-Umgebung ist eine Umgebung, die der Endkunde nicht sieht und auf der Tests ausgeführt werden können"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Nonlive}
+\end_layout
+
+\end_inset
+
+ Anliegen und Fragen gibt es einen weiteren Anlaufpunkt mit schwächeren
+ 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Service Level Agreements"
+description "Schriftliche Vertragsvereinbarung zwischen Dienstleister und Kunde über Qualität und Quantität der im Rahmen des Outsourcing-Vertrages zu erbringenden Service-Leistungen anhand eindeutig nachweisbarer und nachvollziehbarer Kriterien; z.B. Verfügbarkeit eines Systems in %"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Service Level Agreements}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Team Social
+\end_layout
+
+\begin_layout Standard
+Team Social stellt mehrere Produkte auf der Shop-Seite bereit, die im Reiter
+ Inspiration auf www.otto.de zu finden sind.
+ Darunter sind beispielsweise der Feed (www.otto.de/feed), über den man von
+ Anwendern zusammengestellte Inhalte abonnieren und betrachten kann.
+ Das Tags-System (www.otto.de/tags/[TAGNAME]), welches derzeit die im Feed
+ genutzten 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Tags"
+description "Stichworte"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Tags}
+\end_layout
+
+\end_inset
+
+ aggregiert und eine Liste der relevantesten Ergebnisse darstellt und der
+ StyleCreator (www.otto.de/stylecreator).
+ Das Team betreut insgesamt neun 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Microservice"
+description "Services"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Microservices}
+\end_layout
+
+\end_inset
+
+, die diese Produkte bereitstellen.
+\end_layout
+
+\begin_layout Subsubsection
+StyleCreator
+\end_layout
+
+\begin_layout Standard
+Im Jahr 2016 ist der StyleCreator entwickelt und live auf www.otto.de zur
+ Verfügung gestellt worden.
+ Dieses Tool erlaubt es Artikelbilder von www.otto.de auszuwählen, sie zu
+ einer Collage zusammenzustellen und diese anschließend zu veröffentlichen.
+ Ein hiermit erstellter Style benötigt einen Titel und kann einen Untertitel
+ erhalten.
+ Der Bearbeiter kann zwischen diversen Design-Vorlagen wählen oder im freien
+ Design die Collage erstellen.
+ Diese Freiform-Vorlage bietet dem Ersteller, anders als bei den Design-Vorlagen
+, die Möglichkeit Einzelbilder zu rotieren, zu vergrößern, zu verkleinern
+ und diese freizustellen.
+ Des Weiteren können die Einzelbilder frei auf der Collage versetzt und
+ übereinander gelegt werden.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/aradkiew/Bilder/Bildschirmfoto von »2018-03-01 16-13-38«.png
+	scale 35
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+StyleCreator im Freiform-Modus mit zwei überlappenden Artikelbildern
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Projektziel
+\end_layout
+
+\begin_layout Subsection
+Strategische Entscheidung
+\end_layout
+
+\begin_layout Standard
+Im Rahmen einer strategischen Entscheidung wird die Plattform www.otto.de
+ nicht weiter über den externen Dienstleister gehostet werden, sondern über
+ die 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Amazon Web Services"
+description "Cloud Dingsi"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Amazon Web Services}
+\end_layout
+
+\end_inset
+
+ (AWS)
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Amazon Web Services - AWS
+\end_layout
+
+\end_inset
+
+ bereitgestellt werden.
+ Durch die autarke Aufstellung der Teams kann jedes Team zu großen Teilen
+ selber entscheiden, wie die Migration ausgeführt wird und welche Entitäten
+ priorisiert werden.
+ Ich habe für das Team Social im Rahmen der Projektarbeit die Migration
+ eines Teil-Microservices in die AWS durchgeführt.
+\end_layout
+
+\begin_layout Subsection
+Team K2
+\end_layout
+
+\begin_layout Standard
+Um den Migrationsprozess für alle Teams erfüllbar zu machen wurde das Team
+ K2 gegründet.
+ Hier sind zum Beispiel Kollegen aus dem Team Ops und anderen Fachteams
+ verortet.
+ In der Vorbereitungsphase auf das Projekt wurden hier erste Erfahrungen
+ gesammelt, die Möglichkeiten der technischen Umsetzung und sicherheitsrelevante
+ Aspekte überprüft.
+ Das gesammelte Wissen dieses Teams wird im Paten-Prinzip auf die restlichen
+ Teams verteilt.
+ Bei technischen Problemen stehen die Kollegen von K2 als Ansprechpartner
+ bereit und eskalieren Probleme, wenn nötig, auf die nächste Ebene.
+ Das Team koordiniert zusätzlich einen Termin der den AWS-Migration-Wissensausta
+usch aller Teams untereinander fördert.
+\end_layout
+
+\begin_layout Subsubsection
+Accountmanagement in der AWS-Umgebung
+\end_layout
+
+\begin_layout Standard
+Unter dem 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Root-Account"
+description "AWS Root-Account"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Root-Account}
+\end_layout
+
+\end_inset
+
+ von OTTO wurden in der AWS weitere Accounts angelegt.
+ Jedes Team erhält jeweils zwei neu erstellte Accounts.
+ Diese Accounts sollen dann jeweils für die Live- und die Nonlive-Umgebung
+ genutzt werden.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Rollen- und Rechtemanagement in der AWS-Umgebung
+\end_layout
+
+\begin_layout Standard
+Das K2 Team hat in der AWS bereits ein Rechte- und Rollenkonzept aufgebaut,
+ dass es allen Teams erlaubt in der AWS genrell unabhängig voneinander zu
+ arbeiten.
+ Jeder Benutzer benötigt einen dedizierten Benutzeraccount.
+ Dieser wird zusammen mit den Kollegen von K2 im 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "AWS Identity and Access Management"
+description "AWS Identity and Access Management"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{AWS Identity and Access Management}
+\end_layout
+
+\end_inset
+
+ (IAM) 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+AWS Identity and Access Management - IAM
+\end_layout
+
+\end_inset
+
+ angelegt.
+ Das Konzept des Rollenmanagement von IAM wurde so implementiert, dass einem
+ Benutzer Rechte zugeteilt werden, diese Rechte beinhalten die Rollen er
+ annehmen darf.
+ Den Rollen selber werden dann wiederrum Rechte vergeben.
+ 
+\end_layout
+
+\begin_layout Subsection
+Vervollständigte Migrationsaufgaben von Team Social
+\end_layout
+
+\begin_layout Standard
+Im Rahmen des Migrationsprozesses werden alle Teams ihre Applikationen aus
+ der derzeitigen Umgebungen lösen und mit Unterstützung des K2-Teams in
+ die AWS migrieren.
+ Ihnen ist dabei grundsätzlich freigestellt wie dieser Migrationsprozess
+ durchgeführt wird, welche Tools in Zukunft und für die Migration eingesetzt
+ werden und welche 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "vordefinierten Services"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{vordefinierten Services}
+\end_layout
+
+\end_inset
+
+ der AWS verwendet werden.
+ Team Social hat seit August 2017 mit den ersten Migrationsaufgaben begonnen
+ und mit der Unterstützung von K2 haben alle Mitglieder von Team Social
+ bereits einen persönlichen Benutzeraccount in der AWS angelegt.
+\end_layout
+
+\begin_layout Subsubsection
+Region
+\end_layout
+
+\begin_layout Standard
+Als 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Region"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Region}
+\end_layout
+
+\end_inset
+
+ in der AWS hat das Team sich für 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "eu-central-1"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{eu-central-1}
+\end_layout
+
+\end_inset
+
+ entschieden.
+ Die Region eu-central-1 wird in Frankfurt gehostet und besteht aus drei
+ Verfügbarkeits-Zonen.
+ SIEHE BILD
+\end_layout
+
+\begin_layout Subsubsection
+Tools
+\end_layout
+
+\begin_layout Standard
+Die Implementierung der grundsätzlichen Infrastruktur in die AWS hat das
+ Team bereits ab August 2017 begonnen.
+ Das Team hat sich entschieden AWS 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "CodeCommit"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{CodeCommit}
+\end_layout
+
+\end_inset
+
+ zur verteilten Versionsverwaltung und die AWS 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "CodePipeline"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{CodePipeline}
+\end_layout
+
+\end_inset
+
+ als Pipeline-Tool zu nutzen.
+ Die Ressourcen der AWS sollen einheitlich via 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "CloudFormation"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{CloudFormation}
+\end_layout
+
+\end_inset
+
+-Templates erzeugt werden.
+ Außerdem hat sich das Team in Absprache mit K2 für das 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "CloudFormation-YAML"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{CloudFormation-YAML}
+\end_layout
+
+\end_inset
+
+ Format entschieden.
+\end_layout
+
+\begin_layout Subsubsection
+Infrastruktur
+\end_layout
+
+\begin_layout Standard
+Um die Infrastruktur zu generieren wurde ein 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Bootstrap"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Bootstrap}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Repository"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Repository}
+\end_layout
+
+\end_inset
+
+ angelegt.
+ Hierüber werden alle grundsätzlichen Infrastrukturressourcen erzeugt, die
+ für alle Services des Teams benötigt werden.
+ Via CloudFormation wurde ein Template erstellt, welches pro Umgebung eine
+ 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Virtual Private Cloud"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Virtual Private Cloud}
+\end_layout
+
+\end_inset
+
+ (VPC) 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Virtual Private Cloud - VPC
+\end_layout
+
+\end_inset
+
+ erzeugt.
+ Auf jedem VPC wurde für jede Verfügbarkeitszone ein öffentliches und ein
+ privates Subnetz erzeugt, welche jeweils über ein NAT-Gateway verbunden
+ sind.
+ Die Nonlive-Umgebung wird immer mit denselben Templates erstellt wie die
+ Live-Umgebung und wird sich daher technisch nicht von dieser unterscheiden.
+ Weitere Umgebungen sind derzeit nicht vorgesehen.
+\end_layout
+
+\begin_layout Subsubsection
+Services
+\end_layout
+
+\begin_layout Standard
+Die Migration des Tags-Services in die AWS-Umgebung konnte das Team im Dezember
+ 2017 fertigstellen.
+ Der Tags-Service läuft in einem 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Elastic Compute Cloud"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Elastic Compute Cloud}
+\end_layout
+
+\end_inset
+
+-Container (EC2) 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Elastic Compute Cloud - EC2
+\end_layout
+
+\end_inset
+
+.
+ Ab Januar 2018 begann die Migration des Scraper-Mircoservices dieser wurde
+ nach einem Monat Live-fähig bereitgestellt.
+\end_layout
+
+\begin_layout Standard
+Der nächste zu migrierende Service ist Imageprocessing.
+ Bei diesem Service bietet es sich an, diesen Service unter Umständen nicht
+ in einem Eins-zu-eins-Verfahren in die AWS zu bringen, sondern die hochgradigen
+ Services der AWS zu nutzen um den Service optimiert in die AWS zu integrieren.
+ Die Teilmigration dieses Microservices wurde im Rahmen dieser Projektarbeit
+ durchgeführt.
+\end_layout
+
+\begin_layout Subsection
+Migrationsziel Imageprocessing
+\end_layout
+
+\begin_layout Standard
+Im Rahmen des Projektes soll nur eine Funktion des Imageprocessing-Services
+ freigeschnitten und migriert werden.
+ Nach dieser ersten Teilmigration wird das Vorgehen bewertet und für die
+ weitere Migration geprüft, ob der Service wie gewünscht in die AWS integriert
+ wurde.
+ Bei erfolgreicher Migration werden im Anschluss an dieses Projekt die anderen
+ Funktionen in die AWS eingebaut.
+ Für die erste Teilmigration muss eine Funktion mit wenig Abhängigkeiten
+ und Schnittstellen gewählt werden.
+ Hierfür boten sich die Funktionen „setFree“ und „resize“ an, da sie sehr
+ klein sind und jeweils nur von zwei Services genutzt werden.
+ Ich habe mich mit Absprache des Teams dafür entschieden die 
+\begin_inset Quotes pld
+\end_inset
+
+setFree
+\begin_inset Quotes prd
+\end_inset
+
+-Funktion zu migrieren, da ich hier auch an der Entwicklung beteiligt war.
+\end_layout
+
+\begin_layout Subsubsection
+Imageprocessing
+\end_layout
+
+\begin_layout Standard
+Der Imageprocessing-Microservice wird vom Feed, vom Social-Profile-Service
+ und vom Composing-Service genutzt.
+ Er stellt vier Haupfunktionalitäten bereit, „resize“, „setFree“, „profileImageU
+pload“ und „convert“.
+ Das Profile-System kann via „profileImageUpload“ Profilbilder von Benutzern
+ speichern.
+ Das Feed-System nutzt die „resize“-Funktion um alle Bilder in derselben
+ Größe anzuzeigen.
+ „SetFree“ wird von Composing aufgerufen um im StyleCreator freigestellte
+ Bilder während der Bearbeitung anzuzeigen.
+ Das Herunterladen und Konvertieren der Einzelbilder, sowie das Speichern
+ und zu Verfügung stellen der Collagen übernimmt die „convert“-Funktion,
+ welche im Prozess des Erstellens wiederum auf „resize“ und „setFree“ zugreift.
+\end_layout
+
+\begin_layout Subsubsection
+SetFree-Funktion
+\end_layout
+
+\begin_layout Standard
+Die „setFree“-Funktion wird per REST-Schnittstelle aufgerufen.
+ Sie erwartet die Parameter „ImageId“, „width“ und „height“, wobei die ImageId
+ als 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Pfadparameter"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Pfadparameter}
+\end_layout
+
+\end_inset
+
+ und die Breite und Höhe als 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Queryparameter"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Queryparameter}
+\end_layout
+
+\end_inset
+
+ übergeben werden.
+ Die übermittelte ImageId muss einer auf dem Otto-Image-Server vorhandenen
+ eindeutigen ID für ein Bild entsprechen.
+ Die Breite und die Höhe sind frei wählbar.
+\end_layout
+
+\begin_layout Standard
+Der Service ruft das von 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Node"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Node}
+\end_layout
+
+\end_inset
+
+ bereitgestellte gm-Package (eine Implementierung von 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "GraphicsMagick"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{GraphicsMagick}
+\end_layout
+
+\end_inset
+
+ via Node) auf und Imagprocessing nutzt aus diesem die 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "ImageMagick"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{ImageMagick}
+\end_layout
+
+\end_inset
+
+-Funktionen.
+\end_layout
+
+\begin_layout Standard
+Das Bild, welches an der ImageId hängt, wird per ImageMagick mit den Werten:
+ setFormat('png') borderColor('white') border(1, 1) fuzz(5, true) fill('rgba(0,
+ 0, 0, 0)') setDraw('color', '0', '0', 'floodfill') quality(100) freigeschnitten
+ und wird nach der Freistellung direkt im Browser sichtbar gemacht.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/aradkiew/Bilder/Bildschirmfoto von »2018-03-01 16-14-34«.png
+	scale 35
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+StyleCreator im Freiform-Modus mit zwei überlappenden Artikelbildern, freigestel
+lt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Projektdurchführung
+\end_layout
+
+\begin_layout Subsection
+Umsetzungsstrategien
+\end_layout
+
+\begin_layout Standard
+Um die 
+\begin_inset Quotes pld
+\end_inset
+
+setFree
+\begin_inset Quotes prd
+\end_inset
+
+-Funktion aus der derzeitig gehosteten Infrastruktur des Dienstleisters
+ zu trennen und in die AWS zu integrieren gibt es zwei divergente Lösungsansätze.
+\end_layout
+
+\begin_layout Standard
+Die Funktion könnte, wie Tags, in einem EC2-Container lauffähig gemacht
+ werden.
+ Es müssten keine Anpassungen am Service selber vorgenommen werden.
+ Leider sind EC2-Container teuer und mit dem klassischem 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Elastic Load Balancing"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Elastic Load Balancing}
+\end_layout
+
+\end_inset
+
+ (ELB) 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Elastic Load Balancing - ELB
+\end_layout
+
+\end_inset
+
+ können Instanzen je nach Last hoch- und heruntergefahren werden, allderings
+ sind die Durchführungszeiten sehr hoch.
+\end_layout
+
+\begin_layout Standard
+Als Algternative bietet sich der Umbau als AWS 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Lambda"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Lambda}
+\end_layout
+
+\end_inset
+
+-Funktion an.
+ Hier wird ein Service nicht in einem EC2-Container sonder ohne jeglichen
+ Overhead ausführbar gemacht.
+ Es gibt etliche 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Lambda-Trigger"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Lambda-Trigger}
+\end_layout
+
+\end_inset
+
+ über die ein Service später gestartet werden kann.
+ Eine Lambda-Funktion startet über einen solchen Trigger.
+ Wenn die Funktion ausgeführt wird, wird die Instanz beendet und erzeugt
+ keine weiteren Kosten.
+ Potentiell ist der Erstaufruf der Funktion langsamer als bei einem vorhandenem
+ Container.
+\end_layout
+
+\begin_layout Subsection
+Umsetzungsstrategieentscheidung
+\end_layout
+
+\begin_layout Standard
+Ich habe mich entschieden die Migration von 
+\begin_inset Quotes pld
+\end_inset
+
+setfree
+\begin_inset Quotes prd
+\end_inset
+
+ via AWS Lambda durchzuführen.
+ Die 
+\begin_inset Quotes pld
+\end_inset
+
+setFree
+\begin_inset Quotes prd
+\end_inset
+
+-Funktion wird vergleichsweise selten aufgerufen, dadurch kann der Umbau
+ als Lambda-Funktion einen kostensparenden Effekt erzielen.
+ Zudem ist die Funktion klein und wird selbst in der kleinsten von AWS angeboten
+en EC2 Instanz die Ressourcen nicht auslasten.
+ Sie wird nur per einfachem REST-Aufruf gestartet und Lambda-Funktionen
+ können per AWS API-Gateway getriggered werden.
+\end_layout
+
+\begin_layout Subsection
+Arbeitsschritte
+\end_layout
+
+\begin_layout Standard
+Die einzelenen Arbeitsschritte werden hier blub blub 
+\end_layout
+
+\begin_layout Subsubsection
+Repository
+\end_layout
+
+\begin_layout Standard
+Das Imageprocessing Service Repository liegt derzeit in einem 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Gitlab"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Gitlab}
+\end_layout
+
+\end_inset
+
+, welches über den externen Dienstleister gehostet wird.
+ Dieses Versionsverwaltungstool wird nach der Migration nicht mehr zur Verfügung
+ stehen.
+ Daher habe ich via CloudFormation ein Template geschrieben, mit dem das
+ Repository erzeugt wird.
+ Im Anschluss habe ich das noch leere Repository auf meine Festplatte geklont.
+ Ich habe alle Dateien die zur Funktionalität von 
+\begin_inset Quotes pld
+\end_inset
+
+setFree
+\begin_inset Quotes prd
+\end_inset
+
+ nötig sind aus dem Imageprocessing Repository herausgelöst und in dieses
+ Neue hinein kopiert.
+ Des Weiteren habe ich die README.md angepasst.
+\end_layout
+
+\begin_layout Subsubsection
+Pipeline
+\end_layout
+
+\begin_layout Standard
+Um eine Pipeline zu generieren und den Service zu deployen habe ich zwei
+ neue Unterordner namens cloudformation und ci angelegt.
+ Ich habe ein neuen CloudFormation-YAML Template erzeugt.
+ 
+\end_layout
+
+\begin_layout Enumerate
+In der AWS Oberfläche ein CodeCommit Repository angelegt
+\end_layout
+
+\begin_layout Enumerate
+Das leere Repository auf meine Festplatte geklont
+\end_layout
+
+\begin_layout Enumerate
+In dem leeren Repository erste Dateien angelegt
+\end_layout
+
+\begin_layout Enumerate
+.gitignore
+\end_layout
+
+\begin_layout Enumerate
+.eslintrc
+\end_layout
+
+\begin_layout Enumerate
+README.md
+\end_layout
+
+\begin_layout Enumerate
+Die ersten zwei Pipeline-Schritte per CodeCommit unter cloudformation/ci/pipelin
+e.yaml gepusht
+\end_layout
+
+\begin_layout Enumerate
+Die Pipeline via autostacker24 manuell in der aws starten
+\end_layout
+
+\begin_layout Enumerate
+Autostacker24 update –template cloudformation/ci/pipeline.yaml –stack imageproces
+sing-pipeline –profile social-nonlive-admin –region eu-central-1
+\end_layout
+
+\begin_layout Enumerate
+Die Pipeline ist einmal erfolgreich durchgelaufen und ist in nun in aws
+ als Stack gespeichert
+\end_layout
+
+\begin_layout Enumerate
+Die Pipeline mit den nächsten Schritt Updaten
+\end_layout
+
+\begin_layout Enumerate
+Handler bauen
+\end_layout
+
+\begin_layout Enumerate
+Funktionen reduzieren und umbauen
+\end_layout
+
+\begin_layout Enumerate
+Api-Gateway Funktionalitäten sicherstellen
+\end_layout
+
+\begin_layout Section
+Projektlösung
+\end_layout
+
+\begin_layout Standard
+hier Lösung mit Angabe 
+\end_layout
+
+\begin_layout Section
+Fazit
+\end_layout
+
+\begin_layout Standard
+hier fazit
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "auto"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset index_print
+LatexCommand printindex
+type "idx"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
