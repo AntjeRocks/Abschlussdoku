@@ -431,7 +431,31 @@ endes Attribut gesetzt werden muss.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
 Code-Beispiele werden in kleinen umrahmten Boxen dargestellt.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1385,7 +1409,7 @@ setFree
 \end_layout
 
 \begin_layout Standard
-Die Funktion könnte, wie Tags, in einem EC2-Container lauffähig gemacht
+Die Funktion könnte, wie bei Tags, in einem EC2-Container lauffähig gemacht
  werden.
  Es müssten keine Anpassungen am Service selber vorgenommen werden.
  Leider sind EC2-Container teuer und mit dem klassischem 
@@ -1419,7 +1443,7 @@ Elastic Load Balancing - ELB
 
 \end_inset
 
- können Instanzen je nach Last hoch- und heruntergefahren werden, allderings
+ können Instanzen je nach Last hoch- und heruntergefahren werden, allerdings
  sind die Durchführungszeiten sehr hoch.
 \end_layout
 
@@ -1595,6 +1619,10 @@ Das Repository bestand nun aus zwei Ordnern, in dem ersten befanden sich
  und diese befinden sich im Root-Verzeichnis.
 \end_layout
 
+\begin_layout Standard
+REPOSITORY CLOUDFORMATION TEMPLATE
+\end_layout
+
 \begin_layout Subsubsection
 Pipeline 
 \end_layout
@@ -1706,8 +1734,12 @@ essing-pipeline --profile [Profilname] --region eu-central-1
 
 \end_layout
 
+\begin_layout Standard
+PIPELINE CLOUDFORMATION TEMPLATE
+\end_layout
+
 \begin_layout Subsubsection
-Lambda Funktion Handler
+AWS Lambda-Funktion Handler
 \end_layout
 
 \begin_layout Standard
@@ -1733,15 +1765,80 @@ underline{Express.js}
 \end_inset
 
  Framework.
- Hier wird der Router für eingehende HTTP Requests definiert, er reicht
- diese an den Controller weiter und dieser sendet die HTTP Response.
- Eine Lambda Funktion wird über einen sogenannten exports Handler lauffähig
- gemacht.
+ Der setFreeRouter hat 
+\end_layout
+
+\begin_layout Standard
+Der SetFreeService
+\end_layout
+
+\begin_layout Standard
+Der SetFreeController 
+\end_layout
+
+\begin_layout Standard
+Hier wird der Router für eingehende HTTP Requests definiert, er reicht diese
+ an den Controller weiter und dieser sendet die HTTP Response.
+\end_layout
+
+\begin_layout Standard
+Eine Lambda-Funktion wird über den 
+\begin_inset Quotes pld
+\end_inset
+
+exports
+\begin_inset Quotes prd
+\end_inset
+
+-Handler ausführbar gemacht.
  Ich habe den setFreeRouter gelöscht und den setFreeController in einen
  exports Handler umgeschrieben.
- Dieser Handler befindet sich im Root-Verzeichnis.
- 
+ Dieser Handler befindet sich im Root-Verzeichnis des Repositories.
 \end_layout
+
+\begin_layout Subsubsection
+API-Gateway
+\end_layout
+
+\begin_layout Standard
+akjdfhasf
+\end_layout
+
+\begin_layout Standard
+API-GATEWAY CLOUDFORMATION TEMPLATE
+\end_layout
+
+\begin_layout Subsubsection
+Binary Media Files
+\end_layout
+
+\begin_layout Standard
+ldsfnlsdg
+\end_layout
+
+\begin_layout Subsubsection
+Alarming
+\end_layout
+
+\begin_layout Standard
+sjdfnlkasg
+\end_layout
+
+\begin_layout Standard
+ALARMING CLOUDFORMATION TEMPLATE
+\end_layout
+
+\begin_layout Subsubsection
+Lasttest
+\end_layout
+
+\begin_layout Standard
+ÖFNsdlkfg
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
 
 \begin_layout Enumerate
 In der AWS Oberfläche ein CodeCommit Repository angelegt
@@ -1800,6 +1897,11 @@ Funktionen reduzieren und umbauen
 
 \begin_layout Enumerate
 Api-Gateway Funktionalitäten sicherstellen
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
