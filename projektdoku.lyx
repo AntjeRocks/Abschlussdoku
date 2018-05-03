@@ -261,6 +261,10 @@ Werner-Otto-Straße 1-7
 \end_layout
 
 \begin_layout Standard
+22179 Hamburg
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -379,12 +383,12 @@ Einleitung
 Dieses Dokument ist im Rahmen der betrieblichen Projektarbeit für den Ausbildung
 sgang des Fachinformatikers in der Fachrichtung Systemintegration entstanden.
  Das Projekt wurde im genehmigten Projektzeitraum vom 
-\color red
+\color black
 27.
  März 2018 bis zum 14.
- Mai
+ Mai 2018
 \color inherit
- 2018 durchgeführt.
+ durchgeführt.
  Weiterhin wurde im Rahmen des Durchführungszeitraumes diese Dokumentation
  erstellt.
  
@@ -410,12 +414,24 @@ underline{unterstrichen}
 \end_layout
 
 \begin_layout Standard
-Es werden mehrmalig Abkürzungen verwendet.
+Es werden Abkürzungen verwendet.
  Ein Begriff wird einmalig ausgeschrieben und dahinter wird in Klammern
  die abgekürzte Begrifflichkeit dargestellt.
  Im weiteren Text wird nur noch der abgekürzte Begriff verwendet.
- Im Stichwortverzeichnis können die Abkürzungen und ihre ausgeschriebene
+ Im Abkürzungsverzeichnis können die Abkürzungen und ihre ausgeschriebene
  Variante eingesehen werden.
+\end_layout
+
+\begin_layout Standard
+Im Weiteren werden kurze Code-Beispiele und URLs genutzt bei denen ein entsprech
+endes Attribut gesetzt werden muss.
+ Hier wird der Name des Attributs mit eckigen Klammer umschlossen, um eine
+ solche Stelle zu kennzeichnen.
+ Beispiel: [Name des Attributs]
+\end_layout
+
+\begin_layout Standard
+Code-Beispiele werden in kleinen umrahmten Boxen dargestellt.
 \end_layout
 
 \begin_layout Section
@@ -629,7 +645,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/aradkiew/Bilder/Bildschirmfoto von »2018-03-01 16-13-38«.png
+	filename C:/home/aradkiew/Bilder/Bildschirmfoto von »2018-03-01 16-13-38«.png
 	scale 35
 
 \end_inset
@@ -1320,7 +1336,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/aradkiew/Bilder/Bildschirmfoto von »2018-03-01 16-14-34«.png
+	filename C:/home/aradkiew/Bilder/Bildschirmfoto von »2018-03-01 16-14-34«.png
 	scale 35
 
 \end_inset
@@ -1408,7 +1424,7 @@ Elastic Load Balancing - ELB
 \end_layout
 
 \begin_layout Standard
-Als Algternative bietet sich der Umbau als AWS 
+Als Alternative bietet sich der Umbau als AWS 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Lambda"
@@ -1432,7 +1448,7 @@ underline{Lambda}
 -Funktion an.
  Hier wird ein Service nicht in einem EC2-Container sonder ohne jeglichen
  Overhead ausführbar gemacht.
- Es gibt etliche 
+ Es gibt viele 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Lambda-Trigger"
@@ -1496,7 +1512,8 @@ Arbeitsschritte
 \end_layout
 
 \begin_layout Standard
-Die einzelenen Arbeitsschritte werden hier blub blub 
+In diesem Abschnitt werden die einzelnen Arbeitsschritte in ihrer Durchführungsr
+eihenfolge beschrieben.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1504,7 +1521,8 @@ Repository
 \end_layout
 
 \begin_layout Standard
-Das Imageprocessing Service Repository liegt derzeit in einem 
+Das Imageprocessing Repository lag in dem bisher genutzten Versionsverwaltungsto
+ol 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Gitlab"
@@ -1528,9 +1546,34 @@ underline{Gitlab}
 , welches über den externen Dienstleister gehostet wird.
  Dieses Versionsverwaltungstool wird nach der Migration nicht mehr zur Verfügung
  stehen.
- Daher habe ich via CloudFormation ein Template geschrieben, mit dem das
- Repository erzeugt wird.
- Im Anschluss habe ich das noch leere Repository auf meine Festplatte geklont.
+ Daher habe ich via CloudFormation ein Template geschrieben, mit dem ein
+ Repository in der AWS erzeugt wird.
+ Dieses Template habe ich einmalig mit 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Autostacker24"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Autostacker24}
+\end_layout
+
+\end_inset
+
+ in die AWS deployed.
+\end_layout
+
+\begin_layout Standard
+Im Anschluss habe ich das noch leere Repository auf meine Festplatte geklont.
  Ich habe alle Dateien die zur Funktionalität von 
 \begin_inset Quotes pld
 \end_inset
@@ -1539,19 +1582,164 @@ setFree
 \begin_inset Quotes prd
 \end_inset
 
- nötig sind aus dem Imageprocessing Repository herausgelöst und in dieses
- Neue hinein kopiert.
- Des Weiteren habe ich die README.md angepasst.
-\end_layout
-
-\begin_layout Subsubsection
-Pipeline
+ nötig sind aus dem derzeitigem Imageprocessing Repository herausgelöst
+ und in das Neue übertragen.
+ Des Weiteren habe ich die README.md angepasst und die neuen Dateien in das
+ AWS Repository hochgeladen.
 \end_layout
 
 \begin_layout Standard
-Um eine Pipeline zu generieren und den Service zu deployen habe ich zwei
- neue Unterordner namens cloudformation und ci angelegt.
- Ich habe ein neuen CloudFormation-YAML Template erzeugt.
+Das Repository bestand nun aus zwei Ordnern, in dem ersten befanden sich
+ die setFree Dateien und in dem zweiten lagen die setFree Test Dateien.
+ Die .gitignore und .eslintrc habe ich von dem voherigen Projekt behalten
+ und diese befinden sich im Root-Verzeichnis.
+\end_layout
+
+\begin_layout Subsubsection
+Pipeline 
+\end_layout
+
+\begin_layout Standard
+Ich habe einen neuen Unterordner für die CloudFormation-Skripte erstellt
+ und ein CloudFormation-Template für die CodePipeline angelegt.
+ Dieses Template enthält alle Pipeline-Schritte.
+ Eine Pipeline wird als AWS::CodePipeline::Pipeline Typ definiert.
+ Dieser kann ein Name vergeben werden.
+ und ein Speicherort für die Ausführung muss angegeben werden.
+ Die Schritte (Stages) benötigen einen Namen und Aktionen.
+\end_layout
+
+\begin_layout Standard
+Ich habe fünf Schritte erstellt, checkout, common, build, deploy-nonlive
+ und deploy-live.
+ Im checkout Schritt wird über AWS CodeCommit die Dateien heruntergeladen.
+ Der common Schritt besteht aus mehreren Unterschritten.
+ Hier habe ich nach Beispiel eines bereits deployten Services eine Rolle
+ für diesen Service,in live und nonlive, angelegt und berechtigt.
+ Danach wird die pipeline.yaml geupdatet.
+ Der build Schritt wird via AWS 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "CodeBuild"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{CodeBuild}
+\end_layout
+
+\end_inset
+
+ ausgeführt, es wird der Quellcode kompiliert und eine Build-Datei an den
+ nächsten Schritt weiter gereicht.
+ Die deploy-Schritte habe ich in diesem Arbeitsschritt nicht vollständig
+ definiert.
+\end_layout
+
+\begin_layout Standard
+Ich habe die Pipeline einmalig händisch auf der Kommandozeile via 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Autostacker24"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Autostacker24}
+\end_layout
+
+\end_inset
+
+ hochgeladen und deployed.
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Autostacker24"
+description "fehlt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+autostacker24 update --template cloudformation/ci/pipeline.yaml --stack imageproc
+essing-pipeline --profile [Profilname] --region eu-central-1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Lambda Funktion Handler
+\end_layout
+
+\begin_layout Standard
+Die setFree Funktion lief in der Vergangenheit über das 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Express.js"
+description "fehlt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Express.js}
+\end_layout
+
+\end_inset
+
+ Framework.
+ Hier wird der Router für eingehende HTTP Requests definiert, er reicht
+ diese an den Controller weiter und dieser sendet die HTTP Response.
+ Eine Lambda Funktion wird über einen sogenannten exports Handler lauffähig
+ gemacht.
+ Ich habe den setFreeRouter gelöscht und den setFreeController in einen
+ exports Handler umgeschrieben.
+ Dieser Handler befindet sich im Root-Verzeichnis.
  
 \end_layout
 
@@ -1631,9 +1819,45 @@ hier fazit
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+nomname}{Glossar}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset nomencl_print
 LatexCommand printnomenclature
 set_width "auto"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+indexname}{Abkürzungsverzeichnis}
+\end_layout
 
 \end_inset
 
