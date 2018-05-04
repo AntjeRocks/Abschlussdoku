@@ -155,7 +155,7 @@ End
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation skip
-\defskip bigskip
+\defskip smallskip
 \quotes_language polish
 \papercolumns 1
 \papersides 1
@@ -391,7 +391,21 @@ sgang des Fachinformatikers in der Fachrichtung Systemintegration entstanden.
  durchgeführt.
  Weiterhin wurde im Rahmen des Durchführungszeitraumes diese Dokumentation
  erstellt.
- 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -411,23 +425,69 @@ underline{unterstrichen}
 \end_inset
 
  dargestellt.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Es werden Abkürzungen verwendet.
- Ein Begriff wird einmalig ausgeschrieben und dahinter wird in Klammern
- die abgekürzte Begrifflichkeit dargestellt.
+Im Textverlauf werden Abkürzungen verwendet, die Langform wird einmalig
+ ausgeschrieben und dahinter wird in Klammern die abgekürzte Begrifflichkeit
+ dargestellt.
  Im weiteren Text wird nur noch der abgekürzte Begriff verwendet.
  Im Abkürzungsverzeichnis können die Abkürzungen und ihre ausgeschriebene
  Variante eingesehen werden.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Im Weiteren werden kurze Code-Beispiele und URLs genutzt bei denen ein entsprech
-endes Attribut gesetzt werden muss.
- Hier wird der Name des Attributs mit eckigen Klammer umschlossen, um eine
+Im Weiteren werden kurze Beispiele genutzt bei denen ein Attribut gesetzt
+ werden muss.
+ Hier wird der Name des Attributs mit eckigen Klammern umschlossen, um eine
  solche Stelle zu kennzeichnen.
- Beispiel: [Name des Attributs]
+ Beispiel: www.otto.de/p/[Name des Attributs]
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -451,6 +511,21 @@ status open
 
 \begin_layout Plain Layout
 Code-Beispiele werden in kleinen umrahmten Boxen dargestellt.
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
 \end_layout
 
 \end_inset
@@ -501,90 +576,6 @@ Der Bereich E-Commerce wird derzeit durch einen externen Dienstleister bei
  Als Lösungspartner für IT-Infrastruktur stellt dieser dem OTTO E-Commerce
  derzeit nicht nur die notwendige Hardware in einem Rechenzentrum, diverse
  Applikationen und Schnittstellen, sondern auch personelle Ressourcen bereit.
-\end_layout
-
-\begin_layout Subsection
-IT-Operations (Ops)
-\end_layout
-
-\begin_layout Standard
-Team Ops verwaltet die Infrastrukturdienste, die benötigt werden, damit
- die fachlich geschnittenen Teams gemeinsam an der Plattform www.otto.de arbeiten
- können.
- Zu den Infrastrukturdiensten gehören beispielsweise VM, Logging und Monitoring.
- Die inhaltlichen Themen werden von den Fachteams selbstverantwortet bereitgeste
-llt und Ops unterstützt diese dabei technisch.
-\end_layout
-
-\begin_layout Standard
-Hierfür sind sie in einem direkten Austausch mit dem externen Dienstleister
- und stellen zusammen mit diesem für die E-Commerce Mitarbeiter vor Ort
- einen zentralen Anlaufpunkt für alle 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Live"
-description "Die Live-Umgebung (auch Produktivumgebung) ist die Umgebung, die dem Endkunden zugänglich gemacht wird"
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-underline{Live}
-\end_layout
-
-\end_inset
-
--kritischen Support-Anfragen bereit.
- Für sonstige 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Nonlive"
-description "Die Nonlive-Umgebung ist eine Umgebung, die der Endkunde nicht sieht und auf der Tests ausgeführt werden können"
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-underline{Nonlive}
-\end_layout
-
-\end_inset
-
- Anliegen und Fragen gibt es einen weiteren Anlaufpunkt mit schwächeren
- 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Service Level Agreements"
-description "Schriftliche Vertragsvereinbarung zwischen Dienstleister und Kunde über Qualität und Quantität der im Rahmen des Outsourcing-Vertrages zu erbringenden Service-Leistungen anhand eindeutig nachweisbarer und nachvollziehbarer Kriterien; z.B. Verfügbarkeit eines Systems in %"
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-underline{Service Level Agreements}
-\end_layout
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Subsection
@@ -661,7 +652,7 @@ Im Jahr 2016 ist der StyleCreator entwickelt und live auf www.otto.de zur
 , die Möglichkeit Einzelbilder zu rotieren, zu vergrößern, zu verkleinern
  und diese freizustellen.
  Des Weiteren können die Einzelbilder frei auf der Collage versetzt und
- übereinander gelegt werden.
+ übereinandergelegt werden.
 \begin_inset Float figure
 wide false
 sideways false
@@ -741,8 +732,8 @@ Amazon Web Services - AWS
  Durch die autarke Aufstellung der Teams kann jedes Team zu großen Teilen
  selber entscheiden, wie die Migration ausgeführt wird und welche Entitäten
  priorisiert werden.
- Ich habe für das Team Social im Rahmen der Projektarbeit die Migration
- eines Teil-Microservices in die AWS durchgeführt.
+ Meine Aufgabe war es, für das Team Social, im Rahmen der Projektarbeit,
+ die Migration eines Teil-Microservices in die AWS durchzuführen.
 \end_layout
 
 \begin_layout Subsection
@@ -752,8 +743,6 @@ Team K2
 \begin_layout Standard
 Um den Migrationsprozess für alle Teams erfüllbar zu machen wurde das Team
  K2 gegründet.
- Hier sind zum Beispiel Kollegen aus dem Team Ops und anderen Fachteams
- verortet.
  In der Vorbereitungsphase auf das Projekt wurden hier erste Erfahrungen
  gesammelt, die Möglichkeiten der technischen Umsetzung und sicherheitsrelevante
  Aspekte überprüft.
@@ -761,8 +750,6 @@ Um den Migrationsprozess für alle Teams erfüllbar zu machen wurde das Team
  Teams verteilt.
  Bei technischen Problemen stehen die Kollegen von K2 als Ansprechpartner
  bereit und eskalieren Probleme, wenn nötig, auf die nächste Ebene.
- Das Team koordiniert zusätzlich einen Termin der den AWS-Migration-Wissensausta
-usch aller Teams untereinander fördert.
 \end_layout
 
 \begin_layout Subsubsection
@@ -795,7 +782,6 @@ underline{Root-Account}
  Jedes Team erhält jeweils zwei neu erstellte Accounts.
  Diese Accounts sollen dann jeweils für die Live- und die Nonlive-Umgebung
  genutzt werden.
- 
 \end_layout
 
 \begin_layout Subsubsection
@@ -840,9 +826,9 @@ AWS Identity and Access Management - IAM
 
  angelegt.
  Das Konzept des Rollenmanagement von IAM wurde so implementiert, dass einem
- Benutzer Rechte zugeteilt werden, diese Rechte beinhalten die Rollen er
- annehmen darf.
- Den Rollen selber werden dann wiederrum Rechte vergeben.
+ Benutzer Rechte zugeteilt werden, diese Rechte befähigen den Nutzer verscheiden
+ Rollen anzunehmen.
+ Den Rollen selber werden dann wiederrum Rechte auf Ressourcen zugewiesen.
  
 \end_layout
 
@@ -942,7 +928,7 @@ Tools
 
 \begin_layout Standard
 Die Implementierung der grundsätzlichen Infrastruktur in die AWS hat das
- Team bereits ab August 2017 begonnen.
+ Team im August 2017 begonnen.
  Das Team hat sich entschieden AWS 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
@@ -1115,12 +1101,11 @@ Virtual Private Cloud - VPC
 \end_inset
 
  erzeugt.
- Auf jedem VPC wurde für jede Verfügbarkeitszone ein öffentliches und ein
- privates Subnetz erzeugt, welche jeweils über ein NAT-Gateway verbunden
- sind.
+ Auf jeder VPC wurde für jede Verfügbarkeitszone ein öffentliches und ein
+ privates Subnetz erzeugt, welches jeweils über ein NAT-Gateway verbunden
+ ist.
  Die Nonlive-Umgebung wird immer mit denselben Templates erstellt wie die
  Live-Umgebung und wird sich daher technisch nicht von dieser unterscheiden.
- Weitere Umgebungen sind derzeit nicht vorgesehen.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1128,6 +1113,10 @@ Services
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 Die Migration des Tags-Services in die AWS-Umgebung konnte das Team im Dezember
  2017 fertigstellen.
  Der Tags-Service läuft in einem 
@@ -1164,14 +1153,34 @@ Elastic Compute Cloud - EC2
 .
  Ab Januar 2018 begann die Migration des Scraper-Mircoservices dieser wurde
  nach einem Monat Live-fähig bereitgestellt.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Der nächste zu migrierende Service ist Imageprocessing.
- Bei diesem Service bietet es sich an, diesen Service unter Umständen nicht
- in einem Eins-zu-eins-Verfahren in die AWS zu bringen, sondern die hochgradigen
- Services der AWS zu nutzen um den Service optimiert in die AWS zu integrieren.
- Die Teilmigration dieses Microservices wurde im Rahmen dieser Projektarbeit
+Das Team hat bereits zwei Services migriert und der nächste zu migrierende
+ Service war Imageprocessing.
+ Bei diesem Service bot es sich an, diesen nicht in einem Eins-zu-eins-Verfahren
+ in die AWS zu bringen, sondern die vordefinierten Services der AWS zu nutzen.
+ Die Teilmigration dieses Microservices wurde im Rahmen der Projektarbeit
  durchgeführt.
 \end_layout
 
@@ -1180,18 +1189,40 @@ Migrationsziel Imageprocessing
 \end_layout
 
 \begin_layout Standard
-Im Rahmen des Projektes soll nur eine Funktion des Imageprocessing-Services
+Im Rahmen des Projektes sollte nur eine Funktion des Imageprocessing-Services
  freigeschnitten und migriert werden.
- Nach dieser ersten Teilmigration wird das Vorgehen bewertet und für die
- weitere Migration geprüft, ob der Service wie gewünscht in die AWS integriert
- wurde.
+ Nach dieser ersten Teilmigration soll das Vorgehen bewertet und für die
+ weitere Migration geprüft werden, ob der Service wie gewünscht in die AWS
+ integriert wurde.
  Bei erfolgreicher Migration werden im Anschluss an dieses Projekt die anderen
  Funktionen in die AWS eingebaut.
- Für die erste Teilmigration muss eine Funktion mit wenig Abhängigkeiten
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Für die erste Teilmigration musste eine Funktion mit wenig Abhängigkeiten
  und Schnittstellen gewählt werden.
  Hierfür boten sich die Funktionen „setFree“ und „resize“ an, da sie sehr
  klein sind und jeweils nur von zwei Services genutzt werden.
- Ich habe mich mit Absprache des Teams dafür entschieden die 
+ 
+\end_layout
+
+\begin_layout Standard
+Nach Absprache mit dem Team ist die Entscheidung gefallen, dass die 
 \begin_inset Quotes pld
 \end_inset
 
@@ -1275,6 +1306,21 @@ underline{Queryparameter}
  Die übermittelte ImageId muss einer auf dem Otto-Image-Server vorhandenen
  eindeutigen ID für ein Bild entsprechen.
  Die Breite und die Höhe sind frei wählbar.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1342,6 +1388,21 @@ underline{ImageMagick}
 \end_inset
 
 -Funktionen.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1406,6 +1467,21 @@ setFree
 
 -Funktion aus der derzeitig gehosteten Infrastruktur des Dienstleisters
  zu trennen und in die AWS zu integrieren gibt es zwei divergente Lösungsansätze.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1445,6 +1521,21 @@ Elastic Load Balancing - ELB
 
  können Instanzen je nach Last hoch- und heruntergefahren werden, allerdings
  sind die Durchführungszeiten sehr hoch.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1594,6 +1685,21 @@ underline{Autostacker24}
 \end_inset
 
  in die AWS deployed.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1610,6 +1716,21 @@ setFree
  und in das Neue übertragen.
  Des Weiteren habe ich die README.md angepasst und die neuen Dateien in das
  AWS Repository hochgeladen.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1635,6 +1756,21 @@ Ich habe einen neuen Unterordner für die CloudFormation-Skripte erstellt
  Dieser kann ein Name vergeben werden.
  und ein Speicherort für die Ausführung muss angegeben werden.
  Die Schritte (Stages) benötigen einen Namen und Aktionen.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1670,6 +1806,21 @@ underline{CodeBuild}
  nächsten Schritt weiter gereicht.
  Die deploy-Schritte habe ich in diesem Arbeitsschritt nicht vollständig
  definiert.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1695,10 +1846,17 @@ underline{Autostacker24}
 \end_inset
 
  hochgeladen und deployed.
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Autostacker24"
-description "fehlt"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
 
 \end_inset
 
@@ -1727,6 +1885,21 @@ status open
 \begin_layout Plain Layout
 autostacker24 update --template cloudformation/ci/pipeline.yaml --stack imageproc
 essing-pipeline --profile [Profilname] --region eu-central-1
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
 \end_layout
 
 \end_inset
