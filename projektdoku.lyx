@@ -1122,8 +1122,22 @@ underline{eu-central-1}
 
  entschieden.
  Die Region eu-central-1 wird in Frankfurt gehostet und besteht aus drei
- Verfügbarkeits-Zonen.
- SIEHE BILD
+ Verfügbarkeitszonen.
+ AWS Verfügbarkeitszonen sind physisch voneinander getrennt, aber über Verbindun
+gen mit geringer Latenz, wie in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{Abbildung c.}
+\end_layout
+
+\end_inset
+
+ dargestellt ist, verbunden.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2596,7 +2610,7 @@ Technischer Entwickler
 \begin_inset Text
 
 \begin_layout Plain Layout
-Abnahme der Migration, Begleitung der Projektarbeit
+Begleitung der Projektarbeit, Abnahme des Projektes
 \end_layout
 
 \end_inset
