@@ -13,7 +13,6 @@
 \options idxtotoc
 \use_default_options true
 \begin_modules
-InStar
 customHeadersFooters
 \end_modules
 \maintain_unincluded_children false
@@ -227,49 +226,191 @@ Migration eines über einen Dienstleister gehosteten Microservice in die
  Amazon Web Services-Umgebung
 \end_layout
 
-\begin_layout Titlehead
-Antje Radkiewicz Loher Straße 15b 22149 Hamburg
+\begin_layout Author
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{
+\backslash
+normalsize{
 \end_layout
 
-\begin_layout Minisec
-Ausbildungsberuf
+\end_inset
+
+Ausbildungsberuf 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}}
+\backslash
+
+\backslash
+
+\backslash
+small{
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
 Fachinformatiker Fachrichtung Systemintegration
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\backslash
+
+\backslash
+
+\backslash
+textbf{
+\backslash
+normalsize{
 \end_layout
 
-\begin_layout Minisec
+\end_inset
+
 Prüfungsbewerberin
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}}
+\backslash
+
+\backslash
+
+\backslash
+small{
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
 Antje Radkiewicz
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\backslash
+
+\backslash
+
+\backslash
+small{
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
 Loher Straße 15b
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\backslash
+
+\backslash
+
+\backslash
+small{
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
 22149 Hamburg
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\backslash
+
+\backslash
+
+\backslash
+textbf{
+\backslash
+normalsize{
 \end_layout
 
-\begin_layout Minisec
+\end_inset
+
 Ausbildungsbetrieb
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}}
+\backslash
+
+\backslash
+
+\backslash
+small{
 \end_layout
 
-\begin_layout Standard
-OTTO (Gmbh & Co.
+\end_inset
+
+OTTO (GmbH & Co.
  KG)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\backslash
+
+\backslash
+
+\backslash
+small{
 \end_layout
 
-\begin_layout Standard
-Werner-Otto-Straße 1-7 
+\end_inset
+
+Werner-Otto-Straße 1-7
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\backslash
+
+\backslash
+
+\backslash
+small{
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
 22179 Hamburg
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Left Header
@@ -853,8 +994,8 @@ Rollen- und Rechtemanagement in der AWS-Umgebung
 
 \begin_layout Standard
 Das K2 Team hat in der AWS bereits ein Rechte- und Rollenkonzept aufgebaut,
- dass es allen Teams erlaubt in der AWS genrell unabhängig voneinander zu
- arbeiten.
+ dass es allen Teams erlaubt in der AWS generell unabhängig voneinander
+ zu arbeiten.
  Jeder Benutzer benötigt einen dedizierten Benutzeraccount.
  Dieser wird zusammen mit den Kollegen von K2 im 
 \begin_inset CommandInset nomenclature
