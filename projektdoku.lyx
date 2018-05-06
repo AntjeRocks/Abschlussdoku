@@ -355,6 +355,28 @@ thesection}{
 arabic{section}}
 \end_layout
 
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*{
+\backslash
+thefigure}{
+\backslash
+alph{figure}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*{
+\backslash
+thetable}{
+\backslash
+alph{table}}
+\end_layout
+
 \end_inset
 
 
@@ -656,8 +678,6 @@ Im Jahr 2016 ist der StyleCreator entwickelt und live auf www.otto.de zur
  Verfügung gestellt worden.
  Dieses Tool erlaubt es Artikelbilder von www.otto.de auszuwählen, sie zu
  einer Collage zusammenzustellen und diese anschließend zu veröffentlichen.
- Ein hiermit erstellter Style benötigt einen Titel und kann einen Untertitel
- erhalten.
  Der Bearbeiter kann zwischen diversen Design-Vorlagen wählen oder im freien
  Design die Collage erstellen.
  Diese Freiform-Vorlage bietet dem Ersteller, anders als bei den Design-Vorlagen
@@ -2138,14 +2158,94 @@ clearpage
 
 
 \backslash
-begingroup
+addcontentsline{toc}{chapter}{
+\backslash
+Large{Anhang}}
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-addcontentsline{toc}{chapter}{Anhang}
+pagenumbering{Roman}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Zwei Kapitel auf einer Seite
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+makeatletter
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand
+\backslash
+chapter{
+\backslash
+thispagestyle{plain}%
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+global
+\backslash
+@topnum
+\backslash
+z@
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+@afterindentfalse
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+secdef
+\backslash
+@chapter
+\backslash
+@schapter}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+makeatother
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+thechapter}{
+\backslash
+Alph{chapter}}
 \end_layout
 
 \end_inset
@@ -2157,42 +2257,7 @@ addcontentsline{toc}{chapter}{Anhang}
 Anhang
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-setcounter{section}{0}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\backslash
-renewcommand{
-\backslash
-thesection}{
-\backslash
-Alph{chapter}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
+\begin_layout Chapter
 Grafiken
 \end_layout
 
@@ -2204,7 +2269,243 @@ status open
 
 
 \backslash
-clearpage
+setcounter{figure}{2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Bilder/aws_regions.png
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+AWS Region mit drei Verfügbarkeitszonen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Tabellen
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Funktion
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aufgaben
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Antje Radkiewicz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Auszubildende
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Migration des Teil-Microservice
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Christian Finckler
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Technischer Entwickler
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Abnahme der Migration, Begleitung der Projektarbeit
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mitarbeiter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
 \end_layout
 
 \begin_layout Plain Layout
@@ -2213,25 +2514,16 @@ clearpage
 \backslash
 renewcommand{
 \backslash
-thechapter}{
-\backslash
-Roman{chapter}}
+nomname}{B.
+ Glossar}
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-renewcommand{
-\backslash
-nomname}{I Glossar}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{chapter}{I Glossar}
+addcontentsline{toc}{chapter}{B.
+ Glossar}
 \end_layout
 
 \end_inset
@@ -2259,7 +2551,8 @@ status open
 \backslash
 renewcommand{
 \backslash
-indexname}{II Abkürzungsverzeichnis}
+indexname}{C.
+ Abkürzungsverzeichnis}
 \end_layout
 
 \end_inset
@@ -2285,7 +2578,8 @@ status open
 
 
 \backslash
-addcontentsline{toc}{chapter}{III Abbildungsverzeichnis}
+addcontentsline{toc}{chapter}{D.
+ Abbildungsverzeichnis}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2294,7 +2588,8 @@ addcontentsline{toc}{chapter}{III Abbildungsverzeichnis}
 \backslash
 renewcommand{
 \backslash
-listfigurename}{III Abbildungsverzeichnis}
+listfigurename}{D.
+ Abbildungsverzeichnis}
 \end_layout
 
 \end_inset
@@ -2318,7 +2613,15 @@ status open
 
 
 \backslash
-addcontentsline{toc}{chapter}{IV Tabellenverzeichnis}
+newpage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{E.
+ Tabellenverzeichnis}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2327,7 +2630,8 @@ addcontentsline{toc}{chapter}{IV Tabellenverzeichnis}
 \backslash
 renewcommand{
 \backslash
-listtablename}{IV Tabellenverzeichnis}
+listtablename}{E.
+ Tabellenverzeichnis}
 \end_layout
 
 \end_inset
