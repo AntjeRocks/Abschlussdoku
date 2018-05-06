@@ -14,6 +14,7 @@
 \use_default_options true
 \begin_modules
 InStar
+customHeadersFooters
 \end_modules
 \maintain_unincluded_children false
 \begin_forced_local_layout
@@ -160,7 +161,7 @@ End
 \quotes_language polish
 \papercolumns 1
 \papersides 1
-\paperpagestyle default
+\paperpagestyle fancy
 \bullet 0 0 0 -1
 \bullet 1 0 1 -1
 \tracking_changes false
@@ -180,23 +181,36 @@ status open
 
 
 \backslash
-clearpage
+pagenumbering{gobble}
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-begingroup
+makeatletter
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-renewcommand{
+let
 \backslash
-chapterpagestyle}{empty}
+ps@plain
+\backslash
+ps@fancy % Plain page style = fancy page style
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+makeatother
 \end_layout
 
 \end_inset
@@ -256,6 +270,14 @@ Werner-Otto-Straße 1-7
 
 \begin_layout Standard
 22179 Hamburg
+\end_layout
+
+\begin_layout Left Header
+Inhaltsverzeichnis
+\end_layout
+
+\begin_layout Right Header
+Antje Radkiewicz
 \end_layout
 
 \begin_layout Standard
@@ -334,20 +356,6 @@ status open
 
 
 \backslash
-clearpage
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-endgroup
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
 renewcommand*{
 \backslash
 thesection}{
@@ -383,7 +391,27 @@ alph{table}}
 \end_layout
 
 \begin_layout Chapter*
-Dokumentation
+Dokumentation der betrieblichen Projektarbeit
+\end_layout
+
+\begin_layout Left Header
+Projektumfeld
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -479,9 +507,8 @@ status open
 
 \begin_layout Standard
 Im Textverlauf werden Abkürzungen verwendet, die Langform wird einmalig
- ausgeschrieben und dahinter wird in Klammern die abgekürzte Begrifflichkeit
- dargestellt.
- Im weiteren Text wird nur noch der abgekürzte Begriff verwendet.
+ ausgeschrieben und dahinter wird in Klammern die Abkürzung dargestellt.
+ Danach wird im weiteren Textverlauf nur noch der abgekürzte Begriff verwendet.
  Im Abkürzungsverzeichnis können die Abkürzungen und ihre ausgeschriebene
  Variante eingesehen werden.
 \begin_inset ERT
@@ -502,7 +529,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-Im Weiteren werden kurze Beispiele genutzt bei denen ein Attribut gesetzt
+Des Weiteren werden kurze Beispiele genutzt bei denen ein Attribut gesetzt
  werden muss.
  Hier wird der Name des Attributs mit eckigen Klammern umschlossen, um eine
  solche Stelle zu kennzeichnen.
@@ -719,6 +746,10 @@ StyleCreator im Freiform-Modus mit zwei überlappenden Artikelbildern
 \end_layout
 
 \begin_layout Section
+Projektziel
+\end_layout
+
+\begin_layout Left Header
 Projektziel
 \end_layout
 
@@ -1484,6 +1515,10 @@ lt
 Projektdurchführung
 \end_layout
 
+\begin_layout Left Header
+Projektdurchführung
+\end_layout
+
 \begin_layout Subsection
 Umsetzungsstrategien
 \end_layout
@@ -2113,6 +2148,10 @@ Api-Gateway Funktionalitäten sicherstellen
 Projektlösung
 \end_layout
 
+\begin_layout Left Header
+Projektlösung
+\end_layout
+
 \begin_layout Standard
 hier Lösung mit Angabe 
 \end_layout
@@ -2136,6 +2175,10 @@ textbf{Fazit}}
 \end_layout
 
 \begin_layout Section*
+Fazit
+\end_layout
+
+\begin_layout Left Header
 Fazit
 \end_layout
 
@@ -2254,6 +2297,10 @@ Alph{chapter}}
 \end_layout
 
 \begin_layout Chapter*
+Anhang
+\end_layout
+
+\begin_layout Left Header
 Anhang
 \end_layout
 
