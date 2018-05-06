@@ -10,6 +10,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{microtype}
 \end_preamble
+\options idxtotoc
 \use_default_options true
 \begin_modules
 InStar
@@ -193,16 +194,9 @@ begingroup
 
 
 \backslash
-renewcommand*{
+renewcommand{
 \backslash
 chapterpagestyle}{empty}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-pagestyle{empty}
 \end_layout
 
 \end_inset
@@ -257,7 +251,7 @@ OTTO (Gmbh & Co.
 \end_layout
 
 \begin_layout Standard
-Werner-Otto-Straße 1-7
+Werner-Otto-Straße 1-7 
 \end_layout
 
 \begin_layout Standard
@@ -375,7 +369,25 @@ Migration eines über einen Dienstleister gehosteten Microservice in die
  Amazon Web Services-Umgebung
 \end_layout
 
-\begin_layout Section
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{
+\backslash
+textbf{Einleitung}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
 Einleitung
 \end_layout
 
@@ -2085,7 +2097,25 @@ Projektlösung
 hier Lösung mit Angabe 
 \end_layout
 
-\begin_layout Section
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{
+\backslash
+textbf{Fazit}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
 Fazit
 \end_layout
 
@@ -2101,9 +2131,107 @@ status open
 
 
 \backslash
+clearpage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begingroup
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Anhang}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Anhang
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{section}{0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\backslash
 renewcommand{
 \backslash
-nomname}{Glossar}
+thesection}{
+\backslash
+Alph{chapter}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Grafiken
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+thechapter}{
+\backslash
+Roman{chapter}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+nomname}{I Glossar}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{I Glossar}
 \end_layout
 
 \end_inset
@@ -2131,7 +2259,7 @@ status open
 \backslash
 renewcommand{
 \backslash
-indexname}{Abkürzungsverzeichnis}
+indexname}{II Abkürzungsverzeichnis}
 \end_layout
 
 \end_inset
@@ -2143,6 +2271,72 @@ indexname}{Abkürzungsverzeichnis}
 \begin_inset CommandInset index_print
 LatexCommand printindex
 type "idx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{III Abbildungsverzeichnis}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+listfigurename}{III Abbildungsverzeichnis}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{IV Tabellenverzeichnis}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+listtablename}{IV Tabellenverzeichnis}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
 
 \end_inset
 
