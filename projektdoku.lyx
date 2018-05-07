@@ -612,8 +612,10 @@ status open
 \end_layout
 
 \begin_layout Standard
-In dieser Dokumentation werden Fachbegriffe erwähnt, die im Glossar näher
- erläutert werden.
+Diese Dokumentation richtet sich an Personen die in der Fachrichtung Informatik
+ Vorwissen besitzen.
+ In dieser Dokumentation werden fachbezogene Begriffe verwendet, die im
+ Glossar näher erläutert werden.
  Fachbegriffe, die in dem Glossar enthalten sind, werden 
 \begin_inset ERT
 status open
@@ -992,11 +994,13 @@ Team K2
 \end_layout
 
 \begin_layout Standard
-Um den Migrationsprozess für alle Teams erfüllbar zu machen wurde das Team
- K2 gegründet.
+Um den Migrationsprozess, für alle Teams, erfüllbar zu machen wurde das
+ Team K2 gegründet.
  In der Vorbereitungsphase auf das Projekt wurden hier erste Erfahrungen
  gesammelt, die Möglichkeiten der technischen Umsetzung und sicherheitsrelevante
  Aspekte überprüft.
+ Das Team hat wichtige Infrastrukturressourcen erzeugt und stellt diese
+ allen anderen Teams zur Verfügung.
  Das gesammelte Wissen dieses Teams wird im Paten-Prinzip auf die restlichen
  Teams verteilt.
  Bei technischen Problemen stehen die Kollegen von K2 als Ansprechpartner
@@ -1033,10 +1037,10 @@ underline{Root-Account}
 
 \end_inset
 
- von OTTO wurden weitere Accounts angelegt.
+ von OTTO (GmbH & Co.
+ KG) wurden, in Absprache mit K2, weitere AWS Accounts angelegt.
  Jedes Team erhält jeweils zwei dieser Accounts.
- Diese sollen dann jeweils für die Live- und die Nonlive-Umgebung genutzt
- werden.
+ Diese werden dann jeweils für die Live- und die Nonlive-Umgebung genutzt.
  Resourcen die in einem Account angelegt werden, können nicht automatisch
  auf Ressourcen der anderen Accounts zugreifen.
 \end_layout
@@ -1102,8 +1106,8 @@ status open
 \begin_layout Standard
 Ein Benutzeraccount kann verschiedene Rollen annehmen.
  Es gibt vorgefertigte Rollen, wie zum Beispiel die Manager-, die Read-Only-
- und die Developer-Rolle.
- Rollen werden explizit für einen Zeitraum angenommen.
+ oder die Developer-Rolle.
+ Rollen werden von Benutzeraccounts explizit für einen Zeitraum angenommen.
  Mit dem Annehmen der Managerrolle in einem Account können Rechte auf Rollen
  innerhalb dieses Accounts gemanaged werden.
  Jedes Team erhält für eine oder mehrere Personen die Berechtigung die Managerro
@@ -1116,37 +1120,17 @@ lle anzunehmen.
 Vervollständigte Migrationsaufgaben von Team Social
 \end_layout
 
-\begin_layout Standard
-Im Rahmen des Migrationsprozesses werden alle Teams ihre Applikationen aus
- der derzeitigen Umgebungen lösen und mit Unterstützung des K2-Teams in
- die AWS migrieren.
- Ihnen ist dabei grundsätzlich freigestellt wie dieser Migrationsprozess
- durchgeführt wird, welche Tools in Zukunft und für die Migration eingesetzt
- werden und welche 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "vordefinierten Services"
-description "fehlt"
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-underline{vordefinierten Services}
+\begin_layout Subsubsection
+Account-, Rollen- und Rechtemanagement
 \end_layout
 
-\end_inset
-
- der AWS verwendet werden.
- Team Social hat seit August 2017 mit den ersten Migrationsaufgaben begonnen
- und mit der Unterstützung von K2 haben alle Mitglieder von Team Social
- bereits einen persönlichen Benutzeraccount in der AWS angelegt.
+\begin_layout Standard
+Mit der Unterstützung von K2 haben alle Mitglieder von Team Social bereits
+ einen persönlichen Benutzeraccount in der AWS angelegt.
+ Die Managerrolle, für die Accounts von Team Social, wurde durch K2 an den
+ Technischen Entwickler vergeben.
+ Alle Entwickler aus dem Team wurden für die Read-Only- und Developer-Rolle
+ freigeschaltet.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1160,30 +1144,9 @@ Die AWS-Umgebung besteht weltweit aus Rechenzentren, die sich in verschiedenen
  mehrere isolierte Standorte, die als Availability Zones oder Verfügbarkeitszone
 n bezeichnet werden.
  Da die Plattform www.otto.de in Deutschland genutzt wird, hat sich das Team
- Social für die Region 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "eu-central-1"
-description "fehlt"
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-underline{eu-central-1}
-\end_layout
-
-\end_inset
-
- entschieden.
- Die Region eu-central-1 wird in Frankfurt gehostet und besteht aus drei
- Verfügbarkeitszonen, wie in 
+ Social für die Region eu-central-1 entschieden.
+ Diese Region wird in Frankfurt gehostet und besteht aus drei Verfügbarkeitszone
+n, wie in 
 \begin_inset ERT
 status open
 
@@ -1392,10 +1355,9 @@ Services
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
+Vor dem Start dieser Projektarbeit hatte das Team bereits zwei Microservices
+ in die AWS-Umgebung migriert.
+ Diese wurden als 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Elastic Compute Cloud"
@@ -1426,20 +1388,17 @@ Elastic Compute Cloud - EC2
 
 \end_inset
 
+ Instanzen zur Verfügung
+\begin_inset Note Note
+status open
 
+\begin_layout Plain Layout
+HIER BIN ICH!!!
 \end_layout
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Vor dem Start dieser Projektarbeit hatte das Team bereits zwei Microservices
- migriert und der nächste zu migrierende Service war Imageprocessing.
- Bei diesem Service bot es sich an, diesen nicht in einem Eins-zu-eins-Verfahren
- in die AWS zu übertragen, sondern die vordefinierten Services der AWS zu
- nutzen.
 \end_layout
 
 \begin_layout Subsection
@@ -1451,7 +1410,10 @@ Imageprocessing
 \end_layout
 
 \begin_layout Standard
-jsdflksdgf
+Der nächste zu migrierende Service war Imageprocessing.
+ Bei diesem Service bot es sich an, diesen nicht in einem Eins-zu-eins-Verfahren
+ in die AWS zu übertragen, sondern die vordefinierten Services der AWS zu
+ nutzen.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2576,9 +2538,9 @@ status open
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
-<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="5cm">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2587,7 +2549,7 @@ Name
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2607,7 +2569,7 @@ Aufgaben
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2616,16 +2578,17 @@ Antje Radkiewicz
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Auszubildende
+Auszubildende OTTO (GmbH & Co.
+ KG)
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2636,7 +2599,7 @@ Migration des Teil-Microservice
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2645,16 +2608,16 @@ Christian Finckler
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Technischer Entwickler
+Technischer Entwickler Team Social
 \end_layout
 
 \end_inset
 </cell>
-<cell multirow="3" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell multirow="3" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2665,25 +2628,25 @@ Begleitung der Projektarbeit, Abnahme des Projektes
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Stefan Kopetsch
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Technischer Entwickler Team Social
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2694,7 +2657,7 @@ Begleitung der Projektarbeit, Abnahme des Projektes
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2703,7 +2666,7 @@ Begleitung der Projektarbeit, Abnahme des Projektes
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2730,7 +2693,7 @@ Begleitung der Projektarbeit, Abnahme des Projektes
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Mitarbeiter
+Projektbeteiligte Personen
 \end_layout
 
 \end_inset
