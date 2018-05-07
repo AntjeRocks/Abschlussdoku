@@ -936,8 +936,8 @@ Amazon Web Services - AWS
  Durch die autarke Aufstellung der Teams kann jedes Team zu großen Teilen
  selber entscheiden, wie die Migration ausgeführt wird und welche Entitäten
  priorisiert werden.
- Meine Aufgabe war es, für das Team Social, im Rahmen der Projektarbeit,
- die Migration eines Teil-Microservices in die AWS durchzuführen.
+ Im Rahmen dieser Projektarbeit wurde die Migration eines Teil-Microservices
+ in die AWS durchgeführt.
 \end_layout
 
 \begin_layout Subsection
@@ -953,7 +953,7 @@ Um den Migrationsprozess für alle Teams erfüllbar zu machen wurde das Team
  Das gesammelte Wissen dieses Teams wird im Paten-Prinzip auf die restlichen
  Teams verteilt.
  Bei technischen Problemen stehen die Kollegen von K2 als Ansprechpartner
- bereit und eskalieren Probleme, wenn nötig, auf die nächste Ebene.
+ bereit.
 \end_layout
 
 \begin_layout Subsubsection
@@ -961,7 +961,7 @@ Accountmanagement in der AWS-Umgebung
 \end_layout
 
 \begin_layout Standard
-Unter dem 
+Unter dem AWS 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Root-Account"
@@ -982,10 +982,12 @@ underline{Root-Account}
 
 \end_inset
 
- von OTTO wurden in der AWS weitere Accounts angelegt.
- Jedes Team erhält jeweils zwei neu erstellte Accounts.
- Diese Accounts sollen dann jeweils für die Live- und die Nonlive-Umgebung
- genutzt werden.
+ von OTTO wurden weitere Accounts angelegt.
+ Jedes Team erhält jeweils zwei dieser Accounts.
+ Diese sollen dann jeweils für die Live- und die Nonlive-Umgebung genutzt
+ werden.
+ Resourcen die in einem Account angelegt werden, können nicht automatisch
+ auf Ressourcen der anderen Accounts zugreifen.
 \end_layout
 
 \begin_layout Subsubsection
@@ -996,7 +998,7 @@ Rollen- und Rechtemanagement in der AWS-Umgebung
 Das K2 Team hat in der AWS bereits ein Rechte- und Rollenkonzept aufgebaut,
  dass es allen Teams erlaubt in der AWS generell unabhängig voneinander
  zu arbeiten.
- Jeder Benutzer benötigt einen dedizierten Benutzeraccount.
+ Jeder Benutzer benötigt einen ihm zugewiesenen Benutzeraccount.
  Dieser wird zusammen mit den Kollegen von K2 im 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
@@ -1029,11 +1031,34 @@ AWS Identity and Access Management - IAM
 \end_inset
 
  angelegt.
- Das Konzept des Rollenmanagement von IAM wurde so implementiert, dass einem
- Benutzer Rechte zugeteilt werden, diese Rechte befähigen den Nutzer verscheiden
- Rollen anzunehmen.
- Den Rollen selber werden dann wiederrum Rechte auf Ressourcen zugewiesen.
- 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ein Benutzeraccount kann verschiedene Rollen annehmen.
+ Es gibt vorgefertigte Rollen, wie zum Beispiel die Manager-, die Read-Only-
+ und die Developer-Rolle.
+ Rollen werden explizit für einen Zeitraum angenommen.
+ Mit dem Annehmen der Managerrolle in einem Account können Rechte auf Rollen
+ innerhalb dieses Accounts gemanaged werden.
+ Jedes Team erhält für eine oder mehrere Personen die Berechtigung die Managerro
+lle anzunehmen.
+ Die Benutzer mit dem Recht, diese Rolle anzunehmen, verteilen für ihr Team,
+ die nötigen Rechte im Selbstmanagement.
 \end_layout
 
 \begin_layout Subsection
@@ -1078,28 +1103,13 @@ Region
 \end_layout
 
 \begin_layout Standard
-Als 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Region"
-description "fehlt"
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-underline{Region}
-\end_layout
-
-\end_inset
-
- in der AWS hat das Team sich für 
+Die AWS-Umgebung besteht weltweit aus Rechenzentren, die sich in verschiedenen
+ Regionen befinden.
+ Jede Region ist ein separater geografischer Bereich, dieser verfügt über
+ mehrere isolierte Standorte, die als Availability Zones oder Verfügbarkeitszone
+n bezeichnet werden.
+ Da die Plattform www.otto.de in Deutschland genutzt wird, hat sich das Team
+ Social für die Region 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "eu-central-1"
@@ -1122,9 +1132,7 @@ underline{eu-central-1}
 
  entschieden.
  Die Region eu-central-1 wird in Frankfurt gehostet und besteht aus drei
- Verfügbarkeitszonen.
- AWS Verfügbarkeitszonen sind physisch voneinander getrennt, aber über Verbindun
-gen mit geringer Latenz, wie in 
+ Verfügbarkeitszonen, wie in 
 \begin_inset ERT
 status open
 
@@ -1137,7 +1145,9 @@ textit{Abbildung c.}
 
 \end_inset
 
- dargestellt ist, verbunden.
+ dargestellt ist.
+ Diese Zonen sind physisch voneinander getrennt, aber über Verbindungen
+ mit geringer Latenz verbunden.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1145,8 +1155,8 @@ Tools
 \end_layout
 
 \begin_layout Standard
-Die Implementierung der grundsätzlichen Infrastruktur in die AWS hat das
- Team im August 2017 begonnen.
+Die Arbeiten für die Implementierung der grundsätzlichen Infrastruktur in
+ der AWS-Umgebung wurden im August 2017 begonnen.
  Das Team hat sich entschieden AWS 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
@@ -1190,7 +1200,7 @@ underline{CodePipeline}
 \end_inset
 
  als Pipeline-Tool zu nutzen.
- Die Ressourcen der AWS sollen einheitlich via 
+ Alle Ressourcen sollen einheitlich via 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "CloudFormation"
@@ -1286,7 +1296,7 @@ underline{Repository}
  angelegt.
  Hierüber werden alle grundsätzlichen Infrastrukturressourcen erzeugt, die
  für alle Services des Teams benötigt werden.
- Via CloudFormation wurde ein Template erstellt, welches pro Umgebung eine
+ Via CloudFormation wurde ein Template erstellt, welches pro Account eine
  
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
@@ -1319,7 +1329,7 @@ Virtual Private Cloud - VPC
 \end_inset
 
  erzeugt.
- Auf jeder VPC wurde für jede Verfügbarkeitszone ein öffentliches und ein
+ Auf jede VPC wurde für jede Verfügbarkeitszone ein öffentliches und ein
  privates Subnetz erzeugt, welches jeweils über ein NAT-Gateway verbunden
  ist.
  Die Nonlive-Umgebung wird immer mit denselben Templates erstellt wie die
@@ -1335,9 +1345,6 @@ Services
 status open
 
 \begin_layout Plain Layout
-Die Migration des Tags-Services in die AWS-Umgebung konnte das Team im Dezember
- 2017 fertigstellen.
- Der Tags-Service läuft in einem 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Elastic Compute Cloud"
@@ -1368,23 +1375,6 @@ Elastic Compute Cloud - EC2
 
 \end_inset
 
-.
- Ab Januar 2018 begann die Migration des Scraper-Mircoservices dieser wurde
- nach einem Monat Live-fähig bereitgestellt.
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
@@ -1394,12 +1384,11 @@ status open
 \end_layout
 
 \begin_layout Standard
-Das Team hat bereits zwei Services migriert und der nächste zu migrierende
- Service war Imageprocessing.
+Vor dem Start dieser Projektarbeit hatte das Team bereits zwei Microservices
+ migriert und der nächste zu migrierende Service war Imageprocessing.
  Bei diesem Service bot es sich an, diesen nicht in einem Eins-zu-eins-Verfahren
- in die AWS zu bringen, sondern die vordefinierten Services der AWS zu nutzen.
- Die Teilmigration dieses Microservices wurde im Rahmen der Projektarbeit
- durchgeführt.
+ in die AWS zu übertragen, sondern die vordefinierten Services der AWS zu
+ nutzen.
 \end_layout
 
 \begin_layout Subsection
@@ -1407,13 +1396,13 @@ Migrationsziel Imageprocessing
 \end_layout
 
 \begin_layout Standard
-Im Rahmen des Projektes sollte nur eine Funktion des Imageprocessing-Services
- freigeschnitten und migriert werden.
- Nach dieser ersten Teilmigration soll das Vorgehen bewertet und für die
+Im Rahmen der Projektarbeit sollte nur eine Funktion des Imageprocessing-Service
+s freigeschnitten und migriert werden.
+ Nach dieser ersten Teilmigration wird das Vorgehen bewertet und für die
  weitere Migration geprüft werden, ob der Service wie gewünscht in die AWS
  integriert wurde.
- Bei erfolgreicher Migration werden im Anschluss an dieses Projekt die anderen
- Funktionen in die AWS eingebaut.
+ Bei einer erfolgreichen Migration werden im Anschluss an dieses Projekt
+ die anderen Funktionen in die AWS eingebaut.
 \begin_inset ERT
 status open
 
@@ -1432,15 +1421,9 @@ status open
 \end_layout
 
 \begin_layout Standard
-Für die erste Teilmigration musste eine Funktion mit wenig Abhängigkeiten
- und Schnittstellen gewählt werden.
- Hierfür boten sich die Funktionen „setFree“ und „resize“ an, da sie sehr
- klein sind und jeweils nur von zwei Services genutzt werden.
- 
-\end_layout
-
-\begin_layout Standard
-Nach Absprache mit dem Team ist die Entscheidung gefallen, dass die 
+Für die erste Teilmigration sollte eine Funktion mit wenigen Abhängigkeiten
+ und wenigen Schnittstellen zu anderen Services gewählt werden.
+ Hierfür kamen die Funktionen 
 \begin_inset Quotes pld
 \end_inset
 
@@ -1448,7 +1431,18 @@ setFree
 \begin_inset Quotes prd
 \end_inset
 
--Funktion zu migrieren, da ich hier auch an der Entwicklung beteiligt war.
+ und 
+\begin_inset Quotes pld
+\end_inset
+
+resize
+\begin_inset Quotes prd
+\end_inset
+
+ in Frage.
+ Aufgrund der geringeren Komplexität und der geringeren Anzahl von Schnittstelle
+n wurde die setFree-Funktion, nach Absprache mit dem Team, zum Migrationskandita
+ten.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1456,19 +1450,17 @@ Imageprocessing
 \end_layout
 
 \begin_layout Standard
-Der Imageprocessing-Microservice wird vom Feed, vom Social-Profile-Service
- und vom Composing-Service genutzt.
- Er stellt vier Haupfunktionalitäten bereit, „resize“, „setFree“, „profileImageU
-pload“ und „convert“.
+Der Imageprocessing-Microservice stellt vier Haupfunktionalitäten bereit,
+ „resize“, „setFree“, „profileImageUpload“ und „convert“.
  Das Profile-System kann via „profileImageUpload“ Profilbilder von Benutzern
  speichern.
  Das Feed-System nutzt die „resize“-Funktion um alle Bilder in derselben
  Größe anzuzeigen.
- „SetFree“ wird von Composing aufgerufen um im StyleCreator freigestellte
- Bilder während der Bearbeitung anzuzeigen.
- Das Herunterladen und Konvertieren der Einzelbilder, sowie das Speichern
- und zu Verfügung stellen der Collagen übernimmt die „convert“-Funktion,
- welche im Prozess des Erstellens wiederum auf „resize“ und „setFree“ zugreift.
+ „SetFree“ wird von einem anderen Microservice aufgerufen, um im StyleCreator
+ freigestellte Bilder während der Bearbeitung anzuzeigen.
+ Das Herunterladen und das Konvertieren der Einzelbilder, sowie das Speichern
+ und zu Verfügung stellen der Collagen wird von der „convert“-Funktion ausgeführ
+t.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1476,9 +1468,10 @@ SetFree-Funktion
 \end_layout
 
 \begin_layout Standard
-Die „setFree“-Funktion wird per REST-Schnittstelle aufgerufen.
- Sie erwartet die Parameter „ImageId“, „width“ und „height“, wobei die ImageId
- als 
+Die „setFree“-Funktion wurde über einen speziellen Endpunkt einer REST-Schnittst
+elle aufgerufen.
+ Die POST-Methode des Endpunktes erwartete die Parameter „ImageId“, „width“
+ und „height“, wobei die ImageId als 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Pfadparameter"
@@ -1520,9 +1513,9 @@ underline{Queryparameter}
 
 \end_inset
 
- übergeben werden.
- Die übermittelte ImageId muss einer auf dem Otto-Image-Server vorhandenen
- eindeutigen ID für ein Bild entsprechen.
+ übergeben wurden.
+ Die angegebene ImageId muss einer eindeutigen ID auf ein Bild auf dem Otto-Imag
+e-Server entsprechen.
  Die Breite und die Höhe sind frei wählbar.
 \begin_inset ERT
 status open
@@ -1542,10 +1535,23 @@ status open
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+In welcher Vergangenheitsform schreibe ich das?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Der Service ruft das von 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
-symbol "Node"
+symbol "Node.js"
 description "fehlt"
 
 \end_inset
@@ -1558,12 +1564,12 @@ status open
 
 
 \backslash
-underline{Node}
+underline{Node.js}
 \end_layout
 
 \end_inset
 
- bereitgestellte gm-Package (eine Implementierung von 
+ bereitgestellte Package (eine Node.js Implementierung von 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "GraphicsMagick"
@@ -1584,7 +1590,7 @@ underline{GraphicsMagick}
 
 \end_inset
 
- via Node) auf und Imagprocessing nutzt aus diesem die 
+) namens gm auf und Imagprocessing nutzt aus diesem die 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "ImageMagick"
@@ -2499,7 +2505,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-AWS Region mit drei Verfügbarkeitszonen
+AWS Region mit drei Verfügbarkeitszonen (Quelle: https://docs.aws.amazon.com/de_de/
+AWSEC2/latest/UserGuide/using-regions-availability-zones.html, 2018)
 \end_layout
 
 \end_inset
@@ -2716,16 +2723,16 @@ newpage
 \backslash
 renewcommand{
 \backslash
-nomname}{B.
- Glossar}
+nomname}{C.
+  Glossar}
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-addcontentsline{toc}{chapter}{B.
- Glossar}
+addcontentsline{toc}{chapter}{C.
+  Glossar}
 \end_layout
 
 \end_inset
@@ -2753,8 +2760,8 @@ status open
 \backslash
 renewcommand{
 \backslash
-indexname}{C.
- Abkürzungsverzeichnis}
+indexname}{D.
+  Abkürzungsverzeichnis}
 \end_layout
 
 \end_inset
@@ -2780,8 +2787,8 @@ status open
 
 
 \backslash
-addcontentsline{toc}{chapter}{D.
- Abbildungsverzeichnis}
+addcontentsline{toc}{chapter}{E.
+  Abbildungsverzeichnis}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2790,8 +2797,8 @@ addcontentsline{toc}{chapter}{D.
 \backslash
 renewcommand{
 \backslash
-listfigurename}{D.
- Abbildungsverzeichnis}
+listfigurename}{E.
+  Abbildungsverzeichnis}
 \end_layout
 
 \end_inset
@@ -2822,8 +2829,8 @@ newpage
 
 
 \backslash
-addcontentsline{toc}{chapter}{E.
- Tabellenverzeichnis}
+addcontentsline{toc}{chapter}{F.
+  Tabellenverzeichnis}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2832,8 +2839,8 @@ addcontentsline{toc}{chapter}{E.
 \backslash
 renewcommand{
 \backslash
-listtablename}{E.
- Tabellenverzeichnis}
+listtablename}{F.
+  Tabellenverzeichnis}
 \end_layout
 
 \end_inset
