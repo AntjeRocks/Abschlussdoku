@@ -535,10 +535,6 @@ alph{table}}
 Dokumentation der betrieblichen Projektarbeit
 \end_layout
 
-\begin_layout Left Header
-Projektumfeld
-\end_layout
-
 \begin_layout Standard
 \begin_inset ERT
 status open
@@ -579,6 +575,10 @@ textbf{Einleitung}}
 \end_layout
 
 \begin_layout Section*
+Einleitung
+\end_layout
+
+\begin_layout Left Header
 Einleitung
 \end_layout
 
@@ -647,9 +647,9 @@ status open
 \end_layout
 
 \begin_layout Standard
-Im Textverlauf werden Abkürzungen verwendet, die Langform wird einmalig
- ausgeschrieben und dahinter wird in Klammern die Abkürzung dargestellt.
- Danach wird im weiteren Textverlauf nur noch der abgekürzte Begriff verwendet.
+Im Textverlauf werden Abkürzungen verwendet.
+ Die ausgeschriebene Variante wird einmalig genutzt und hinter dieser wird
+ in Klammern die Abkürzung dargestellt.
  Im Abkürzungsverzeichnis können die Abkürzungen und ihre ausgeschriebene
  Variante eingesehen werden.
 \begin_inset ERT
@@ -718,6 +718,27 @@ Code-Beispiele werden in kleinen umrahmten Boxen dargestellt.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Projektbeschreibung
+\end_layout
+
+\begin_layout Left Header
+Projektbeschreibung
+\end_layout
+
+\begin_layout Standard
+Im Rahmen der praktischen Abschlussarbeit wurde die Migration eines Teil-Microse
+rvices in die 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Amazon Web Services"
+description "Cloud Dingsi"
+
+\end_inset
+
+
 \begin_inset ERT
 status open
 
@@ -725,14 +746,28 @@ status open
 
 
 \backslash
-
-\backslash
-
+underline{Amazon Web Services}
 \end_layout
 
 \end_inset
 
+ (AWS)
+\begin_inset Index idx
+status open
 
+\begin_layout Plain Layout
+Amazon Web Services - AWS
+\end_layout
+
+\end_inset
+
+ realisiert.
+ Der Microservice bestand aus vier Kernfunktionalitäten.
+ Hieraus wurde ein Teil-Service ausgewählt, freigeschnitten und lauffähig
+ in die AWS überführt.
+ Diese Migrationsaufgabe wurde im Rahmen eines teamübergreifenden strategischen
+ Entscheides durchgeführt und einige vordefinierte Rahmenbedingungen mussten
+ eingehalten werden.
 \end_layout
 
 \begin_layout Section
@@ -752,6 +787,10 @@ Die OTTO (GmbH & Co.
  Seit 1995 betreibt das Unternehmen die E-Commerce-Plattform www.otto.de.
 \end_layout
 
+\begin_layout Left Header
+Projektumfeld
+\end_layout
+
 \begin_layout Subsection
 E-Commerce
 \end_layout
@@ -764,8 +803,6 @@ t die Seite www.otto.de.
  der entsprechenden Shop-Segmente verantwortet.
  Die Teams selber sind interdisziplinär aufgestellt, mit dem Ziel eine möglichst
  autarke und zielführende Arbeitsweise zu gestatten.
- Den Teams wird die Möglichkeit gegeben im eigenen Tempo Neuerungen zu entwickel
-n und die Werkzeuge ihrer Wahl zu nutzen.
 \end_layout
 
 \begin_layout Subsection
@@ -789,8 +826,8 @@ Team Social stellt mehrere Produkte auf der Shop-Seite bereit, die im Reiter
  Inspiration auf www.otto.de zu finden sind.
  Darunter sind beispielsweise der Feed (www.otto.de/feed), über den man von
  Anwendern zusammengestellte Inhalte abonnieren und betrachten kann.
- Das Tags-System (www.otto.de/tags/[TAGNAME]), welches derzeit die im Feed
- genutzten 
+ Tags (www.otto.de/tags/[TAGNAME]), welches derzeit die im Feed genutzten
+ 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Tags"
@@ -813,7 +850,7 @@ underline{Tags}
 
  aggregiert und eine Liste der relevantesten Ergebnisse darstellt und der
  StyleCreator (www.otto.de/stylecreator).
- Das Team betreut insgesamt neun 
+ Das Team betreut mehrere 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Microservice"
@@ -835,6 +872,31 @@ underline{Microservices}
 \end_inset
 
 , die diese Produkte bereitstellen.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Alle Services liegen auf Systemen, die von dem exterenen Dienstleister gehosted
+ werden.
+ Durch die Abgesprochene Vorgehensweise werden Produkte die im Hause OTTO
+ für die Webseite www.otto.de entwickelt werden auf die Maschinen des Dienstleiste
+rs übertragen und lauffähig gemacht.
+ Der Dienstleister stellt zusätzlich diverse Infrstrukturressourcen für
+ die gesamte Plattform zur Verfügung.
 \end_layout
 
 \begin_layout Subsubsection
@@ -842,14 +904,12 @@ StyleCreator
 \end_layout
 
 \begin_layout Standard
-Im Jahr 2016 ist der StyleCreator entwickelt und live auf www.otto.de zur
- Verfügung gestellt worden.
- Dieses Tool erlaubt es Artikelbilder von www.otto.de auszuwählen, sie zu
- einer Collage zusammenzustellen und diese anschließend zu veröffentlichen.
+Der StyleCreator erlaubt es Artikelbilder von www.otto.de auszuwählen, sie
+ zu einer Collage zusammenzustellen und diese anschließend zu veröffentlichen.
  Der Bearbeiter kann zwischen diversen Design-Vorlagen wählen oder im freien
  Design die Collage erstellen.
- Diese Freiform-Vorlage bietet dem Ersteller, anders als bei den Design-Vorlagen
-, die Möglichkeit Einzelbilder zu rotieren, zu vergrößern, zu verkleinern
+ Die Freiform-Vorlage bietet dem Ersteller, anders als bei den Design-Vorlagen,
+ die Möglichkeit Einzelbilder zu rotieren, zu vergrößern, zu verkleinern
  und diese freizustellen.
  Des Weiteren können die Einzelbilder frei auf der Collage versetzt und
  übereinandergelegt werden.
@@ -887,11 +947,11 @@ StyleCreator im Freiform-Modus mit zwei überlappenden Artikelbildern
 \end_layout
 
 \begin_layout Section
-Projektziel
+Projekbegründung
 \end_layout
 
 \begin_layout Left Header
-Projektziel
+Projektbegründung
 \end_layout
 
 \begin_layout Subsection
@@ -901,43 +961,30 @@ Strategische Entscheidung
 \begin_layout Standard
 Im Rahmen einer strategischen Entscheidung wird die Plattform www.otto.de
  nicht weiter über den externen Dienstleister gehostet werden, sondern über
- die 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Amazon Web Services"
-description "Cloud Dingsi"
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-underline{Amazon Web Services}
-\end_layout
-
-\end_inset
-
- (AWS)
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-Amazon Web Services - AWS
-\end_layout
-
-\end_inset
-
- bereitgestellt werden.
+ die AWS bereitgestellt werden.
  Durch die autarke Aufstellung der Teams kann jedes Team zu großen Teilen
  selber entscheiden, wie die Migration ausgeführt wird und welche Entitäten
  priorisiert werden.
- Im Rahmen dieser Projektarbeit wurde die Migration eines Teil-Microservices
- in die AWS durchgeführt.
+\end_layout
+
+\begin_layout Subsection
+Zeitlicher Rahmen
+\end_layout
+
+\begin_layout Standard
+Durch die Entscheidung, den Hoster für die Plattform zu wechseln, wurde
+ der derzeitige Vertrag mit diesem nicht verlängert.
+ Bevor dieser Vertrag ausläuft müssen alle Teams, einschließlich der operativen,
+ die Lauffähigkeit aller ihrer Kernservices in der AWS-Umgebung sichergestellt
+ haben.
+ Die Migration verfolgt nicht das primäre Interesse eine Kostenersparnis
+ zu erlangen.
+ In der Migrationsphase sollen zunächst die Kernfunktionalitäten in der
+ neuen Umgebung lauffähig gemacht werden, ohne technische Schulden aufzunehmen.
+\end_layout
+
+\begin_layout Section
+IST-Analyse
 \end_layout
 
 \begin_layout Subsection
@@ -954,6 +1001,10 @@ Um den Migrationsprozess für alle Teams erfüllbar zu machen wurde das Team
  Teams verteilt.
  Bei technischen Problemen stehen die Kollegen von K2 als Ansprechpartner
  bereit.
+\end_layout
+
+\begin_layout Left Header
+IST-Analyse
 \end_layout
 
 \begin_layout Subsubsection
@@ -1392,57 +1443,7 @@ Vor dem Start dieser Projektarbeit hatte das Team bereits zwei Microservices
 \end_layout
 
 \begin_layout Subsection
-Migrationsziel Imageprocessing
-\end_layout
-
-\begin_layout Standard
-Im Rahmen der Projektarbeit sollte nur eine Funktion des Imageprocessing-Service
-s freigeschnitten und migriert werden.
- Nach dieser ersten Teilmigration wird das Vorgehen bewertet und für die
- weitere Migration geprüft werden, ob der Service wie gewünscht in die AWS
- integriert wurde.
- Bei einer erfolgreichen Migration werden im Anschluss an dieses Projekt
- die anderen Funktionen in die AWS eingebaut.
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Für die erste Teilmigration sollte eine Funktion mit wenigen Abhängigkeiten
- und wenigen Schnittstellen zu anderen Services gewählt werden.
- Hierfür kamen die Funktionen 
-\begin_inset Quotes pld
-\end_inset
-
-setFree
-\begin_inset Quotes prd
-\end_inset
-
- und 
-\begin_inset Quotes pld
-\end_inset
-
-resize
-\begin_inset Quotes prd
-\end_inset
-
- in Frage.
- Aufgrund der geringeren Komplexität und der geringeren Anzahl von Schnittstelle
-n wurde die setFree-Funktion, nach Absprache mit dem Team, zum Migrationskandita
-ten.
+nicht migrierte services
 \end_layout
 
 \begin_layout Subsubsection
@@ -1450,17 +1451,7 @@ Imageprocessing
 \end_layout
 
 \begin_layout Standard
-Der Imageprocessing-Microservice stellt vier Haupfunktionalitäten bereit,
- „resize“, „setFree“, „profileImageUpload“ und „convert“.
- Das Profile-System kann via „profileImageUpload“ Profilbilder von Benutzern
- speichern.
- Das Feed-System nutzt die „resize“-Funktion um alle Bilder in derselben
- Größe anzuzeigen.
- „SetFree“ wird von einem anderen Microservice aufgerufen, um im StyleCreator
- freigestellte Bilder während der Bearbeitung anzuzeigen.
- Das Herunterladen und das Konvertieren der Einzelbilder, sowie das Speichern
- und zu Verfügung stellen der Collagen wird von der „convert“-Funktion ausgeführ
-t.
+jsdflksdgf
 \end_layout
 
 \begin_layout Subsubsection
@@ -1468,8 +1459,8 @@ SetFree-Funktion
 \end_layout
 
 \begin_layout Standard
-Die „setFree“-Funktion wurde über einen speziellen Endpunkt einer REST-Schnittst
-elle aufgerufen.
+Die setFree-Funktion wurde über einen speziellen Endpunkt einer REST-Schnittstel
+le aufgerufen.
  Die POST-Methode des Endpunktes erwartete die Parameter „ImageId“, „width“
  und „height“, wobei die ImageId als 
 \begin_inset CommandInset nomenclature
@@ -1548,7 +1539,7 @@ In welcher Vergangenheitsform schreibe ich das?
 \end_layout
 
 \begin_layout Standard
-Der Service ruft das von 
+Der Service nutzt das von 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Node.js"
@@ -1590,7 +1581,8 @@ underline{GraphicsMagick}
 
 \end_inset
 
-) namens gm auf und Imagprocessing nutzt aus diesem die 
+) namens gm.
+ Mit diesem können Funktionen von GraphicsMagick und 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "ImageMagick"
@@ -1611,7 +1603,7 @@ underline{ImageMagick}
 
 \end_inset
 
--Funktionen.
+ ausgeführt werden.
 \begin_inset ERT
 status open
 
@@ -1630,10 +1622,11 @@ status open
 \end_layout
 
 \begin_layout Standard
-Das Bild, welches an der ImageId hängt, wird per ImageMagick mit den Werten:
- setFormat('png') borderColor('white') border(1, 1) fuzz(5, true) fill('rgba(0,
- 0, 0, 0)') setDraw('color', '0', '0', 'floodfill') quality(100) freigeschnitten
- und wird nach der Freistellung direkt im Browser sichtbar gemacht.
+Das Bild, welches anhand der ImageId identifizierbar ist, wird per GraphicsMagic
+k mit den Werten: setFormat('png') borderColor('white') border(1, 1) fuzz(5,
+ true) fill('rgba(0, 0, 0, 0)') setDraw('color', '0', '0', 'floodfill')
+ quality(100) freigeschnitten und nach der Freistellung direkt im Browser
+ sichtbar gemacht.
 \end_layout
 
 \begin_layout Standard
@@ -1663,8 +1656,79 @@ lt
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Projektziel
+\end_layout
+
+\begin_layout Left Header
+Projektziel
+\end_layout
+
+\begin_layout Subsection
+Migrationsziel Imageprocessing
+\end_layout
+
+\begin_layout Standard
+Im Rahmen der Projektarbeit sollte nur eine Funktion des Imageprocessing-Service
+s freigeschnitten und migriert werden.
+ Nach dieser ersten Teilmigration wird das Vorgehen bewertet und für die
+ weitere Migration geprüft werden, ob der Service wie gewünscht in die AWS
+ integriert wurde.
+ Bei einer erfolgreichen Migration werden im Anschluss an dieses Projekt
+ die anderen Funktionen in die AWS eingebaut.
+\begin_inset ERT
+status open
+
 \begin_layout Plain Layout
 
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Für die erste Teilmigration sollte eine Funktion mit wenigen Abhängigkeiten
+ und wenigen Schnittstellen zu anderen Services gewählt werden.
+ Hierfür kamen die Funktionen setFree und resize in Frage.
+ Aufgrund der geringeren Komplexität und der geringeren Anzahl von Schnittstelle
+n wurde die setFree-Funktion, nach Absprache mit dem Team, zum Migrationskandita
+ten.
+ SetFree wird von einem anderen Microservice aufgerufen, um im StyleCreator
+ freigestellte Bilder während der Bearbeitung anzuzeigen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Subsubsection
+Imageprocessing
+\end_layout
+
+\begin_layout Plain Layout
+Der Imageprocessing-Microservice stellt vier Haupfunktionalitäten bereit,
+ „resize“, „setFree“, „profileImageUpload“ und „convert“.
+ Das Profile-System kann via „profileImageUpload“ Profilbilder von Benutzern
+ speichern.
+ Das Feed-System nutzt die „resize“-Funktion um alle Bilder in derselben
+ Größe anzuzeigen.
+ „SetFree“ wird von einem anderen Microservice aufgerufen, um im StyleCreator
+ freigestellte Bilder während der Bearbeitung anzuzeigen.
+ Das Herunterladen und das Konvertieren der Einzelbilder, sowie das Speichern
+ und zu Verfügung stellen der Collagen wird von der „convert“-Funktion ausgeführ
+t.
 \end_layout
 
 \end_inset
@@ -1685,16 +1749,9 @@ Umsetzungsstrategien
 \end_layout
 
 \begin_layout Standard
-Um die 
-\begin_inset Quotes pld
-\end_inset
-
-setFree
-\begin_inset Quotes prd
-\end_inset
-
--Funktion aus der derzeitig gehosteten Infrastruktur des Dienstleisters
- zu trennen und in die AWS zu integrieren gibt es zwei divergente Lösungsansätze.
+Um die setFree-Funktion aus der derzeitig gehosteten Infrastruktur des Dienstlei
+sters zu trennen und in die AWS zu integrieren gibt es zwei divergente Lösungsan
+sätze.
 \begin_inset ERT
 status open
 
@@ -1825,25 +1882,9 @@ Umsetzungsstrategieentscheidung
 \end_layout
 
 \begin_layout Standard
-Ich habe mich entschieden die Migration von 
-\begin_inset Quotes pld
-\end_inset
-
-setfree
-\begin_inset Quotes prd
-\end_inset
-
- via AWS Lambda durchzuführen.
- Die 
-\begin_inset Quotes pld
-\end_inset
-
-setFree
-\begin_inset Quotes prd
-\end_inset
-
--Funktion wird vergleichsweise selten aufgerufen, dadurch kann der Umbau
- als Lambda-Funktion einen kostensparenden Effekt erzielen.
+Ich habe mich entschieden die Migration von setFree via AWS Lambda durchzuführen.
+ Die setFree-Funktion wird vergleichsweise selten aufgerufen, dadurch kann
+ der Umbau als Lambda-Funktion einen kostensparenden Effekt erzielen.
  Zudem ist die Funktion klein und wird selbst in der kleinsten von AWS angeboten
 en EC2 Instanz die Ressourcen nicht auslasten.
  Sie wird nur per einfachem REST-Aufruf gestartet und Lambda-Funktionen
@@ -2724,7 +2765,7 @@ newpage
 renewcommand{
 \backslash
 nomname}{C.
-  Glossar}
+ Glossar}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2732,7 +2773,7 @@ nomname}{C.
 
 \backslash
 addcontentsline{toc}{chapter}{C.
-  Glossar}
+ Glossar}
 \end_layout
 
 \end_inset
@@ -2761,7 +2802,7 @@ status open
 renewcommand{
 \backslash
 indexname}{D.
-  Abkürzungsverzeichnis}
+ Abkürzungsverzeichnis}
 \end_layout
 
 \end_inset
@@ -2788,7 +2829,7 @@ status open
 
 \backslash
 addcontentsline{toc}{chapter}{E.
-  Abbildungsverzeichnis}
+ Abbildungsverzeichnis}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2798,7 +2839,7 @@ addcontentsline{toc}{chapter}{E.
 renewcommand{
 \backslash
 listfigurename}{E.
-  Abbildungsverzeichnis}
+ Abbildungsverzeichnis}
 \end_layout
 
 \end_inset
@@ -2830,7 +2871,7 @@ newpage
 
 \backslash
 addcontentsline{toc}{chapter}{F.
-  Tabellenverzeichnis}
+ Tabellenverzeichnis}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2840,7 +2881,7 @@ addcontentsline{toc}{chapter}{F.
 renewcommand{
 \backslash
 listtablename}{F.
-  Tabellenverzeichnis}
+ Tabellenverzeichnis}
 \end_layout
 
 \end_inset
