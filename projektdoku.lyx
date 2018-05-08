@@ -1117,7 +1117,7 @@ lle anzunehmen.
 \end_layout
 
 \begin_layout Subsection
-Vervollständigte Migrationsaufgaben von Team Social
+Abgeschlossene Migrationsaufgaben von Team Social
 \end_layout
 
 \begin_layout Subsubsection
@@ -1125,8 +1125,9 @@ Account-, Rollen- und Rechtemanagement
 \end_layout
 
 \begin_layout Standard
-Mit der Unterstützung von K2 haben alle Mitglieder von Team Social bereits
- einen persönlichen Benutzeraccount in der AWS angelegt.
+Das K2 Team hat, zusammen mit den Teammitgliedern von Social, für alle Benutzer
+ einen persönlichen Benutzeraccount in der AWS angelegt und sichergestellt,
+ dass die Zwei-Faktor-Authentifizierung eingerichtet ist.
  Die Managerrolle, für die Accounts von Team Social, wurde durch K2 an den
  Technischen Entwickler vergeben.
  Alle Entwickler aus dem Team wurden für die Read-Only- und Developer-Rolle
@@ -1257,7 +1258,7 @@ underline{CloudFormation-YAML}
 
 \end_inset
 
- Format entschieden.
+-Format entschieden.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1355,9 +1356,10 @@ Services
 \end_layout
 
 \begin_layout Standard
-Vor dem Start dieser Projektarbeit hatte das Team bereits zwei Microservices
- in die AWS-Umgebung migriert.
- Diese wurden als 
+Vor dem Start dieser Projektarbeit hatte das Team zwei Microservices in
+ die AWS-Umgebung migriert.
+ Die bereits migrierten Microservices werden mit CloudFormation-Templates
+ erzeugt und werden in 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Elastic Compute Cloud"
@@ -1388,21 +1390,11 @@ Elastic Compute Cloud - EC2
 
 \end_inset
 
- Instanzen zur Verfügung
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-HIER BIN ICH!!!
-\end_layout
-
-\end_inset
-
-
+ ausgeführt.
 \end_layout
 
 \begin_layout Subsection
-nicht migrierte services
+Bevorstehende Migrationsausgaben von Team Social
 \end_layout
 
 \begin_layout Subsubsection
@@ -1410,19 +1402,45 @@ Imageprocessing
 \end_layout
 
 \begin_layout Standard
-Der nächste zu migrierende Service war Imageprocessing.
- Bei diesem Service bot es sich an, diesen nicht in einem Eins-zu-eins-Verfahren
- in die AWS zu übertragen, sondern die vordefinierten Services der AWS zu
- nutzen.
+Die Reihenfolge der zu migrierenden Microservices wurde von Team Social
+ vor der Migration des Ersten festgelegt.
+ Alle Microservice wurden anhand ihrer Schnittstellen und Komplexität in
+ eine sinnvolle Reihenfolge gesetzt.
+ Der Microservice, der als nächstes migriert werden sollte, war Imageprocessing.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
 \end_layout
 
-\begin_layout Subsubsection
-SetFree-Funktion
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Die setFree-Funktion wurde über einen speziellen Endpunkt einer REST-Schnittstel
-le aufgerufen.
+Der Imageprocessing Microservice bestand aus vier Kernfunktionalitäten.
+ Für die Mirgation innerhalb dieser Projektarbeit sollte nur ein Teil-Service
+ aus dem Service gelöst und in die AWS migriert werden.
+ Der Teil-Service mit der geringsten Komplexität und den wenigsten Abhängigkeite
+n war setFree.
+ SetFree wurde von anderen Microservices aufgerufen, um im StyleCreator
+ freigestellte Bilder während der Bearbeitung anzuzeigen.
+\end_layout
+
+\begin_layout Subsubsection
+SetFree-Teil-Service
+\end_layout
+
+\begin_layout Standard
+Der setFree-Teil-Service wurde über einen speziellen Endpunkt einer REST-Schnitt
+stelle aufgerufen.
  Die POST-Methode des Endpunktes erwartete die Parameter „ImageId“, „width“
  und „height“, wobei die ImageId als 
 \begin_inset CommandInset nomenclature
@@ -1467,8 +1485,8 @@ underline{Queryparameter}
 \end_inset
 
  übergeben wurden.
- Die angegebene ImageId muss einer eindeutigen ID auf ein Bild auf dem Otto-Imag
-e-Server entsprechen.
+ Die angegebene ImageId muss einer eindeutigen ID auf ein Bild, auf dem
+ Otto-Image-Server entsprechen.
  Die Breite und die Höhe sind frei wählbar.
 \begin_inset ERT
 status open
@@ -1480,19 +1498,6 @@ status open
 
 \backslash
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-In welcher Vergangenheitsform schreibe ich das?
 \end_layout
 
 \end_inset
@@ -1522,7 +1527,7 @@ underline{Node.js}
 
 \end_inset
 
- bereitgestellte Package (eine Node.js Implementierung von 
+ bereitgestellte Package namens gm (eine Node.js Implementierung von 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "GraphicsMagick"
@@ -1543,7 +1548,7 @@ underline{GraphicsMagick}
 
 \end_inset
 
-) namens gm.
+).
  Mit diesem können Funktionen von GraphicsMagick und 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
@@ -1643,59 +1648,6 @@ s freigeschnitten und migriert werden.
  integriert wurde.
  Bei einer erfolgreichen Migration werden im Anschluss an dieses Projekt
  die anderen Funktionen in die AWS eingebaut.
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Für die erste Teilmigration sollte eine Funktion mit wenigen Abhängigkeiten
- und wenigen Schnittstellen zu anderen Services gewählt werden.
- Hierfür kamen die Funktionen setFree und resize in Frage.
- Aufgrund der geringeren Komplexität und der geringeren Anzahl von Schnittstelle
-n wurde die setFree-Funktion, nach Absprache mit dem Team, zum Migrationskandita
-ten.
- SetFree wird von einem anderen Microservice aufgerufen, um im StyleCreator
- freigestellte Bilder während der Bearbeitung anzuzeigen.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Subsubsection
-Imageprocessing
-\end_layout
-
-\begin_layout Plain Layout
-Der Imageprocessing-Microservice stellt vier Haupfunktionalitäten bereit,
- „resize“, „setFree“, „profileImageUpload“ und „convert“.
- Das Profile-System kann via „profileImageUpload“ Profilbilder von Benutzern
- speichern.
- Das Feed-System nutzt die „resize“-Funktion um alle Bilder in derselben
- Größe anzuzeigen.
- „SetFree“ wird von einem anderen Microservice aufgerufen, um im StyleCreator
- freigestellte Bilder während der Bearbeitung anzuzeigen.
- Das Herunterladen und das Konvertieren der Einzelbilder, sowie das Speichern
- und zu Verfügung stellen der Collagen wird von der „convert“-Funktion ausgeführ
-t.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -1711,9 +1663,9 @@ Umsetzungsstrategien
 \end_layout
 
 \begin_layout Standard
-Um die setFree-Funktion aus der derzeitig gehosteten Infrastruktur des Dienstlei
-sters zu trennen und in die AWS zu integrieren gibt es zwei divergente Lösungsan
-sätze.
+Um den setFree-Teil-Service aus der derzeitig gehosteten Infrastruktur des
+ Dienstleisters zu trennen und in die AWS zu integrieren gibt es zwei divergente
+ Lösungsansätze.
 \begin_inset ERT
 status open
 
@@ -1845,8 +1797,8 @@ Umsetzungsstrategieentscheidung
 
 \begin_layout Standard
 Ich habe mich entschieden die Migration von setFree via AWS Lambda durchzuführen.
- Die setFree-Funktion wird vergleichsweise selten aufgerufen, dadurch kann
- der Umbau als Lambda-Funktion einen kostensparenden Effekt erzielen.
+ Die setFree-Teil-Service wird vergleichsweise selten aufgerufen, dadurch
+ kann der Umbau als Lambda-Funktion einen kostensparenden Effekt erzielen.
  Zudem ist die Funktion klein und wird selbst in der kleinsten von AWS angeboten
 en EC2 Instanz die Ressourcen nicht auslasten.
  Sie wird nur per einfachem REST-Aufruf gestartet und Lambda-Funktionen
@@ -1935,16 +1887,9 @@ status open
 
 \begin_layout Standard
 Im Anschluss habe ich das noch leere Repository auf meine Festplatte geklont.
- Ich habe alle Dateien die zur Funktionalität von 
-\begin_inset Quotes pld
-\end_inset
-
-setFree
-\begin_inset Quotes prd
-\end_inset
-
- nötig sind aus dem derzeitigem Imageprocessing Repository herausgelöst
- und in das Neue übertragen.
+ Ich habe alle Dateien die zur Funktionalität von setFree nötig sind aus
+ dem derzeitigem Imageprocessing Repository herausgelöst und in das Neue
+ übertragen.
  Des Weiteren habe ich die README.md angepasst und die neuen Dateien in das
  AWS Repository hochgeladen.
 \begin_inset ERT
@@ -2147,7 +2092,7 @@ AWS Lambda-Funktion Handler
 \end_layout
 
 \begin_layout Standard
-Die setFree Funktion lief in der Vergangenheit über das 
+Der setFreeTeil-Service lief in der Vergangenheit über das 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Express.js"
