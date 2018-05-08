@@ -923,7 +923,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename Bilder/StyleCreator.png
-	scale 35
+	scale 30
 
 \end_inset
 
@@ -1606,7 +1606,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename Bilder/StyleCreator freigestellt.png
-	scale 35
+	scale 30
 
 \end_inset
 
@@ -1629,10 +1629,6 @@ lt
 \end_layout
 
 \begin_layout Section
-Projektziel
-\end_layout
-
-\begin_layout Left Header
 Projektziel
 \end_layout
 
@@ -2446,6 +2442,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename Bilder/aws_regions.png
+	scale 70
 
 \end_inset
 
@@ -2453,8 +2450,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-AWS Region mit drei Verfügbarkeitszonen (Quelle: https://docs.aws.amazon.com/de_de/
-AWSEC2/latest/UserGuide/using-regions-availability-zones.html, 2018)
+AWS Region mit drei Verfügbarkeitszonen (Quelle: https://docs.aws.amazon.com/
+ de_de/AWSEC2/latest/UserGuide/using-regions-availability-zones.html, 2018)
 \end_layout
 
 \end_inset
