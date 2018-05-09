@@ -413,14 +413,6 @@ status open
 
 \end_layout
 
-\begin_layout Left Header
-Inhaltsverzeichnis
-\end_layout
-
-\begin_layout Right Header
-Antje Radkiewicz
-\end_layout
-
 \begin_layout Standard
 \begin_inset Note Note
 status open
@@ -480,6 +472,121 @@ en, z.
 
 \end_layout
 
+\begin_layout Subsection*
+Vorwort
+\end_layout
+
+\begin_layout Standard
+Diese Dokumentation richtet sich an Personen die in der Fachrichtung Informatik
+ Vorwissen besitzen.
+ In dieser Dokumentation werden fachbezogene Begriffe verwendet, die im
+ Glossar näher erläutert werden.
+ Fachbegriffe, die in dem Glossar enthalten sind, werden 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{unterstrichen}
+\end_layout
+
+\end_inset
+
+ dargestellt.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Im Textverlauf werden Abkürzungen verwendet.
+ Die ausgeschriebene Variante wird einmalig genutzt und hinter dieser wird
+ in Klammern die Abkürzung dargestellt.
+ Im Abkürzungsverzeichnis können die Abkürzungen und ihre ausgeschriebene
+ Variante eingesehen werden.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Des Weiteren werden kurze Beispiele genutzt bei denen ein Attribut gesetzt
+ werden muss.
+ Hier wird der Name des Attributs mit eckigen Klammern umschlossen, um eine
+ solche Stelle zu kennzeichnen.
+ Beispiel: www.otto.de/p/[Name des Attributs]
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+Code-Beispiele werden in kleinen umrahmten Boxen dargestellt.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
@@ -487,6 +594,14 @@ LatexCommand tableofcontents
 \end_inset
 
 
+\end_layout
+
+\begin_layout Left Header
+Inhaltsverzeichnis
+\end_layout
+
+\begin_layout Right Header
+Antje Radkiewicz
 \end_layout
 
 \begin_layout Standard
@@ -611,117 +726,6 @@ status open
 
 \end_layout
 
-\begin_layout Standard
-Diese Dokumentation richtet sich an Personen die in der Fachrichtung Informatik
- Vorwissen besitzen.
- In dieser Dokumentation werden fachbezogene Begriffe verwendet, die im
- Glossar näher erläutert werden.
- Fachbegriffe, die in dem Glossar enthalten sind, werden 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-underline{unterstrichen}
-\end_layout
-
-\end_inset
-
- dargestellt.
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Im Textverlauf werden Abkürzungen verwendet.
- Die ausgeschriebene Variante wird einmalig genutzt und hinter dieser wird
- in Klammern die Abkürzung dargestellt.
- Im Abkürzungsverzeichnis können die Abkürzungen und ihre ausgeschriebene
- Variante eingesehen werden.
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Des Weiteren werden kurze Beispiele genutzt bei denen ein Attribut gesetzt
- werden muss.
- Hier wird der Name des Attributs mit eckigen Klammern umschlossen, um eine
- solche Stelle zu kennzeichnen.
- Beispiel: www.otto.de/p/[Name des Attributs]
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
-status open
-
-\begin_layout Plain Layout
-Code-Beispiele werden in kleinen umrahmten Boxen dargestellt.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Projektbeschreibung
 \end_layout
@@ -804,7 +808,7 @@ t die Seite www.otto.de.
  Für jede Vertikale ist ein Entwicklerteam zuständig, welches die Funktionalität
  der entsprechenden Shop-Segmente verantwortet.
  Die Teams selber sind interdisziplinär aufgestellt, mit dem Ziel eine möglichst
- autarke und zielführende Arbeitsweise zu gestatten.
+ autarke und zielführende Arbeitsweise zu ermöglichen.
 \end_layout
 
 \begin_layout Subsection
@@ -827,9 +831,8 @@ Team Social
 Team Social stellt mehrere Produkte auf der Shop-Seite bereit, die im Reiter
  Inspiration auf www.otto.de zu finden sind.
  Darunter sind beispielsweise der Feed (www.otto.de/feed), über den man von
- Anwendern zusammengestellte Inhalte abonnieren und betrachten kann.
- Tags (www.otto.de/tags/[TAGNAME]), welches derzeit die im Feed genutzten
- 
+ Anwendern zusammengestellte Inhalte abonnieren und betrachten kann, Tags
+ (www.otto.de/tags/[TAGNAME]), welches derzeit die im Feed genutzten 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Tags"
@@ -892,12 +895,12 @@ status open
 \end_layout
 
 \begin_layout Standard
-Alle Services liegen auf Systemen, die von dem exterenen Dienstleister gehosted
+Alle Services liegen auf Systemen, die von dem externen Dienstleister gehosted
  werden.
- Durch die Abgesprochene Vorgehensweise werden Produkte die im Hause OTTO
- für die Webseite www.otto.de entwickelt werden auf die Maschinen des Dienstleiste
-rs übertragen und lauffähig gemacht.
- Der Dienstleister stellt zusätzlich diverse Infrstrukturressourcen für
+ Durch die abgesprochene Vorgehensweise werden Produkte, die im Hause OTTO
+ für die Webseite www.otto.de entwickelt werden, auf die Maschinen des Dienstleist
+ers übertragen und lauffähig gemacht.
+ Der Dienstleister stellt zusätzlich diverse Infrastrukturressourcen für
  die gesamte Plattform zur Verfügung.
 \end_layout
 
@@ -910,8 +913,8 @@ Der StyleCreator erlaubt es Artikelbilder von www.otto.de auszuwählen, sie
  zu einer Collage zusammenzustellen und diese anschließend zu veröffentlichen.
  Der Bearbeiter kann zwischen diversen Design-Vorlagen wählen oder im freien
  Design die Collage erstellen.
- Die Freiform-Vorlage bietet dem Ersteller, anders als bei den Design-Vorlagen,
- die Möglichkeit Einzelbilder zu rotieren, zu vergrößern, zu verkleinern
+ Die Freiform-Vorlage bietet dem Ersteller (anders als bei den Design-Vorlagen)
+ die Möglichkeit, Einzelbilder zu rotieren, zu vergrößern, zu verkleinern
  und diese freizustellen.
  Des Weiteren können die Einzelbilder frei auf der Collage versetzt und
  übereinandergelegt werden.
@@ -949,7 +952,7 @@ StyleCreator im Freiform-Modus mit zwei überlappenden Artikelbildern
 \end_layout
 
 \begin_layout Section
-Projekbegründung
+Projektbegründung
 \end_layout
 
 \begin_layout Left Header
@@ -974,13 +977,12 @@ Zeitlicher Rahmen
 \end_layout
 
 \begin_layout Standard
-Durch die Entscheidung, den Hoster für die Plattform zu wechseln, wurde
- der derzeitige Vertrag mit diesem nicht verlängert.
+Aufgrund der Entscheidung, den Hoster für die Plattform zu wechseln, wurde
+ der bestehende Hosting-Vertrag nicht verlängert.
  Bevor dieser Vertrag ausläuft müssen alle Teams, einschließlich der operativen,
  die Lauffähigkeit aller ihrer Kernservices in der AWS-Umgebung sichergestellt
  haben.
- Die Migration verfolgt nicht das primäre Interesse eine Kostenersparnis
- zu erlangen.
+ Die Migration verfolgt nicht primär das Ziel eine Kostenersparnis zu erlangen.
  In der Migrationsphase sollen zunächst die Kernfunktionalitäten in der
  neuen Umgebung lauffähig gemacht werden, ohne technische Schulden aufzunehmen.
 \end_layout
@@ -994,8 +996,8 @@ Team K2
 \end_layout
 
 \begin_layout Standard
-Um den Migrationsprozess, für alle Teams, erfüllbar zu machen wurde das
- Team K2 gegründet.
+Um den Migrationsprozess für alle Teams erfüllbar zu machen wurde das Team
+ K2 gegründet.
  In der Vorbereitungsphase auf das Projekt wurden hier erste Erfahrungen
  gesammelt, die Möglichkeiten der technischen Umsetzung und sicherheitsrelevante
  Aspekte überprüft.
@@ -1041,7 +1043,7 @@ underline{Root-Account}
  KG) wurden, in Absprache mit K2, weitere AWS Accounts angelegt.
  Jedes Team erhält jeweils zwei dieser Accounts.
  Diese werden dann jeweils für die Live- und die Nonlive-Umgebung genutzt.
- Resourcen die in einem Account angelegt werden, können nicht automatisch
+ Ressourcen, die in einem Account angelegt werden, können nicht automatisch
  auf Ressourcen der anderen Accounts zugreifen.
 \end_layout
 
@@ -1051,7 +1053,7 @@ Rollen- und Rechtemanagement in der AWS-Umgebung
 
 \begin_layout Standard
 Das K2 Team hat in der AWS bereits ein Rechte- und Rollenkonzept aufgebaut,
- dass es allen Teams erlaubt in der AWS generell unabhängig voneinander
+ welches es allen Teams erlaubt in der AWS generell unabhängig voneinander
  zu arbeiten.
  Jeder Benutzer benötigt einen ihm zugewiesenen Benutzeraccount.
  Dieser wird zusammen mit den Kollegen von K2 im 
@@ -1112,7 +1114,7 @@ Ein Benutzeraccount kann verschiedene Rollen annehmen.
  innerhalb dieses Accounts gemanaged werden.
  Jedes Team erhält für eine oder mehrere Personen die Berechtigung die Managerro
 lle anzunehmen.
- Die Benutzer mit dem Recht, diese Rolle anzunehmen, verteilen für ihr Team,
+ Die Benutzer mit dem Recht, diese Rolle anzunehmen, verteilen für ihr Team
  die nötigen Rechte im Selbstmanagement.
 \end_layout
 
@@ -1128,8 +1130,8 @@ Account-, Rollen- und Rechtemanagement
 Das K2 Team hat, zusammen mit den Teammitgliedern von Social, für alle Benutzer
  einen persönlichen Benutzeraccount in der AWS angelegt und sichergestellt,
  dass die Zwei-Faktor-Authentifizierung eingerichtet ist.
- Die Managerrolle, für die Accounts von Team Social, wurde durch K2 an den
- Technischen Entwickler vergeben.
+ Die Managerrolle für die Accounts von Team Social, wurde durch K2 an den
+ technischen Entwickler vergeben.
  Alle Entwickler aus dem Team wurden für die Read-Only- und Developer-Rolle
  freigeschaltet.
 \end_layout
@@ -1141,9 +1143,9 @@ Region
 \begin_layout Standard
 Die AWS-Umgebung besteht weltweit aus Rechenzentren, die sich in verschiedenen
  Regionen befinden.
- Jede Region ist ein separater geografischer Bereich, dieser verfügt über
- mehrere isolierte Standorte, die als Availability Zones oder Verfügbarkeitszone
-n bezeichnet werden.
+ Jede Region ist ein separater geografischer Bereich.
+ Dieser verfügt über mehrere isolierte Standorte, die als Availability Zones
+ oder Verfügbarkeitszonen bezeichnet werden.
  Da die Plattform www.otto.de in Deutschland genutzt wird, hat sich das Team
  Social für die Region eu-central-1 entschieden.
  Diese Region wird in Frankfurt gehostet und besteht aus drei Verfügbarkeitszone
@@ -1403,7 +1405,7 @@ Imageprocessing
 
 \begin_layout Standard
 Die Reihenfolge der zu migrierenden Microservices wurde von Team Social
- vor der Migration des Ersten festgelegt.
+ vor der Migration festgelegt.
  Alle Microservice wurden anhand ihrer Schnittstellen und Komplexität in
  eine sinnvolle Reihenfolge gesetzt.
  Der Microservice, der als nächstes migriert werden sollte, war Imageprocessing.
@@ -1485,8 +1487,8 @@ underline{Queryparameter}
 \end_inset
 
  übergeben wurden.
- Die angegebene ImageId muss einer eindeutigen ID auf ein Bild, auf dem
- Otto-Image-Server entsprechen.
+ Die angegebene ImageId muss einer eindeutigen ID auf ein Bild auf dem Otto-Imag
+e-Server entsprechen.
  Die Breite und die Höhe sind frei wählbar.
 \begin_inset ERT
 status open
