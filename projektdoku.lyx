@@ -476,6 +476,14 @@ en, z.
 Vorwort
 \end_layout
 
+\begin_layout Right Header
+Antje Radkiewicz
+\end_layout
+
+\begin_layout Left Header
+Vorwort
+\end_layout
+
 \begin_layout Standard
 Diese Dokumentation richtet sich an Personen die in der Fachrichtung Informatik
  Vorwissen besitzen.
@@ -588,8 +596,15 @@ Code-Beispiele werden in kleinen umrahmten Boxen dargestellt.
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset toc
-LatexCommand tableofcontents
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
 
 \end_inset
 
@@ -600,8 +615,13 @@ LatexCommand tableofcontents
 Inhaltsverzeichnis
 \end_layout
 
-\begin_layout Right Header
-Antje Radkiewicz
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -965,8 +985,8 @@ Strategische Entscheidung
 
 \begin_layout Standard
 Im Rahmen einer strategischen Entscheidung wird die Plattform www.otto.de
- nicht weiter über den externen Dienstleister gehostet werden, sondern über
- die AWS bereitgestellt werden.
+ nicht weiter über den externen Dienstleister gehostet, sondern über die
+ AWS bereitgestellt werden.
  Durch die autarke Aufstellung der Teams kann jedes Team zu großen Teilen
  selber entscheiden, wie die Migration ausgeführt wird und welche Entitäten
  priorisiert werden.
@@ -1639,13 +1659,13 @@ Migrationsziel Imageprocessing
 \end_layout
 
 \begin_layout Standard
-Im Rahmen der Projektarbeit sollte nur eine Funktion des Imageprocessing-Service
-s freigeschnitten und migriert werden.
- Nach dieser ersten Teilmigration wird das Vorgehen bewertet und für die
- weitere Migration geprüft werden, ob der Service wie gewünscht in die AWS
+Im Rahmen dieser Projektarbeit sollte nur ein Teil des Imageprocessing-Services
+ freigeschnitten und migriert werden.
+ Nach dieser ersten Teilmigration sollte das Vorgehen bewertet werden, zusätzlic
+h sollte überprüft werden, ob der Teil-Service wie gewünscht in die AWS
  integriert wurde.
  Bei einer erfolgreichen Migration werden im Anschluss an dieses Projekt
- die anderen Funktionen in die AWS eingebaut.
+ die anderen Teile des Services in die AWS migriert.
 \end_layout
 
 \begin_layout Section
@@ -1661,9 +1681,8 @@ Umsetzungsstrategien
 \end_layout
 
 \begin_layout Standard
-Um den setFree-Teil-Service aus der derzeitig gehosteten Infrastruktur des
- Dienstleisters zu trennen und in die AWS zu integrieren gibt es zwei divergente
- Lösungsansätze.
+Um den setFree-Teil-Service aus der alten Hosting-Infrastruktur des Dienstleiste
+rs zu trennen und in die AWS zu integrieren gab es zwei Lösungsansätze.
 \begin_inset ERT
 status open
 
@@ -1682,13 +1701,13 @@ status open
 \end_layout
 
 \begin_layout Standard
-Die Funktion könnte, wie bei Tags, in einem EC2-Container lauffähig gemacht
- werden.
- Es müssten keine Anpassungen am Service selber vorgenommen werden.
- Leider sind EC2-Container teuer und mit dem klassischem 
+Der Teil-Servie hätte, wie bei Tags, in einem EC2-Container lauffähig gemacht
+ werden können.
+ Es hätten keine Anpassungen am Service selber vorgenommen werden müssen.
+ Mittels einer 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
-symbol "Elastic Load Balancing"
+symbol "Amazon EC2 Auto Scaling Group"
 description "fehlt"
 
 \end_inset
@@ -1701,23 +1720,12 @@ status open
 
 
 \backslash
-underline{Elastic Load Balancing}
+underline{Amazon EC2 Auto Scaling Group}
 \end_layout
 
 \end_inset
 
- (ELB) 
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-Elastic Load Balancing - ELB
-\end_layout
-
-\end_inset
-
- können Instanzen je nach Last hoch- und heruntergefahren werden, allerdings
- sind die Durchführungszeiten sehr hoch.
+ hätten die Instanzen je nach Last hoch- und heruntergefahren werden gekonnt.
 \begin_inset ERT
 status open
 
@@ -1736,7 +1744,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-Als Alternative bietet sich der Umbau als AWS 
+Als Alternative konnte der Teil-Service als AWS 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Lambda"
@@ -1757,10 +1765,10 @@ underline{Lambda}
 
 \end_inset
 
--Funktion an.
- Hier wird ein Service nicht in einem EC2-Container sonder ohne jeglichen
- Overhead ausführbar gemacht.
- Es gibt viele 
+-Funktion implementiert werden.
+ Hierbei würde ein Service nicht in einem EC2-Container sonder ohne jeglichen
+ Overhead ausführbar gemacht werden.
+ Es gäbe viele 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Lambda-Trigger"
@@ -1781,12 +1789,728 @@ underline{Lambda-Trigger}
 
 \end_inset
 
- über die ein Service später gestartet werden kann.
- Eine Lambda-Funktion startet über einen solchen Trigger.
- Wenn die Funktion ausgeführt wird, wird die Instanz beendet und erzeugt
- keine weiteren Kosten.
- Potentiell ist der Erstaufruf der Funktion langsamer als bei einem vorhandenem
- Container.
+ über die der Service später gestartet werden könnte.
+ Nachdem eine Lambda-Funktion getriggered werden würde, würde die Instanz
+ beendet werden und keine weiteren Kosten erzeugen.
+\end_layout
+
+\begin_layout Subsection
+Entscheidungskriterien
+\end_layout
+
+\begin_layout Subsubsection
+Kostenunterschied
+\end_layout
+
+\begin_layout Standard
+Eine EC2 t2.nano Instanz ist die kleinste Option, sie stellt einen vCpu und
+ 0,5 GiB RAM zur Verfügung.
+ Sie kostet 0,0058 US-Dollar pro Stunde.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lambda-Funktionen werden nach der Häufigkeit der Anforderung gezahlt, Testaufruf
+e der Funktion werden mitberechnet.
+ Der einmalige Aufruf einer Lambda-Funktion kostet 0,0000002 US-Dollar.
+ Zusätzlich wird auf Basis der Ausführungsdauer Kosten erzeugt.
+ Je nachdem wieviel Arbeitsspeicher einer Funktion zugewiesen die kleinste
+ Arbeitsspeichervariante kostet alle 100 ms 0,000000208 US-Dollar.
+\end_layout
+
+\begin_layout Subsubsection
+Performanceunterschied
+\end_layout
+
+\begin_layout Standard
+sadfjasdf
+\end_layout
+
+\begin_layout Subsubsection
+Einmaliger Mehraufwand
+\end_layout
+
+\begin_layout Standard
+asdfasdf
+\end_layout
+
+\begin_layout Subsubsection
+Nutzwertanalyse
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Position
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Auswahlkriterium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Punktwert
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Performance
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+45 %
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mehraufwand
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30 %
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Preis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25 %
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Summe
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100 %
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Faktoranalyse Entscheidungskriterien
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Punktewertung
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sehr gut
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gut
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+befriedigend
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ausreichend
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+mangelhaft
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ungenügend
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gewichtung
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+EC2-Container
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wertung
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Lambda-Funktion
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wertung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Performance
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+45 %
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mehraufwand
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30 %
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Preis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25 %
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
