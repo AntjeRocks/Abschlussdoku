@@ -1830,6 +1830,7 @@ e der Funktion werden mitberechnet.
  Zusätzlich wird auf Basis der Ausführungsdauer Kosten erzeugt.
  Je nachdem wieviel Arbeitsspeicher einer Funktion zugewiesen die kleinste
  Arbeitsspeichervariante kostet alle 100 ms 0,000000208 US-Dollar.
+ SetFree wird etwa 100 Mal am tag aufgerufen und läuft etwa 2 Sekunden.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1841,11 +1842,11 @@ sadfjasdf
 \end_layout
 
 \begin_layout Subsubsection
-Einmaliger Mehraufwand
+Aufwand
 \end_layout
 
 \begin_layout Standard
-asdfasdf
+D
 \end_layout
 
 \begin_layout Subsubsection
@@ -1859,40 +1860,26 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="3">
+<lyxtabular version="3" rows="5" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Position
+Auswahlkriterien
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Auswahlkriterium
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Punktwert
 \end_layout
 
 \end_inset
@@ -1903,16 +1890,7 @@ Punktwert
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Performance
+Preis
 \end_layout
 
 \end_inset
@@ -1928,15 +1906,6 @@ Performance
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2.
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -1961,16 +1930,7 @@ Mehraufwand
 \begin_inset Text
 
 \begin_layout Plain Layout
-3.
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Preis
+Performance
 \end_layout
 
 \end_inset
@@ -1986,15 +1946,6 @@ Preis
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -2022,7 +1973,7 @@ Summe
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Faktoranalyse Entscheidungskriterien
+Faktoranalyse Auswahlkriterien
 \end_layout
 
 \end_inset
@@ -2040,10 +1991,6 @@ Faktoranalyse Entscheidungskriterien
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Tabular
@@ -2231,7 +2178,7 @@ ungenügend
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
+Wertungsskala
 \end_layout
 
 \end_inset
@@ -2251,13 +2198,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="6">
+<lyxtabular version="3" rows="5" columns="8">
 <features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -2287,7 +2232,7 @@ Gewichtung
 \begin_inset Text
 
 \begin_layout Plain Layout
-EC2-Container
+EC2
 \end_layout
 
 \end_inset
@@ -2296,7 +2241,7 @@ EC2-Container
 \begin_inset Text
 
 \begin_layout Plain Layout
-Wertung
+Wert
 \end_layout
 
 \end_inset
@@ -2305,7 +2250,25 @@ Wertung
 \begin_inset Text
 
 \begin_layout Plain Layout
-Lambda-Funktion
+Nutzwert
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Lambda
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wert
 \end_layout
 
 \end_inset
@@ -2314,7 +2277,7 @@ Lambda-Funktion
 \begin_inset Text
 
 \begin_layout Plain Layout
-Wertung
+Nutzwert
 \end_layout
 
 \end_inset
@@ -2325,7 +2288,7 @@ Wertung
 \begin_inset Text
 
 \begin_layout Plain Layout
-Performance
+Preis
 \end_layout
 
 \end_inset
@@ -2343,7 +2306,7 @@ Performance
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0,14 $/Tag
 \end_layout
 
 \end_inset
@@ -2352,7 +2315,7 @@ Performance
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2
 \end_layout
 
 \end_inset
@@ -2361,7 +2324,25 @@ Performance
 \begin_inset Text
 
 \begin_layout Plain Layout
+90
+\end_layout
 
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,013 $/Tag
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
 \end_layout
 
 \end_inset
@@ -2370,7 +2351,7 @@ Performance
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+45
 \end_layout
 
 \end_inset
@@ -2381,7 +2362,7 @@ Performance
 \begin_inset Text
 
 \begin_layout Plain Layout
-Mehraufwand
+Aufwand
 \end_layout
 
 \end_inset
@@ -2408,7 +2389,16 @@ Mehraufwand
 \begin_inset Text
 
 \begin_layout Plain Layout
+4
+\end_layout
 
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+120
 \end_layout
 
 \end_inset
@@ -2422,11 +2412,94 @@ Mehraufwand
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+90
+\end_layout
 
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RAM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25 %
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,5 GiB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,12 MiB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+75
 \end_layout
 
 \end_inset
@@ -2437,7 +2510,7 @@ Mehraufwand
 \begin_inset Text
 
 \begin_layout Plain Layout
-Preis
+
 \end_layout
 
 \end_inset
@@ -2446,7 +2519,7 @@ Preis
 \begin_inset Text
 
 \begin_layout Plain Layout
-25 %
+100 %
 \end_layout
 
 \end_inset
@@ -2456,6 +2529,24 @@ Preis
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+260
 \end_layout
 
 \end_inset
@@ -2482,7 +2573,7 @@ Preis
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+210
 \end_layout
 
 \end_inset
@@ -2496,15 +2587,11 @@ Preis
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
+Nutzwertanalyse
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
