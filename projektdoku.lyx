@@ -418,40 +418,12 @@ status open
 status open
 
 \begin_layout Enumerate
-Die Dokumentation soll dem Auftrag angemessen sein und Folgendes enthalten:
- 
-\end_layout
-
-\begin_layout Enumerate
-Name und Ausbildungsberuf des Auszubildenden
-\end_layout
-
-\begin_layout Enumerate
-Angabe des Ausbildungsbetriebes/Prüfbetriebes
-\end_layout
-
-\begin_layout Enumerate
-Thema der Projektarbeit
-\end_layout
-
-\begin_layout Enumerate
-Falls erforderlich eine Beschreibung/Konkretisierung des Auftrages
-\end_layout
-
-\begin_layout Enumerate
 Umfassende Beschreibung der Prozessschritte und der erzielten Ergebnisse
 \end_layout
 
 \begin_layout Enumerate
-Begründung bei ggf.
- Veränderungen zum Projektantrag (Änderungen zum Projektantrag sind nur
- im eng begrenzten Rahmen zulässig, Projektinhalte dürfen nicht wesentlich
- ver- ändert werden)
-\end_layout
-
-\begin_layout Enumerate
 Wenn für das Projekt erforderlich, ein Anhang mit praxisbezogenen Unterlagen
- und Do- kumenten.
+ und Dokumenten.
  Dieser Anhang sollte auf das Minimum beschränkt werden.
 \end_layout
 
@@ -593,6 +565,25 @@ Code-Beispiele werden in kleinen umrahmten Boxen dargestellt.
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Der Name von projektbeiteiligten Person wurde zum Schutz der Personen gekürzt.
 \end_layout
 
 \begin_layout Standard
@@ -760,7 +751,7 @@ rvices in die
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Amazon Web Services"
-description "Cloud Dingsi"
+description "Ein Tocherterunternehmen von Amazon. Bietet Cloud-Computing mit weltweit verteilten Rechenzentren an."
 
 \end_inset
 
@@ -836,7 +827,7 @@ Externer Dienstleister
 \end_layout
 
 \begin_layout Standard
-Der Bereich E-Commerce wird derzeit durch einen externen Dienstleister bei
+Der Bereich E-Commerce wurde bisher durch einen externen Dienstleister bei
  der Bereitstellung von www.otto.de unterstützt.
  Als Lösungspartner für IT-Infrastruktur stellt dieser dem OTTO E-Commerce
  derzeit nicht nur die notwendige Hardware in einem Rechenzentrum, diverse
@@ -852,34 +843,14 @@ Team Social stellt mehrere Produkte auf der Shop-Seite bereit, die im Reiter
  Inspiration auf www.otto.de zu finden sind.
  Darunter sind beispielsweise der Feed (www.otto.de/feed), über den man von
  Anwendern zusammengestellte Inhalte abonnieren und betrachten kann, Tags
- (www.otto.de/tags/[TAGNAME]), welches derzeit die im Feed genutzten 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Tags"
-description "Stichworte"
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-underline{Tags}
-\end_layout
-
-\end_inset
-
+ (www.otto.de/tags/[TAGNAME]), welches derzeit die im Feed genutzten Tags
  aggregiert und eine Liste der relevantesten Ergebnisse darstellt und der
  StyleCreator (www.otto.de/stylecreator).
  Das Team betreut mehrere 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Microservice"
-description "Services"
+description "Ein Microservice dient dazu große monolithische Architekturen zu vermeiden. Dies geklingt indem kleine entkoppelte Servies bereitgestellt werden."
 
 \end_inset
 
@@ -917,7 +888,7 @@ status open
 \begin_layout Standard
 Alle Services liegen auf Systemen, die von dem externen Dienstleister gehosted
  werden.
- Durch die abgesprochene Vorgehensweise werden Produkte, die im Hause OTTO
+ Durch eine abgesprochene Vorgehensweise werden Produkte, die im Hause OTTO
  für die Webseite www.otto.de entwickelt werden, auf die Maschinen des Dienstleist
 ers übertragen und lauffähig gemacht.
  Der Dienstleister stellt zusätzlich diverse Infrastrukturressourcen für
@@ -954,7 +925,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-StyleCreator im Freiform-Modus mit zwei überlappenden Artikelbildern
+StyleCreator im Freiform-Modus mit zwei sich überlappten Artikelbildern
 \end_layout
 
 \end_inset
@@ -984,9 +955,9 @@ Strategische Entscheidung
 \end_layout
 
 \begin_layout Standard
-Im Rahmen einer strategischen Entscheidung wird die Plattform www.otto.de
- nicht weiter über den externen Dienstleister gehostet, sondern über die
- AWS bereitgestellt werden.
+Im Rahmen einer strategischen Entscheidung wurde entschieden, dass die Plattform
+ www.otto.de nicht weiter über den externen Dienstleister gehostet, sondern
+ über die AWS bereitgestellt werden wird.
  Durch die autarke Aufstellung der Teams kann jedes Team zu großen Teilen
  selber entscheiden, wie die Migration ausgeführt wird und welche Entitäten
  priorisiert werden.
@@ -1011,6 +982,10 @@ Aufgrund der Entscheidung, den Hoster für die Plattform zu wechseln, wurde
 IST-Analyse
 \end_layout
 
+\begin_layout Left Header
+IST-Analyse
+\end_layout
+
 \begin_layout Subsection
 Team K2
 \end_layout
@@ -1029,10 +1004,6 @@ Um den Migrationsprozess für alle Teams erfüllbar zu machen wurde das Team
  bereit.
 \end_layout
 
-\begin_layout Left Header
-IST-Analyse
-\end_layout
-
 \begin_layout Subsubsection
 Accountmanagement in der AWS-Umgebung
 \end_layout
@@ -1042,7 +1013,7 @@ Unter dem AWS
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Root-Account"
-description "AWS Root-Account"
+description "Auch Stammbenutzer des AWS-Konto gennant. Dieses Anmeldekonto hat sämtliche rechte auf AWS-Ressourcen und -Services."
 
 \end_inset
 
@@ -1061,8 +1032,9 @@ underline{Root-Account}
 
  von OTTO (GmbH & Co.
  KG) wurden, in Absprache mit K2, weitere AWS Accounts angelegt.
- Jedes Team erhält jeweils zwei dieser Accounts.
- Diese werden dann jeweils für die Live- und die Nonlive-Umgebung genutzt.
+ Jedes Team erhielt jeweils zwei dieser Accounts.
+ Diese werden in Zukunft jeweils für die Live- und die Nonlive-Umgebung
+ genutzt.
  Ressourcen, die in einem Account angelegt werden, können nicht automatisch
  auf Ressourcen der anderen Accounts zugreifen.
 \end_layout
@@ -1080,7 +1052,7 @@ Das K2 Team hat in der AWS bereits ein Rechte- und Rollenkonzept aufgebaut,
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "AWS Identity and Access Management"
-description "AWS Identity and Access Management"
+description "Ein in die AWS integriertes Benutzerverwaltungstool, welches ein granulares Rechte- und Rollenkonzept erlaubt."
 
 \end_inset
 
@@ -1198,7 +1170,7 @@ Die Arbeiten für die Implementierung der grundsätzlichen Infrastruktur in
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "CodeCommit"
-description "fehlt"
+description "System zur verteilten Versionsverwaltung von Quellcode, welches nativ in der AWS genutzt werden kann."
 
 \end_inset
 
@@ -1219,7 +1191,7 @@ underline{CodeCommit}
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "CodePipeline"
-description "fehlt"
+description "Eine integriertes Pipelinetool in der AWS. Die einzelnen Steps können aus CloudFormation-Template erzeugt werden."
 
 \end_inset
 
@@ -1241,7 +1213,7 @@ underline{CodePipeline}
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "CloudFormation"
-description "fehlt"
+description "Sprache, mit der Ressourcen in der AWS erzeugt werden können."
 
 \end_inset
 
@@ -1263,7 +1235,7 @@ underline{CloudFormation}
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "CloudFormation-YAML"
-description "fehlt"
+description "CloudFormation-Templates können seit 2016 auch im YAML-Format definiert werden. "
 
 \end_inset
 
@@ -1292,7 +1264,7 @@ Um die Infrastruktur zu generieren wurde ein
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Bootstrap"
-description "fehlt"
+description "Bootstrapping bezeichnet den Vorgang, bei dem ein Mechanismus zum Starten von Software benötigt wird, die dann weitere Software startet."
 
 \end_inset
 
@@ -1309,28 +1281,7 @@ underline{Bootstrap}
 
 \end_inset
 
- 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Repository"
-description "fehlt"
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-underline{Repository}
-\end_layout
-
-\end_inset
-
- angelegt.
+ Repository angelegt.
  Hierüber werden alle grundsätzlichen Infrastrukturressourcen erzeugt, die
  für alle Services des Teams benötigt werden.
  Via CloudFormation wurde ein Template erstellt, welches pro Account eine
@@ -1338,7 +1289,7 @@ underline{Repository}
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Virtual Private Cloud"
-description "fehlt"
+description "Die AWS Virtual Private Cloud ermöglicht es, einen Netzwerkbereich in der AWS zu definieren."
 
 \end_inset
 
@@ -1385,7 +1336,7 @@ Vor dem Start dieser Projektarbeit hatte das Team zwei Microservices in
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Elastic Compute Cloud"
-description "fehlt"
+description "Eine Amazon Elastic Compute Cloud ist eine definierte Rechenkapazität in der AWS. Es gibt diverse Größen und Bereitstellungstypen."
 
 \end_inset
 
@@ -1402,7 +1353,7 @@ underline{Elastic Compute Cloud}
 
 \end_inset
 
--Container (EC2) 
+-Containern (EC2) 
 \begin_inset Index idx
 status open
 
@@ -1453,7 +1404,7 @@ Der Imageprocessing Microservice bestand aus vier Kernfunktionalitäten.
  Der Teil-Service mit der geringsten Komplexität und den wenigsten Abhängigkeite
 n war setFree.
  SetFree wurde von anderen Microservices aufgerufen, um im StyleCreator
- freigestellte Bilder während der Bearbeitung anzuzeigen.
+ Bilder freizustellen.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1464,49 +1415,8 @@ SetFree-Teil-Service
 Der setFree-Teil-Service wurde über einen speziellen Endpunkt einer REST-Schnitt
 stelle aufgerufen.
  Die POST-Methode des Endpunktes erwartete die Parameter „ImageId“, „width“
- und „height“, wobei die ImageId als 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Pfadparameter"
-description "fehlt"
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-underline{Pfadparameter}
-\end_layout
-
-\end_inset
-
- und die Breite und Höhe als 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Queryparameter"
-description "fehlt"
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-underline{Queryparameter}
-\end_layout
-
-\end_inset
-
- übergeben wurden.
+ und „height“, wobei die ImageId als Pfadparameter und die Breite und Höhe
+ als Queryparameter übergeben wurden.
  Die angegebene ImageId muss einer eindeutigen ID auf ein Bild auf dem Otto-Imag
 e-Server entsprechen.
  Die Breite und die Höhe sind frei wählbar.
@@ -1528,32 +1438,12 @@ status open
 \end_layout
 
 \begin_layout Standard
-Der Service nutzt das von 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Node.js"
-description "fehlt"
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-underline{Node.js}
-\end_layout
-
-\end_inset
-
- bereitgestellte Package namens gm (eine Node.js Implementierung von 
+Der Service nutzt das von Node.js bereitgestellte Package namens gm (eine
+ Node.js Implementierung von 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "GraphicsMagick"
-description "fehlt"
+description "Ein Ableger von ImageMagick, welches Bilder mit sehr hoher Farbtiefe unterstützt."
 
 \end_inset
 
@@ -1575,7 +1465,7 @@ underline{GraphicsMagick}
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "ImageMagick"
-description "fehlt"
+description "Ist eine freie  Software zur Bearbeitung von Grafiken. Es kann auf der Kommandazeile aufgerufen werden."
 
 \end_inset
 
@@ -1636,8 +1526,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-StyleCreator im Freiform-Modus mit zwei überlappenden Artikelbildern, freigestel
-lt
+StyleCreator im Freiform-Modus mit zwei sich überlappten Artikelbildern,
+ freigestellt
 \end_layout
 
 \end_inset
@@ -1661,11 +1551,11 @@ Migrationsziel Imageprocessing
 \begin_layout Standard
 Im Rahmen dieser Projektarbeit sollte nur ein Teil des Imageprocessing-Services
  freigeschnitten und migriert werden.
- Nach dieser ersten Teilmigration sollte das Vorgehen bewertet werden, zusätzlic
-h sollte überprüft werden, ob der Teil-Service wie gewünscht in die AWS
- integriert wurde.
- Bei einer erfolgreichen Migration werden im Anschluss an dieses Projekt
- die anderen Teile des Services in die AWS migriert.
+ Nach dieser ersten Teilmigration sollte das Vorgehen bewertet werden.
+ Zusätzlich sollte überprüft werden ob der Teil-Service wie gewünscht in
+ die AWS integriert wurde.
+ Bei einer erfolgreichen Migration würden im Anschluss an das Projekt die
+ anderen Teile des Services auf die selbe Weise in die AWS migriert werden.
 \end_layout
 
 \begin_layout Section
@@ -1708,7 +1598,7 @@ Der Teil-Servie hätte, wie bei Tags, in einem EC2-Container lauffähig gemacht
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Amazon EC2 Auto Scaling Group"
-description "fehlt"
+description "Mittels der Amazon EC2 Auto Scaling Group können Parameter gesetzt werden, wodurch bei Bedarf EC2-Container automatisch hoch- und runtergefahren werden."
 
 \end_inset
 
@@ -1744,11 +1634,11 @@ status open
 \end_layout
 
 \begin_layout Standard
-Als Alternative konnte der Teil-Service als AWS 
+Als Alternative hätte der Teil-Service als AWS 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Lambda"
-description "fehlt"
+description "Eine AWS Lambda ist ein Datenverarbeitungsservice. Hiermit können Prozesse hochgradig automatisiert werden."
 
 \end_inset
 
@@ -1765,14 +1655,14 @@ underline{Lambda}
 
 \end_inset
 
--Funktion implementiert werden.
+-Funktion implementiert werden gekonnt.
  Hierbei würde ein Service nicht in einem EC2-Container sonder ohne jeglichen
  Overhead ausführbar gemacht werden.
  Es gäbe viele 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Lambda-Trigger"
-description "fehlt"
+description "Lambda-Funktionen können über zahlreiche Trigger ausgelöst werden, wie zum Beispiel, ein Zeitpunkt, das eintreten einer Veränderung in einem AWS Service oder API-Gateway Requests."
 
 \end_inset
 
@@ -1799,13 +1689,38 @@ Entscheidungskriterien
 \end_layout
 
 \begin_layout Subsubsection
-Kostenunterschied
+Kosten
 \end_layout
 
 \begin_layout Standard
-Eine EC2 t2.nano Instanz ist die kleinste Option, sie stellt einen vCpu und
- 0,5 GiB RAM zur Verfügung.
+Der setFree-Teil-Service wurde im Schnitt einhundert Mal am Tag aufgerufen
+ und hatte eine durchschnittliche Ausführungsdauer von 2 Sekunden.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Eine EC2 t2.nano Instanz ist die kleinste EC2 Option, sie stellt einen vCpu
+ und 0,5 GiB RAM zur Verfügung.
  Sie kostet 0,0058 US-Dollar pro Stunde.
+ Eine über EC2 bereitgestellte Instanz läuft ununterbrochen.
+ Es ist generell möglich, via Amazon Auto Scaling Group, eine Instanz erst
+ zu starten, wenn der Service benötigt wird.
+ Die Erstellungszeit ist aber vergleichsweise hoch.
+ (Tägliche Kosten pro Umgebung: 0,0058 $ * 24)
 \begin_inset ERT
 status open
 
@@ -1827,18 +1742,12 @@ status open
 Lambda-Funktionen werden nach der Häufigkeit der Anforderung gezahlt, Testaufruf
 e der Funktion werden mitberechnet.
  Der einmalige Aufruf einer Lambda-Funktion kostet 0,0000002 US-Dollar.
- Zusätzlich wird auf Basis der Ausführungsdauer Kosten erzeugt.
- Je nachdem wieviel Arbeitsspeicher einer Funktion zugewiesen die kleinste
- Arbeitsspeichervariante kostet alle 100 ms 0,000000208 US-Dollar.
- SetFree wird etwa 100 Mal am tag aufgerufen und läuft etwa 2 Sekunden.
-\end_layout
-
-\begin_layout Subsubsection
-Performanceunterschied
-\end_layout
-
-\begin_layout Standard
-sadfjasdf
+ Zusätzlich werden auf Basis der Ausführungsdauer Kosten erzeugt.
+ Je nachdem wieviel Arbeitsspeicher einer Funktion zugewiesen wird kostet
+ zum Beispiel die kleinste Arbeitsspeichervariante alle 100 ms 0,000000208
+ US-Dollar.
+ (Tägliche Kosten pro Umgebung: 0,0000002 + 0,0000208 $ * 2 Sekunden * 100
+ Ausführungen am Tag)
 \end_layout
 
 \begin_layout Subsubsection
@@ -1846,7 +1755,53 @@ Aufwand
 \end_layout
 
 \begin_layout Standard
-D
+Das team hatte einen erhöhten Erfahrungsschatz, wie ein Service als EC2-Containe
+r in die AWS zu deployen wäre.
+ Um den Container bereit zu stellen würden viele Arbeitsstunden in die Ressource
+nerzeugung und deren Design erzeugt werden.
+ Die lokalen Tests hätten wie gewohnt ausführbar gemacht werden gekonnt.
+ Die Tests in der AWS hätten angepasst werden gemusst.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bei der Umsetzung als Lambda-Funktion hätte eine SAM lokal Umgebung erstellt
+ werden müssen, die sowohl in MAC-Umgebungen als auch unter Linux funktionstücht
+ig gewesen wären.
+ Eine Lambda-Funktion zu erstellen war laut Dokumentation mit wenig Aufwand
+ behaftet.
+\end_layout
+
+\begin_layout Subsubsection
+Performance
+\end_layout
+
+\begin_layout Standard
+Der setFree-Teil-Service benötigte keine hohen Ressourcen.
+ Es wurde bei der Ausführung ein ImageMagick Prozess ausgeführt.
+ Bei einer Arbeitsspeicherkapazität von einem GB dauerte die Umwandlung
+ der Bilder nicht lange.
+ Die kleinste Instanz bei dem externen Dienstleister war eine virtuelle
+ Maschine mit einem GB RAM.
+ Es war noch nicht absehbar in welcher Weise sich die Durchführungsdauer
+ verändern wird, wenn dem Teil-Servie weniger als diese RAM-Kapazität zur
+ Verfügung gestellt wird.
+ Der kleinste EC2-Container würde vierfach (0,5 GiB) so viel Kapazität besitzten
+ wie die kleinste Lambda-Ausführungsvariante (0,12 GiB).
 \end_layout
 
 \begin_layout Subsubsection
@@ -1890,7 +1845,7 @@ Auswahlkriterien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Preis
+Kosten
 \end_layout
 
 \end_inset
@@ -1910,7 +1865,7 @@ Preis
 \begin_inset Text
 
 \begin_layout Plain Layout
-Mehraufwand
+Aufwand
 \end_layout
 
 \end_inset
@@ -1973,7 +1928,7 @@ Summe
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Faktoranalyse Auswahlkriterien
+Gewichtungsanalyse Auswahlkriterien
 \end_layout
 
 \end_inset
@@ -1984,9 +1939,6 @@ Faktoranalyse Auswahlkriterien
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
@@ -2288,7 +2240,7 @@ Nutzwert
 \begin_inset Text
 
 \begin_layout Plain Layout
-Preis
+Kosten
 \end_layout
 
 \end_inset
@@ -2333,7 +2285,7 @@ Preis
 \begin_inset Text
 
 \begin_layout Plain Layout
-0,013 $/Tag
+0,004 $/Tag
 \end_layout
 
 \end_inset
@@ -2380,7 +2332,7 @@ Aufwand
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+hoch
 \end_layout
 
 \end_inset
@@ -2407,7 +2359,7 @@ Aufwand
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+gering
 \end_layout
 
 \end_inset
@@ -2416,7 +2368,7 @@ Aufwand
 \begin_inset Text
 
 \begin_layout Plain Layout
-3
+2
 \end_layout
 
 \end_inset
@@ -2425,7 +2377,7 @@ Aufwand
 \begin_inset Text
 
 \begin_layout Plain Layout
-90
+60
 \end_layout
 
 \end_inset
@@ -2436,7 +2388,7 @@ Aufwand
 \begin_inset Text
 
 \begin_layout Plain Layout
-RAM
+Performance
 \end_layout
 
 \end_inset
@@ -2481,7 +2433,7 @@ RAM
 \begin_inset Text
 
 \begin_layout Plain Layout
-0,12 MiB
+0,12 GiB
 \end_layout
 
 \end_inset
@@ -2490,7 +2442,7 @@ RAM
 \begin_inset Text
 
 \begin_layout Plain Layout
-3
+4
 \end_layout
 
 \end_inset
@@ -2499,7 +2451,7 @@ RAM
 \begin_inset Text
 
 \begin_layout Plain Layout
-75
+100
 \end_layout
 
 \end_inset
@@ -2510,7 +2462,7 @@ RAM
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Summe
 \end_layout
 
 \end_inset
@@ -2537,7 +2489,7 @@ RAM
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+8
 \end_layout
 
 \end_inset
@@ -2564,7 +2516,7 @@ RAM
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+7
 \end_layout
 
 \end_inset
@@ -2573,7 +2525,7 @@ RAM
 \begin_inset Text
 
 \begin_layout Plain Layout
-210
+205
 \end_layout
 
 \end_inset
@@ -2605,22 +2557,30 @@ Umsetzungsstrategieentscheidung
 \end_layout
 
 \begin_layout Standard
-Ich habe mich entschieden die Migration von setFree via AWS Lambda durchzuführen.
- Die setFree-Teil-Service wird vergleichsweise selten aufgerufen, dadurch
- kann der Umbau als Lambda-Funktion einen kostensparenden Effekt erzielen.
- Zudem ist die Funktion klein und wird selbst in der kleinsten von AWS angeboten
-en EC2 Instanz die Ressourcen nicht auslasten.
- Sie wird nur per einfachem REST-Aufruf gestartet und Lambda-Funktionen
- können per AWS API-Gateway getriggered werden.
+Aufrgund des Ergebnisses der Nutzwertanalyse wurde die Migration von setFree
+ via AWS Lambda durchgeführt.
+\end_layout
+
+\begin_layout Standard
+2.5 Das bisherige Logging in die neue Umgebung transferieren (2 h)
+\end_layout
+
+\begin_layout Standard
+3.1 Performancetest zum Vergleich der alten und neuen Umgebung durchführen
+ (1 h)
+\end_layout
+
+\begin_layout Standard
+3.2 Kostenanalyse der alten Plattform im Vergleich zur neuen Implementierung
+ (1 h)
+\end_layout
+
+\begin_layout Standard
+3.3 Kurze Übergabe an das Team (1 h)
 \end_layout
 
 \begin_layout Subsection
 Arbeitsschritte
-\end_layout
-
-\begin_layout Standard
-In diesem Abschnitt werden die einzelnen Arbeitsschritte in ihrer Durchführungsr
-eihenfolge beschrieben.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2628,38 +2588,13 @@ Repository
 \end_layout
 
 \begin_layout Standard
-Das Imageprocessing Repository lag in dem bisher genutzten Versionsverwaltungsto
-ol 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Gitlab"
-description "fehlt"
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-underline{Gitlab}
-\end_layout
-
-\end_inset
-
-, welches über den externen Dienstleister gehostet wird.
- Dieses Versionsverwaltungstool wird nach der Migration nicht mehr zur Verfügung
- stehen.
- Daher habe ich via CloudFormation ein Template geschrieben, mit dem ein
- Repository in der AWS erzeugt wird.
- Dieses Template habe ich einmalig mit 
+Um ein neues Repository in der AWS anzulegen wurde ein Cloudformation-Template
+ erstellt.
+ Dieses Template wurde einmalig mit 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Autostacker24"
-description "fehlt"
+description "Dies ist ein kleines Tool, welches es erlaubt CloudFormation Ressourcen schnell zu erstellen oder zu updaten."
 
 \end_inset
 
@@ -2677,30 +2612,31 @@ underline{Autostacker24}
 \end_inset
 
  in die AWS deployed.
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Im Anschluss habe ich das noch leere Repository auf meine Festplatte geklont.
- Ich habe alle Dateien die zur Funktionalität von setFree nötig sind aus
+ Im Anschluss wurde das leere Repository auf eine lokale Festplatte geklont.
+ Alle Dateien, die zur Funktionalität von setFree nötig sind, wurden aus
  dem derzeitigem Imageprocessing Repository herausgelöst und in das Neue
  übertragen.
- Des Weiteren habe ich die README.md angepasst und die neuen Dateien in das
+ Des Weiteren wurde die README.md angepasst und die neuen Dateien in das
  AWS Repository hochgeladen.
+\end_layout
+
+\begin_layout Standard
+
+\color red
+REPOSITORY CLOUDFORMATION TEMPLATE
+\end_layout
+
+\begin_layout Subsubsection
+AWS Lambda-Funktion Handler
+\end_layout
+
+\begin_layout Standard
+Der setFree-Teil-Service wurde in der Vergangenheit über das Express.js Framework
+ ausgeführt.
+ Die Quelldateien des setFree-Teil-Services mussten so angepasst werden,
+ dass der Service als Lambda-Funktion aufgerufen werden konnte.
+ In der Dokumentation von AWS ist beschrieben, dass ein Node.js Projekt über
+ ein sogenanntes Handler-Objekt aufrufbar gemacht wird.
 \begin_inset ERT
 status open
 
@@ -2719,14 +2655,60 @@ status open
 \end_layout
 
 \begin_layout Standard
-Das Repository bestand nun aus zwei Ordnern, in dem ersten befanden sich
- die setFree Dateien und in dem zweiten lagen die setFree Test Dateien.
- Die .gitignore und .eslintrc habe ich von dem voherigen Projekt behalten
- und diese befinden sich im Root-Verzeichnis.
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+exports.myHandler = function(event, context) {}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-REPOSITORY CLOUDFORMATION TEMPLATE
+Hierfür wurde die setFreeService.js Datei angepasst und in das Root-Verzeichnis
+ des Repositories verschoben.
+ Der setFreeRouter und der setFreeController wurden durch die Umstellung
+ obsolet und im Anschluss gelöscht.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\color red
+SETFREE SERVICE FILE ALT UND NEU
 \end_layout
 
 \begin_layout Subsubsection
@@ -2734,103 +2716,17 @@ Pipeline
 \end_layout
 
 \begin_layout Standard
-Ich habe einen neuen Unterordner für die CloudFormation-Skripte erstellt
- und ein CloudFormation-Template für die CodePipeline angelegt.
- Dieses Template enthält alle Pipeline-Schritte.
- Eine Pipeline wird als AWS::CodePipeline::Pipeline Typ definiert.
- Dieser kann ein Name vergeben werden.
- und ein Speicherort für die Ausführung muss angegeben werden.
- Die Schritte (Stages) benötigen einen Namen und Aktionen.
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Ich habe fünf Schritte erstellt, checkout, common, build, deploy-nonlive
- und deploy-live.
- Im checkout Schritt wird über AWS CodeCommit die Dateien heruntergeladen.
- Der common Schritt besteht aus mehreren Unterschritten.
- Hier habe ich nach Beispiel eines bereits deployten Services eine Rolle
- für diesen Service,in live und nonlive, angelegt und berechtigt.
- Danach wird die pipeline.yaml geupdatet.
- Der build Schritt wird via AWS 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "CodeBuild"
-description "fehlt"
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-underline{CodeBuild}
-\end_layout
-
-\end_inset
-
- ausgeführt, es wird der Quellcode kompiliert und eine Build-Datei an den
- nächsten Schritt weiter gereicht.
- Die deploy-Schritte habe ich in diesem Arbeitsschritt nicht vollständig
- definiert.
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Ich habe die Pipeline einmalig händisch auf der Kommandozeile via 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Autostacker24"
-description "fehlt"
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-underline{Autostacker24}
-\end_layout
-
-\end_inset
-
- hochgeladen und deployed.
+Durch das Anlegen eines neuen CloudFormation-Templates für die CodePipeline
+ wurde der Deployment-Prozess automatisiert.
+ Ein CloudFormation-Pipeline-Template besteht aus Pipeline-Schritten (Stages),
+ die jeweils einen Namen und verschiedene Aktionen besitzen.
+ Für diesen Teil-Service wurden fünf Schritte erstellt, checkout, common,
+ build, deploy-nonlive und deploy-live.
+ Die Schritte werden nacheinander ausgeführt und werden den Service erst
+ in non-live und bei erfolgreicher Durchführung anschließend automatisch
+ in die live-Umgebung deployen.
+ Dieses Template wurde im Anschluss auch via Autostacker24 manuell in die
+ AWS hochgeladen.
 \begin_inset ERT
 status open
 
@@ -2875,83 +2771,12 @@ essing-pipeline --profile [Profilname] --region eu-central-1
 \end_inset
 
 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
+
+\color red
 PIPELINE CLOUDFORMATION TEMPLATE
-\end_layout
-
-\begin_layout Subsubsection
-AWS Lambda-Funktion Handler
-\end_layout
-
-\begin_layout Standard
-Der setFreeTeil-Service lief in der Vergangenheit über das 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Express.js"
-description "fehlt"
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-underline{Express.js}
-\end_layout
-
-\end_inset
-
- Framework.
- Der setFreeRouter hat 
-\end_layout
-
-\begin_layout Standard
-Der SetFreeService
-\end_layout
-
-\begin_layout Standard
-Der SetFreeController 
-\end_layout
-
-\begin_layout Standard
-Hier wird der Router für eingehende HTTP Requests definiert, er reicht diese
- an den Controller weiter und dieser sendet die HTTP Response.
-\end_layout
-
-\begin_layout Standard
-Eine Lambda-Funktion wird über den 
-\begin_inset Quotes pld
-\end_inset
-
-exports
-\begin_inset Quotes prd
-\end_inset
-
--Handler ausführbar gemacht.
- Ich habe den setFreeRouter gelöscht und den setFreeController in einen
- exports Handler umgeschrieben.
- Dieser Handler befindet sich im Root-Verzeichnis des Repositories.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2959,102 +2784,48 @@ API-Gateway
 \end_layout
 
 \begin_layout Standard
-akjdfhasf
+Der set-Free-Teil-Service sollte, wie gehabt, über einen Endpunkt erreichbar
+ gemacht werden.
+ Die http-Schnittstelle hatte sich bewährt.
+ In der AWS können über CloudFormation-Templates API-Gateways erstellt werden.
+ Hier musste eine Struktur definiert werden.
+ Root wurde als /imageprocessing definiert unter diesem gab es nach der
+ Erstellung die Schnittstelle /setFree.
+ Diese erwartete die weiterhin die Parameter ImageId, height und width.
+ Allerdings wurden diese alle als Queryparameter implementiert.
 \end_layout
 
 \begin_layout Standard
+
+\color red
 API-GATEWAY CLOUDFORMATION TEMPLATE
 \end_layout
 
 \begin_layout Subsubsection
-Binary Media Files
+Binary Media Types
 \end_layout
 
 \begin_layout Standard
-ldsfnlsdg
-\end_layout
-
-\begin_layout Subsubsection
-Alarming
-\end_layout
-
-\begin_layout Standard
-sjdfnlkasg
-\end_layout
-
-\begin_layout Standard
-ALARMING CLOUDFORMATION TEMPLATE
-\end_layout
-
-\begin_layout Subsubsection
-Lasttest
-\end_layout
-
-\begin_layout Standard
-ÖFNsdlkfg
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
+Nach der Implementierung des API-Gateway-Templates in die Pipeline war ein
+ Gateway vorhanden, die Test-Rückgaben konnten jedoch nicht mehr von Browsern
+ dargestellt werden.
+ Der Rückgabewert des setFree-Teil-Services war ein base64 entschlüsseltes
+ Bild und in der Lambda-Testumgebung von AWS wurde eine korrekte Ausgabe
+ erzielt.
+ Laut der Dokumentation sollten base64 entschlüsselte Bilder durch das API-Gatew
+ay definiert werden, indem man den Binary Media Type auf das erwartete Image-For
+mat setzt.
+ (image/png)
+\begin_inset ERT
 status open
 
-\begin_layout Enumerate
-In der AWS Oberfläche ein CodeCommit Repository angelegt
-\end_layout
+\begin_layout Plain Layout
 
-\begin_layout Enumerate
-Das leere Repository auf meine Festplatte geklont
-\end_layout
 
-\begin_layout Enumerate
-In dem leeren Repository erste Dateien angelegt
-\end_layout
+\backslash
 
-\begin_layout Enumerate
-.gitignore
-\end_layout
+\backslash
 
-\begin_layout Enumerate
-.eslintrc
-\end_layout
-
-\begin_layout Enumerate
-README.md
-\end_layout
-
-\begin_layout Enumerate
-Die ersten zwei Pipeline-Schritte per CodeCommit unter cloudformation/ci/pipelin
-e.yaml gepusht
-\end_layout
-
-\begin_layout Enumerate
-Die Pipeline via autostacker24 manuell in der aws starten
-\end_layout
-
-\begin_layout Enumerate
-Autostacker24 update –template cloudformation/ci/pipeline.yaml –stack imageproces
-sing-pipeline –profile social-nonlive-admin –region eu-central-1
-\end_layout
-
-\begin_layout Enumerate
-Die Pipeline ist einmal erfolgreich durchgelaufen und ist in nun in aws
- als Stack gespeichert
-\end_layout
-
-\begin_layout Enumerate
-Die Pipeline mit den nächsten Schritt Updaten
-\end_layout
-
-\begin_layout Enumerate
-Handler bauen
-\end_layout
-
-\begin_layout Enumerate
-Funktionen reduzieren und umbauen
-\end_layout
-
-\begin_layout Enumerate
-Api-Gateway Funktionalitäten sicherstellen
 \end_layout
 
 \end_inset
@@ -3062,16 +2833,177 @@ Api-Gateway Funktionalitäten sicherstellen
 
 \end_layout
 
-\begin_layout Section
-Projektlösung
+\begin_layout Standard
+Nach weiteren Anläufen die Bilder korrekt darzustellen wurde das Problem
+ bei K2 platziert und ein Ticket bei dem AWS-Service eröffnet.
+ Nach diversen Problemlösungsansätzen durch den AWS-Support wurde entdeckt,
+ dass Binary Media Types in API-Gateways nicht mit einem explizitem Typ
+ gesetzt werden können.
+ Die Binary Media Types Option wurde auf */* gesetzt und die Bilder wurden
+ korrekt dargestellt.
 \end_layout
 
-\begin_layout Left Header
-Projektlösung
+\begin_layout Subsubsection
+Alarming, Monitoring und Logging
 \end_layout
 
 \begin_layout Standard
-hier Lösung mit Angabe 
+In der alten Hosting-Landschaft wurde das Alarming durch den Dienstleiter
+ festgelegt.
+ Die Datenbanken und die Server wurden von ihnen erstellt und gemanaged.
+ Durch die Umstellung in die AWS-Umgebung musste jedes Fachteam eine eigene
+ Alarmierungsumgebung aufbauen.
+ Für den setFree-Teil-Service waren wichtige Alarmierungsoptionen die, die
+ die Gesundheit des Services anzeigen konnten.
+ Da eine Lambda-Funktion keinen expliziten Status hat, wurden Stati des
+ API-Gateway gewählt und als 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "CloudWatch"
+description "Amazon CloudWatch ist ein Überwachungsservice der AWS. Hier können Logs, Alarmierungsfunktionen und Monitoring Dashboards genutzt werden."
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{CloudWatch}
+\end_layout
+
+\end_inset
+
+ Alarm implementiert.
+ Teammitglieder würden bei http-Fehlern per E-Mail benachrichtigt werden.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Durch den Dienstleisterwechsel würde in Zukunft kein zentrales Monitoring
+ mehr zur verfügung stehen.
+ Daher musste jedes Fachteam auch eine eigene Monitoringlösung implementieren.
+ Hier bot es sich an CloudWatch auszuprobieren und es wurde eine CloudFormation-
+Template angelegt, welches alle Standard-Werte in ein Dashboard überführt,
+ welches in der AWS eingesehen werden kann.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Das bestehende Logging über ein Logging Tool wurde angepasst.
+ Alle Logausgaben wurde auf Konsolen-Logging umgestellt.
+ Dadurch würden in der AWS automatisch CloudWatch Logs vom Service erzeugt
+ werden.
+\end_layout
+
+\begin_layout Standard
+
+\color red
+ALARMING UND MONITORING CLOUDFORMATION TEMPLATE
+\end_layout
+
+\begin_layout Subsubsection
+Testumgebung
+\end_layout
+
+\begin_layout Standard
+Die Tests waren ohne weitere Anpassungen direkt in der AWS-Umgebung lauffähig.
+ Um eine höhere Effizienz zu erreichen wurden Anpassungen am Lambda-File
+ vorgenommen, damit nach dem Pipeline-Schritt des Testlaufs, nur die Quelldateie
+n des Programms in die Lambda-Funktion implementiert wurden.
+ Das lokale Testen war vorerst nicht möglich.
+ Hierfür bietet Amazon ein Tool, welches sich noch in der Beta-Version befand,
+ 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "AWS Serverless Application Model CLI"
+description "Die AWS SAM CLI erlaubt, es über die Kommandozeile AWS Ressourcen zu erzeugen und zu testen."
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{AWS Serverless Application Model CLI}
+\end_layout
+
+\end_inset
+
+ (SAM CLI) auch SAM lokal genannt.
+ SAM lokal kann für Lambda-Funktionen eine lokale Umgebung erzeugen, Tests
+ darin ausführen und die Umgebung im Anschluss beenden.
+\end_layout
+
+\begin_layout Section
+Soll-IST-Vergleich
+\end_layout
+
+\begin_layout Subsection
+Durchführungszeit
+\end_layout
+
+\begin_layout Standard
+Die für das Projekt genehmigte Arbeitszeit konnte genau eingehalten werden.
+ Für jede Teilaufgabe wurde im Vorfeld eine Zeitschätzung erstellt (siehe
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{Tabelle XXX}
+\end_layout
+
+\end_inset
+
+).
+ Es wurden im Verlauf des Projekts Teilaufgaben schneller als geplant und
+ andere langsamer als geplant fertiggestellt werden.
+ Die größte Änderung an der zeitlichen Planung war die Aufgabe den Service
+ lauffähig zu machen.
+\end_layout
+
+\begin_layout Left Header
+Soll-IST-Vergleich
 \end_layout
 
 \begin_layout Standard
@@ -3275,6 +3207,19 @@ AWS Region mit drei Verfügbarkeitszonen (Quelle: https://docs.aws.amazon.com/
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -3289,7 +3234,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="3">
+<lyxtabular version="3" rows="4" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -3317,7 +3262,7 @@ Funktion
 \begin_inset Text
 
 \begin_layout Plain Layout
-Aufgaben
+Aufgaben innerhalb des Projektes
 \end_layout
 
 \end_inset
@@ -3347,7 +3292,7 @@ Auszubildende OTTO (GmbH & Co.
 \begin_inset Text
 
 \begin_layout Plain Layout
-Migration des Teil-Microservice
+Eigenständige Migration des Teil-Microservice
 \end_layout
 
 \end_inset
@@ -3358,36 +3303,7 @@ Migration des Teil-Microservice
 \begin_inset Text
 
 \begin_layout Plain Layout
-Christian Finckler
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Technischer Entwickler Team Social
-\end_layout
-
-\end_inset
-</cell>
-<cell multirow="3" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Begleitung der Projektarbeit, Abnahme des Projektes
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Stefan Kopetsch
+Christian F.
 \end_layout
 
 \end_inset
@@ -3405,7 +3321,7 @@ Technischer Entwickler Team Social
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Abnahme der Projektarbeit, Anforderungsmanagement
 \end_layout
 
 \end_inset
@@ -3416,7 +3332,7 @@ Technischer Entwickler Team Social
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Marco H.
 \end_layout
 
 \end_inset
@@ -3425,7 +3341,7 @@ Technischer Entwickler Team Social
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+K2-Pate für Team Social
 \end_layout
 
 \end_inset
@@ -3434,7 +3350,7 @@ Technischer Entwickler Team Social
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Eskalation Supportanfrage
 \end_layout
 
 \end_inset
@@ -3517,30 +3433,120 @@ status open
 
 
 \backslash
-renewcommand{
+newpage
+\end_layout
+
+\begin_layout Plain Layout
+
+
 \backslash
-indexname}{D.
- Abkürzungsverzeichnis}
+setcounter{chapter}{3}
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Chapter
+Abkürzungsverzeichnis
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset index_print
-LatexCommand printindex
-type "idx"
+Amazon Web Services - 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{AWS}
+\end_layout
 
 \end_inset
 
+, Seite 1
+\end_layout
 
+\begin_layout Standard
+AWS Identity and Access Management - 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{IAM}
+\end_layout
+
+\end_inset
+
+, Seite 4
+\end_layout
+
+\begin_layout Standard
+Elastic Compute Cloud - 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{EC2}
+\end_layout
+
+\end_inset
+
+, Seite 5
+\end_layout
+
+\begin_layout Standard
+Virtual Private Cloud - 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{VPC}
+\end_layout
+
+\end_inset
+
+, Seite 5
+\end_layout
+
+\begin_layout Standard
+AWS Serverless Application Model CLI - 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{SAM CLI}
+\end_layout
+
+\end_inset
+
+, Seite 11
 \end_layout
 
 \begin_layout Standard
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -3613,6 +3619,33 @@ listtablename}{F.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{chapter}{6}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Literaturverzeichnis
 \end_layout
 
 \end_body
