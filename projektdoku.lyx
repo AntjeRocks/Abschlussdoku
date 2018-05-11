@@ -2990,7 +2990,7 @@ Performancetest
 \end_layout
 
 \begin_layout Standard
-Nach der Migration sollte ein Performancetest gemacht werden.
+Nach der Migration sollte ein Performancetest durchgeführt werden.
  Dieser sollte vorderrangig nachweisen, dass der Service ohne Unterschiede
  zu der vorherigen Migration läuft oder performanter ist.
  Da der Service nicht als EC2-Container implementiert wurde, hätte der Performan
@@ -3005,6 +3005,47 @@ Gattling
 
 , einem Performancest-Tool, durchgeführt.
  Die Test wurden in Scala geschrieben.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die neue Landschaft in der AWS wurde im Test über das Internet aufgerufen,
+ die Tests an der alten Landschaft werden automatisch über das Haus geroutet.
+ Zusätzlich wurden in der alten Umgebung bereits intelligente Caching Optionen
+ gesetzt, die in der AWS-Umgebung noch nicht implementiert waren.
+ Bei der Betrachtung der Ergebnisse musste dieser Umstand mit einberechnet
+ werden.
+ Anhand der Testergebnisse war zu erkennen dass sich die Performance nicht
+ signifikant verändert hatte.
+ Die Lambda-Funktion hat eine etwas langsamere Rückgabezeit gehabt, als
+ der Service in der derzeitigen Umgebung (siehe 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{Grafik XXXXXXXXXXXXXXXX}
+\end_layout
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
