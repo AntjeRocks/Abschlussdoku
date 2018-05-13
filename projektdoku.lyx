@@ -552,7 +552,21 @@ status open
 \end_layout
 
 \begin_layout Standard
-Der Name von projektbeiteiligten Person wurde zum Schutz der Personen gekürzt.
+Der Name von projektbeiteiligten Person kann in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{Tabelle d.}
+\end_layout
+
+\end_inset
+
+ eingesehen werden.
+ Zum Schutz der Personen wurden die Nachnamen gekürzt.
 \end_layout
 
 \begin_layout Standard
@@ -3583,7 +3597,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename G:/Clipboard - 29. Januar 2018 10_07.png
+	filename Bilder/Clipboard - 29. Januar 2018 10_07.png
 	scale 50
 
 \end_inset
@@ -3614,7 +3628,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename G:/Clipboard - 29. Januar 2018 10_08.png
+	filename Bilder/Clipboard - 29. Januar 2018 10_08.png
 	scale 60
 
 \end_inset
