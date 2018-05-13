@@ -1760,10 +1760,9 @@ Performance
 \end_layout
 
 \begin_layout Standard
-Der setFree-Teil-Service benötigte keine hohen Ressourcen.
- Es wurde bei der Ausführung ein ImageMagick Prozess ausgeführt.
+Bei der Ausführung von setFree wird ein ImageMagick Befehl ausgeführt.
  Bei einer Arbeitsspeicherkapazität von einem GB dauerte die Umwandlung
- der Bilder nicht lange.
+ der Bilder etwa 2 Sekunden.
  Die kleinste Instanz bei dem externen Dienstleister war eine virtuelle
  Maschine mit einem GB RAM.
  Es war noch nicht absehbar in welcher Weise sich die Durchführungsdauer
@@ -2569,12 +2568,20 @@ underline{Autostacker24}
  übertragen.
  Des Weiteren wurde die README.md angepasst und die neuen Dateien in das
  AWS Repository hochgeladen.
+ (repository.yaml siehe 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{Abbildung d.}
 \end_layout
 
-\begin_layout Standard
+\end_inset
 
-\color red
-REPOSITORY CLOUDFORMATION TEMPLATE
+)
 \end_layout
 
 \begin_layout Subsubsection
@@ -2588,6 +2595,8 @@ Der setFree-Teil-Service wurde in der Vergangenheit über das Express.js Framewo
  dass der Service als Lambda-Funktion aufgerufen werden konnte.
  In der Dokumentation von AWS ist beschrieben, dass ein Node.js Projekt über
  ein sogenanntes Handler-Objekt aufrufbar gemacht wird.
+ Zusätzlich muss in dem Projekt eine buildspec Datei angelegt werden, in
+ die verschiedenen Ausführungsphasen der Funktion definiert sind.
 \begin_inset ERT
 status open
 
@@ -2651,15 +2660,35 @@ status open
 \begin_layout Standard
 Hierfür wurde die setFreeService.js Datei angepasst und in das Root-Verzeichnis
  des Repositories verschoben.
- Der setFreeRouter und der setFreeController wurden durch die Umstellung
- obsolet und im Anschluss gelöscht.
- 
+ Der setFreeRouter wurde durch die Umstellung oboslet und gelöscht.
+ Die Funktionalitäten das setFreeController wurde in den Service eingefügt.
+ (Auszug aus der neuen imagprocessing.js siehe 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{Abbildung e.}
 \end_layout
 
-\begin_layout Standard
+\end_inset
 
-\color red
-SETFREE SERVICE FILE ALT UND NEU
+, buildspec.yaml siehe 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{Abbildung f.}
+\end_layout
+
+\end_inset
+
+)
 \end_layout
 
 \begin_layout Subsubsection
@@ -2724,12 +2753,6 @@ essing-pipeline --profile [Profilname] --region eu-central-1
 
 \end_layout
 
-\begin_layout Standard
-
-\color red
-PIPELINE CLOUDFORMATION TEMPLATE
-\end_layout
-
 \begin_layout Subsubsection
 API-Gateway
 \end_layout
@@ -2740,16 +2763,23 @@ Der set-Free-Teil-Service sollte, wie gehabt, über einen Endpunkt erreichbar
  Die http-Schnittstelle hatte sich bewährt.
  In der AWS können über CloudFormation-Templates API-Gateways erstellt werden.
  Hier musste eine Struktur definiert werden.
- Root wurde als /imageprocessing definiert unter diesem gab es nach der
- Erstellung die Schnittstelle /setFree.
- Diese erwartete die weiterhin die Parameter ImageId, height und width.
+ Nach der Erstellung des APIs wurde die Schnittstelle /setFree erzeugt.
+ Diese erwartete weiterhin die Parameter ImageId, height und width.
  Allerdings wurden diese alle als Queryparameter implementiert.
+ (Auszug aus dem api.yaml siehe 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{Abbildung g.}
 \end_layout
 
-\begin_layout Standard
+\end_inset
 
-\color red
-API-GATEWAY CLOUDFORMATION TEMPLATE
+)
 \end_layout
 
 \begin_layout Subsubsection
@@ -2792,6 +2822,20 @@ Nach weiteren Anläufen die Bilder korrekt darzustellen wurde das Problem
  gesetzt werden können.
  Die Binary Media Types Option wurde auf */* gesetzt und die Bilder wurden
  korrekt dargestellt.
+ (Codezeile für die Implementierung von Binary Media Types siehe 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{Abbildung h.}
+\end_layout
+
+\end_inset
+
+)
 \end_layout
 
 \begin_layout Subsubsection
@@ -2879,12 +2923,6 @@ Das bestehende Logging über ein Logging Tool wurde angepasst.
  werden.
 \end_layout
 
-\begin_layout Standard
-
-\color red
-ALARMING UND MONITORING CLOUDFORMATION TEMPLATE
-\end_layout
-
 \begin_layout Subsubsection
 Testumgebung
 \end_layout
@@ -2923,7 +2961,11 @@ underline{AWS Serverless Application Model CLI}
 \end_layout
 
 \begin_layout Section
-Soll-IST-Vergleich
+Projektlösung
+\end_layout
+
+\begin_layout Left Header
+Projektlösung
 \end_layout
 
 \begin_layout Subsection
@@ -2981,10 +3023,6 @@ status open
 
 \end_layout
 
-\begin_layout Left Header
-Soll-IST-Vergleich
-\end_layout
-
 \begin_layout Subsection
 Performancetest
 \end_layout
@@ -2999,7 +3037,7 @@ cetest Hinweise auf einnachbessern der Arbeitsspeicherkapazität geben können.
 \begin_inset Quotes pld
 \end_inset
 
-Gattling
+Gatling
 \begin_inset Quotes prd
 \end_inset
 
@@ -3030,7 +3068,7 @@ Die neue Landschaft in der AWS wurde im Test über das Internet aufgerufen,
  Bei der Betrachtung der Ergebnisse musste dieser Umstand mit einberechnet
  werden.
  Anhand der Testergebnisse war zu erkennen dass sich die Performance nicht
- signifikant verändert hatte.
+ signifikant verändert.
  Die Lambda-Funktion hat eine etwas langsamere Rückgabezeit gehabt, als
  der Service in der derzeitigen Umgebung (siehe 
 \begin_inset ERT
@@ -3040,12 +3078,66 @@ status open
 
 
 \backslash
-textit{Grafik XXXXXXXXXXXXXXXX}
+textit{Abbildung i.
+\end_layout
+
+\end_inset
+
+ und 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ j.}
 \end_layout
 
 \end_inset
 
 ).
+\end_layout
+
+\begin_layout Subsection
+Kostenunterschied
+\end_layout
+
+\begin_layout Standard
+Das Projekt beinhaltete die Messung des Kostenunterschieds.
+ Der zuständigen Analysten hat errechnet, dass der gesamte Imageprocessing
+ Service ohne Pipeline und anderer Kompenenten etwa 28 Euro im Monat kostete
+ (siehe 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{Abbildung k.}
+\end_layout
+
+\end_inset
+
+) Der neuimplementierte Teil-Service, welcher nur ein viertel des Gesamtservices
+ ausmachte hat bis dahin keine Kosten erzeugt (siehe 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{Abbildung l.}
+\end_layout
+
+\end_inset
+
+).
+ In der AWS gibt es diverse kostenfreie Kontingent.
+ Eine Million Lambda-Aufrufe sind im Monat kostenfrei.
+ Zusätzlich sind 3,2 Millionen Lambda Verarbeitungssekunden im Monat kostenfrei.
+ Wenn dieses Kontingent erschöpft wäre, würde der Service in der AWS Kosten
+ erzeugen.
 \end_layout
 
 \begin_layout Standard
@@ -3075,7 +3167,14 @@ Fazit
 \end_layout
 
 \begin_layout Standard
-hier fazit
+Der Teil-Service wurde erfolgreich in die AWS mirgirert.
+ Nach der Übergabe an den technischen Entwickler des Teams, wurde entschieden,
+ dass der gesamte Service als Lambda-Funktionen in die AWS überführt werden
+ sollen.
+ An dem Aufbau des API-Gateways müssten dann noch Änderungen vorgenommen
+ werden, damit auch die anderen Teil-Services aufrufbar gemacht werden können.
+ Für die Verbesserung der Performance würde man sich überlegen, ob man den
+ verfügbaren Arbeistspeicher der Lambda-Funktion vergrößert.
 \end_layout
 
 \begin_layout Standard
@@ -3249,6 +3348,295 @@ AWS Region mit drei Verfügbarkeitszonen (Quelle: https://docs.aws.amazon.com/
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Bilder/repository yaml.PNG
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+repository.yaml
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Bilder/export neu.PNG
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+imageprocessing.js mit implementierten Lambda Handler
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Bilder/buildspec yaml.PNG
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+buildspec.yaml
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Bilder/api.PNG
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+api.yaml
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Bilder/binary.PNG
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Alle binary media types erlauben
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Bilder/response time otto.PNG
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gatling Test alte Landschaft
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Bilder/responsetime aws.PNG
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gatling Test neue Landschaft
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename G:/Clipboard - 29. Januar 2018 10_07.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Kosten für setFree-Teil-Servie in der alte Umgebung (live kostet soviel
+ wie develop)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename G:/Clipboard - 29. Januar 2018 10_08.png
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Kosten für setFree-Teil-Servie in der neue Umgebung
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -3292,7 +3680,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="3">
+<lyxtabular version="3" rows="5" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -3386,7 +3774,7 @@ Abnahme der Projektarbeit, Anforderungsmanagement
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3395,7 +3783,7 @@ Marco H.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3404,11 +3792,40 @@ K2-Pate für Team Social
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 Eskalation Supportanfrage
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Christopher R.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Business Analyst
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kostenübersicht Infrastruktur
 \end_layout
 
 \end_inset
@@ -4759,11 +5176,10 @@ Internetquellen
 \end_layout
 
 \begin_layout Standard
-Name, Vorname: Titel.
- Untertitel.
- In: Name der Webseite.
- Stand: Datum.
- URL: Adresse der Webseite (letzter Abruf am Datum)
+Name des Autors unbekannt: AWS Lambda.
+ Developer Guide.
+ In: AWS documentation.
+ URL: https://aws.amazon.com/documentation/lambda (letzter Aufruf am: 10.05.2018)
 \begin_inset ERT
 status open
 
@@ -4783,9 +5199,161 @@ status open
 
 \begin_layout Standard
 Name des Autors unbekannt: AWS Lambda.
- Developer Guide.
+ Preise.
+ In: AWS Lambda.
+ URL: https://aws.amazon.
+\end_layout
+
+\begin_layout Standard
+com/de/lambda/pricing (letzter Aufruf am: 11.05.2018)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Name des Autors unbekannt: Enable Binary Support Using the API Gateway Console.
  In: AWS documentation.
- URL: https://aws.amazon.com/documentation/lambda (letzter Aufruf am: 10.05.2018)
+ URL: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-payl
+oad-encodings-configure-with-console.html (letzter Aufruf am: 09.05.2018)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Name des Autors unbekannt: Content Type Conversions in API Gateway.
+ In: AWS documentation.
+ URL: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-payl
+oad-encodings-workflow.html (letzter Aufruf am: 09.05.2018)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Name des Autors unbekannt: Build Specification Reference for AWS CodeBuild.
+ In: AWS documentation.
+ URL: https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html
+ (letzter Aufruf am: 08.05.2018)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Name des Autors unbekannt: Lambda-Funktions-Handler (Node.js).
+ In: AWS Lambda Entwicklerhandbuch.
+ URL: https://docs.aws.amazon.com/de_de/lambda/latest/dg/programming-model.html
+ (letzter Aufruf am: 08.05.2018)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Jean-Christophe Lavocat: Image conversion using Amazon Lambda and S3 in
+ Node.js.
+ In: jice lavocat Blog.
+ URL: http://jice.lavocat.name/blog/2015/image-conversion-using-amazon-lambda-and-
+s3-in-node.js (letzter Aufruf am: 07.05.2018)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Daniel Lemire: Ridiculously fast base64 encoding and decoding.
+ In: Daniel Lemire's blog.
+ URL: https://lemire.me/blog/2018/01/17/ridiculously-fast-base64-encoding-and-dec
+oding (letzter Aufruf am: 11.05.2018)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
