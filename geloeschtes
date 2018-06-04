@@ -1,6 +1,0 @@
-0.2.4 IT-Operations (Ops)
-
-Team Ops verwaltet die Infrastrukturdienste, die benötigt werden, damit die fachlich geschnittenen Teams gemeinsam an der Plattform www.otto.de arbeiten können. Zu den Infrastrukturdiensten gehören beispielsweise VM, Logging und Monitoring. Die inhaltlichen Themen werden von den Fachteams selbstverantwortet bereitgestellt und Ops unterstützt diese dabei technisch.
-
-Hierfür sind sie in einem direkten Austausch mit dem externen Dienstleister und stellen zusammen mit diesem für die E-Commerce Mitarbeiter vor Ort einen zentralen Anlaufpunkt für alle \underline{Live}-kritischen Support-Anfragen bereit. Für sonstige \underline{Nonlive} Anliegen und Fragen gibt es einen weiteren Anlaufpunkt mit schwächeren \underline{Service Level Agreements}.
-
