@@ -1,0 +1,11 @@
+---
+AWSTemplateFormatVersion: "2010-09-09"
+
+Resources:
+  Api:
+    Type: "AWS::ApiGateway:RestApi"
+    Properties:
+      Name: !Sub "${ServiceName}-api-${Environment}"
+      BinaryMediaTypes:
+        - "*/*"
+      FailOnWarning: true
