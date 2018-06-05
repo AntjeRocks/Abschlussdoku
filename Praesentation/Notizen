@@ -1,0 +1,46 @@
+Folie 1 - Begrüßung
+Guten Morgen, mein Name ist Antje Radkiewicz.
+Ich bin Auszubildende Fachinformatikerin für Systemintegration beim OTTO Versand.
+Ich möchte Ihnen, den technischen Mitarbeitern im Bereich E-Commerce von OTTO, meine Ergebnisse bezüglich der Migration eines Teil-Microservices in die AWS präsentieren.
+Des Weiteren möchte ich sie bitten mir eventuelle Fragen erst im Anschluss an die Präsentation zu stellen.
+
+Folie 2 - Agenda
+Um meine Ihnen Ergebnisse zu vermitteln werde ich erst noch einmal kurz auf die Projektbeschreibung eingehen.
+Danach werde ich den setFree Service erläutern und das Migrationsvorgehen beschreiben.
+Im Anschluss zeige ich Ihnen, wie ich das Projekt durchgeführt habe und
+
+Folie 3 - Projektbeschreibung
+Okay, dann beginne ich jetzt mit der Projektbeschreibung
+
+Folie 4 - Projektbeschreibung: AWS
+Derzeit wird die Infrastruktur für den Webshop von otto.de über einen Dienstleister in dessen Rechenzentrum gehostet.
+In Zukunft soll die gesamte Infrastruktur für den Shop in der AWS gehostet werden.
+Jedes Team wird die Migration selbstverantwortet durchführen.
+Die Teams können sich selber für die zu verwendenden Tools und Services entscheiden.
+Das Ziel für eine erfolgreiche Migration ist, dass alle Teams ihre Services wie bisher bereitstellen können.
+
+Folie 5 - Projektbeschreibung: Team Social
+Ich habe meine Projektarbeit in dem Team Social durchgeführt.
+Hier sollte der Microservice imageprocessing als nächstes migriert werden.
+Für mein Projekt sollte vorerst nur die Migration eines Teil-Services durchgeführt werden.
+Bei diesem Teil-Service handelt es sich im die setFree Funktion.
+Nach der erfolgreichen Migration sollte für den gesamten Microservice entschieden werden, ob sich diese Migrationsvorgehensweise anbietet.
+
+Folie 6 - SetFree Teil-Microservice
+Nun werde ich den setFree Teil-Microservice kurz beleuchten.
+
+Folie 7 + 8 - setFree: Freistellung
+In der Webapplikation StyleCreator auf otto.de ist es möglich Collagen aus Einzelbildern zu erstellen.
+Auf dem Bild hier sieht man eine Beispielcollage.
+Es können allerdings nur Bilder verwendet werden, die auf dem OTTO Imageserver verfügbar sind.
+Diese Einzelbilder können auch freigestellt werden.
+Ein Bild frei zu stellen bedeutet den Hintergrund eines Bildes zu entfernen. *klick* -> Folie 8
+Der setFree-Teil-Microservice lädt die Bilder herunter und schneidet sie dann man mit Imagemagick frei.
+Die Bilder werden dann direkt im Browser sichtbar gemacht.
+
+Folie 9 - setFree: ImageMagick
+ImageMagick ist ein freies Werkzeug zur Erstellung von Rastergrafiken.
+Es ist auf diversen Linux-Distribution bereits vorinstalliert.
+Es gibt einen Ableger von ImageMagick und dieser heißt GraphicsMagick und der hat die selben Funktionalitäten wie ImageMagick.
+Der Code für den setFree Service ist in Node.js geschrieben.
+Es gibt ein Node.js package mit dem man GraphicsMagick benutzen kann, hierfür muss allerdings ImageMagick auf dem ausführenden Gerät installiert sein.
