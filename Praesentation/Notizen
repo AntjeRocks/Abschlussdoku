@@ -43,4 +43,7 @@ ImageMagick ist ein freies Werkzeug zur Erstellung von Rastergrafiken.
 Es ist auf diversen Linux-Distribution bereits vorinstalliert.
 Es gibt einen Ableger von ImageMagick und dieser heißt GraphicsMagick und der hat die selben Funktionalitäten wie ImageMagick.
 Der Code für den setFree Service ist in Node.js geschrieben.
-Es gibt ein Node.js package mit dem man GraphicsMagick benutzen kann, hierfür muss allerdings ImageMagick auf dem ausführenden Gerät installiert sein.
+Es gibt ein Node.js package mit dem man sowohl GraphicsMagick als auch Imagemagick nutzen kann.
+Hierfür muss allerdings eines der Pakete auf dem ausführenden Gerät installiert sein.
+
+Folie 11 - Projektplanung: Entscheidung
