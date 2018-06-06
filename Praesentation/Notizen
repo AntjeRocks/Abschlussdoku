@@ -94,4 +94,17 @@ Dieses ist das kleinste Code-Beispiel.
 Hier wird genau eine Ressource innerhalb eines Stacks erzeugt und zwar ein AWS CodeCommit Repository.
 Dieses wird wie der Kommentar andeutet auch nur dann benötigt werden, wenn wir das Repository neu anlegen.
 
-Folie 19 - 
+Folie 19 - Pipeline: Definition
+Im Folgenden möchte kurz anschneiden wie ich die Pipeline definiert habe.
+Ich werde nicht auf jede einzelne Zeile eingehen.
+Hier sieht man, dass eine Pipeline definiert wird und dass ein S3 Bucket als Speicher für die Artefakte genutzt wird.
+Die Zeile RestartExecutionOnUpdate managed , dass die Pipeline erneut ausgeführt wird, wenn ein Update eingespielt wird.
+Dann können Stages definiert werden.
+Stages benötigen immer einen Namen und eine Action.
+
+Folie 20 - Pipeline: Stage
+Hier ist eine Beispiel Stage.
+Es ist der Build step durch den der Service erstellt wird.
+Ich habe ein CodeBuildProjekt als Configuration hinterlegt.
+
+Folie 21 - Pipeline: CodeBuildProjekt
