@@ -83,4 +83,15 @@ Nach einigem Troubleshooting habe ich dann noch die Binary Media Types Einstellu
 Der Service war dann zu diesem Zeitpunkt funktionsfähig.
 Anschließend habe ich noch Skripte für das Alarming, das Logging und Monitoring geschrieben.
 
-Folie 17 - Repository anlegen
+Folie 17 - CloudFormation
+Bevor ich die einzelnen Code-Schnipsel vorstelle möchte ich gerne erklären was ich mit Skript meine.
+In der AWS können Ressourcen über so genannte CloudFormation Vorlagen erzeugt und als Stacks zusammengefasst werden.
+CloudFormation Skripte können in json oder yaml Format verfasst werden.
+Die kommenden Skriptbeispiele werden alle im yaml-Format sein, da sich das Team darauf verständigt hat dieses Format zu nutzen.
+
+Folie 18 - Repository
+Dieses ist das kleinste Code-Beispiel.
+Hier wird genau eine Ressource innerhalb eines Stacks erzeugt und zwar ein AWS CodeCommit Repository.
+Dieses wird wie der Kommentar andeutet auch nur dann benötigt werden, wenn wir das Repository neu anlegen.
+
+Folie 19 - 
