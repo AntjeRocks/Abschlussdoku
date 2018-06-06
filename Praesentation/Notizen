@@ -46,4 +46,41 @@ Der Code für den setFree Service ist in Node.js geschrieben.
 Es gibt ein Node.js package mit dem man sowohl GraphicsMagick als auch Imagemagick nutzen kann.
 Hierfür muss allerdings eines der Pakete auf dem ausführenden Gerät installiert sein.
 
-Folie 11 - Projektplanung: Entscheidung
+Folie 10 - Projektplanung
+Ich möchte nun weiterleiten auf den nächsten Abschnitt und kurz meine Projektplanung erläutern.
+
+Folie 11 - Projektplanung: Zeitplan
+Auf der Tabelle rechts sieht man die von mir erstellte Zeitplanung.
+Als ich sie erstellt hatte, hatte ich schon eine Idee wie ich ungefähr vorgehen werde und habe daher viele Arbeitsschritte optimistisch bewertet.
+Man sieht dass bei vielen Punkten nur eine Stunde Zeit geplant war.
+Das war natürlich kritisch, wenn an diesen Stellen unerwartete Blocker aufgetauscht wären, hätte es den Plan durcheinander gebracht.
+
+Folie 12 - Projektplanung: Technologie
+Im weiteren Verlauf der Planung habe ich die technologische Umsetzbarkeit überprüft.
+Für die Migration in die AWS hatte ich zwei Technologien zur Auswahl.
+Ich hätte den Teil-Microservice in einen EC2-Container oder als Lambda Funktion bereitstellen können.
+Ich habe beide Möglichkeiten mittels einer Nutzwertanalyse verglichen.
+
+Folie 13 - Projektplanung: Auswahlkriterien
+Um die Varianten miteinander vergleichen zu können habe ich die Auswahlkriterien nach Vorgabe der Abteilung aufgestellt.
+Als Wertungsskala habe ich mich für das Schulnotensystem entschieden.
+
+Folie 14 - Projektplanung: Nutzwertanalyse
+Anschließend habe ich die Daten zusammengefasst und anhand der Fakten den Nutzwert errechnet.
+Das Resultat dieser Analyse war, dass sich die Implementierung als Lamdba Funktion anbietet.
+
+Folie 15 - Projektdurchführung
+Als nächstes möchte die Projektdurchführung veranschaulichen.
+
+Folie 16 - Inhaltsübersicht
+Hier ist die Reihenfolge zu sehen, in der ich die einzelnen Punkte in etwa abgearbeitet habe.
+Ich werde kurz jeden Punkt erläutern und auf den nächsten Folien kann ich jeweils ein kurzes Code-Beispiel für die Punkte zeigen.
+Als erstes habe ich ein Repository in der AWS angelegt.
+Dann habe ich den Service verändert so dass er als Lambda Funktion aufgerufen werden kann.
+Ich habe ein Pipeline-Skript geschrieben und diese manuell in die AWS deployed.
+Danach habe ich ein AWS Api-Gateway Skript erstellt und dieses in der Pipeline lauffähig gemacht.
+Nach einigem Troubleshooting habe ich dann noch die Binary Media Types Einstellung verändert.
+Der Service war dann zu diesem Zeitpunkt funktionsfähig.
+Anschließend habe ich noch Skripte für das Alarming, das Logging und Monitoring geschrieben.
+
+Folie 17 - Repository anlegen
