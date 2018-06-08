@@ -57,7 +57,15 @@ Folie 12 - Projektplanung: Technologie
 Während der Planungsphase habe ich mir überlegt, wie ich die Migration technisch umsetze.
 Ich hatte zwei Technologien zur Auswahl.
 Ich hätte den Teil-Microservice in einen EC2-Container oder als Lambda Funktion bereitstellen können.
-Ein EC2 Container ist eine Umgebung die ununterbrochen läuft.
+
+
+
+Ein EC2 Container ist eine Umgebung die dauerhaft läuft.
+Lambda -> on Demand -> ABrechnung via usage.
+EC2 ist feinteiligetr konfigurierbar.
+Lambda Funktionen können mit weniher konfig aufwand deployed werden
+
+
 Eine Lambda Funktion erstellt einen EC2 Container und löscht ihn im Anschluss wieder.
 ImageMagick ist bereits auf den Containern in der AWS installiert.
 Ich habe beide Möglichkeiten mittels einer Nutzwertanalyse verglichen.
