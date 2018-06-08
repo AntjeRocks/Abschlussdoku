@@ -9,3 +9,4 @@ Resources:
       BinaryMediaTypes:
         - "*/*"
       FailOnWarning: true
+

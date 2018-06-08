@@ -21,4 +21,6 @@ Resources:
       Period: 300
       Statistics: Sum
       Threshold: 10
-      ThreatMissingData: missing
+      TreatMissingData: notBreaching
+
+

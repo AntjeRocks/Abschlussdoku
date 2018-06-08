@@ -12,10 +12,12 @@ ApiStage:
   Type: "AWS::ApiGateway::Stage"
   Properties:
     DeploymentId: !Ref ApiDeployment
-    MehtodSettings:
+    MethodSettings:
       - DataTraceEnabled: true
         HttpMethod: "*"
         LoggingLevel: INFO
         ResourcePath: "/*"
     RestApiId: !Ref Api
     StageName: !Ref DeploymentStage
+
+

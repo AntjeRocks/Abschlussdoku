@@ -15,3 +15,4 @@ Resources:
       Handler: imageprocessing.setfree
       Runtime: nodejs6.10
       Timeout: 100
+
