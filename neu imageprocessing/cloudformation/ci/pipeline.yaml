@@ -1,0 +1,243 @@
+---
+AWSTemplateFormatVersion: 2010-09-09
+
+Description: Pipeline for imageprocessing lambda service
+
+Parameters:
+  LiveAccountId:
+    Type: String
+    AllowedPattern: "[0-9]*"
+    Default: "407420265679"
+    MaxLength: 12
+    MinLength: 12
+  NonliveAccountId:
+    Type: String
+    AllowedPattern: "[0-9]*"
+    Default: "545150822921"
+    MaxLength: 12
+    MinLength: 12
+  ServiceName:
+    Type: String
+    Default: "imageprocessing"
+  TeamName:
+    Type: String
+    Default: "social"
+  PipelineRunnerRoleName:
+    Type: String
+    Default: imageprocessing-pipeline-runner
+  PipelineExecutorRoleName:
+    Type: String
+    Default: imageprocessing-pipeline-executor
+
+Resources:
+  ImageprocessingProject:
+    Type: "AWS::CodeBuild::Project"
+    Properties:
+      Name: !Sub "${ServiceName}"
+      Artifacts:
+        Type: CODEPIPELINE
+      EncryptionKey: !ImportValue pipeline-artifact-store-encryption-key
+      Environment:
+        Type: LINUX_CONTAINER
+        ComputeType: BUILD_GENERAL1_SMALL #BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, and BUILD_GENERAL1_LARGE
+        Image: aws/codebuild/nodejs:7.0.0
+      ServiceRole: !Sub "arn:aws:iam::${NonliveAccountId}:role/${PipelineExecutorRoleName}"
+      Source:
+        Type: CODEPIPELINE
+      Tags:
+        - Key: team
+          Value: !Sub "${TeamName}"
+        - Key: vertical
+          Value: !Sub "${TeamName}"
+        - Key: service
+          Value: !Sub "${ServiceName}"
+
+  ImageprocessingPipeline:
+    Type: "AWS::CodePipeline::Pipeline"
+    Properties:
+      Name: !Sub "${ServiceName}"
+      ArtifactStore:
+        Type: S3
+        EncryptionKey:
+          Id: !ImportValue pipeline-artifact-store-encryption-key
+          Type: KMS
+        Location: !ImportValue pipeline-artifact-store
+      RestartExecutionOnUpdate: true
+      RoleArn: !Sub "arn:aws:iam::${NonliveAccountId}:role/${PipelineRunnerRoleName}"
+      Stages:
+        # https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements
+        - Name: checkout
+          Actions:
+            - Name: !Sub "${ServiceName}"
+              ActionTypeId:
+                Category: Source
+                Owner: AWS
+                Provider: CodeCommit
+                Version: 1
+              Configuration:
+                BranchName: master
+                RepositoryName: !Sub "${ServiceName}"
+              OutputArtifacts:
+                - Name: Source
+              RunOrder: 1
+        - Name: common
+          Actions:
+            - Name: service-roles-nonlive
+              ActionTypeId:
+                Category: Deploy
+                Owner: AWS
+                Provider: CloudFormation
+                Version: 1
+              Configuration:
+                ActionMode: CREATE_UPDATE
+                Capabilities: CAPABILITY_NAMED_IAM
+                RoleArn: !Sub "arn:aws:iam::${NonliveAccountId}:role/${PipelineExecutorRoleName}"
+                StackName: !Sub "${ServiceName}-service-roles-develop"
+                TemplatePath: "Source::cloudformation/ci/service-roles.yaml"
+              InputArtifacts:
+                - Name: Source
+              RunOrder: 1
+              RoleArn: !Sub "arn:aws:iam::${NonliveAccountId}:role/${PipelineExecutorRoleName}"
+            - Name: service-roles-live
+              ActionTypeId:
+                Category: Deploy
+                Owner: AWS
+                Provider: CloudFormation
+                Version: 1
+              Configuration:
+                ActionMode: CREATE_UPDATE
+                Capabilities: CAPABILITY_NAMED_IAM
+                RoleArn: !Sub "arn:aws:iam::${LiveAccountId}:role/${PipelineExecutorRoleName}"
+                StackName: !Sub "${ServiceName}-service-roles-live"
+                TemplatePath: "Source::cloudformation/ci/service-roles.yaml"
+              InputArtifacts:
+                - Name: Source
+              RunOrder: 2
+              RoleArn: !Sub "arn:aws:iam::${LiveAccountId}:role/${PipelineExecutorRoleName}"
+            - Name: pipeline
+              ActionTypeId:
+                Category: Deploy
+                Owner: AWS
+                Provider: CloudFormation
+                Version: 1
+                # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html
+              Configuration:
+                ActionMode: CREATE_UPDATE
+                RoleArn: !Sub "arn:aws:iam::${NonliveAccountId}:role/${PipelineExecutorRoleName}"
+                StackName: !Sub "${ServiceName}-pipeline"
+                TemplatePath: !Sub "Source::cloudformation/ci/pipeline.yaml"
+              InputArtifacts:
+                - Name: Source
+              RoleArn: !Sub "arn:aws:iam::${NonliveAccountId}:role/${PipelineExecutorRoleName}"
+              RunOrder: 3
+        - Name: build
+          Actions:
+            - Name: !Sub "${ServiceName}"
+              ActionTypeId:
+                Category: Build
+                Owner: AWS
+                Provider: CodeBuild
+                Version: 1
+              Configuration:
+                ProjectName: !Ref ImageprocessingProject
+              InputArtifacts:
+                - Name: Source
+              OutputArtifacts:
+                - Name: Build
+              RunOrder: 1
+        - Name: deploy-Nonlive
+          Actions:
+            - Name: service
+              ActionTypeId:
+                Category: Deploy
+                Owner: AWS
+                Provider: CloudFormation
+                Version: 1
+              Configuration:
+                ActionMode: CREATE_UPDATE
+                Capabilities: CAPABILITY_NAMED_IAM
+                ParameterOverrides: |
+                  {
+                    "Environment": "develop",
+                    "DeploymentPackageKey": {
+                      "Fn::GetArtifactAtt": ["Build", "ObjectKey"]
+                    }
+                  }
+                RoleArn: !Sub "arn:aws:iam::${NonliveAccountId}:role/${PipelineExecutorRoleName}"
+                StackName: !Sub "${ServiceName}-service-develop"
+                TemplatePath: !Sub "Build::cloudformation/ci/service.yaml"
+              InputArtifacts:
+                - Name: Build
+              RunOrder: 1
+              RoleArn: !Sub "arn:aws:iam::${NonliveAccountId}:role/${PipelineExecutorRoleName}"
+            - Name: api
+              ActionTypeId:
+                Category: Deploy
+                Owner: AWS
+                Provider: CloudFormation
+                Version: 1
+              Configuration:
+                ActionMode: CREATE_UPDATE
+                Capabilities: CAPABILITY_NAMED_IAM
+                ParameterOverrides: |
+                  {
+                    "Environment": "develop",
+                    "DeploymentStage": "DEVELOP",
+                    "CertificateArn" : "arn:aws:acm:us-east-1:545150822921:certificate/885e9726-41a9-4473-a376-0b06d78327b3"
+                  }
+                RoleArn: !Sub "arn:aws:iam::${NonliveAccountId}:role/${PipelineExecutorRoleName}"
+                StackName: !Sub "${ServiceName}-api-develop"
+                TemplatePath: "Build::cloudformation/infrastructure/api.yaml"
+              InputArtifacts:
+                - Name: Build
+              RoleArn: !Sub "arn:aws:iam::${NonliveAccountId}:role/${PipelineExecutorRoleName}"
+              RunOrder: 2
+            - Name: alarming
+              ActionTypeId:
+                Category: Deploy
+                Owner: AWS
+                Provider: CloudFormation
+                Version: 1
+              Configuration:
+                ActionMode: CREATE_UPDATE
+                ParameterOverrides: |
+                  {
+                    "Environment": "develop",
+                    "DeploymentStage": "DEVELOP"
+                  }
+                RoleArn: !Sub "arn:aws:iam::${NonliveAccountId}:role/${PipelineExecutorRoleName}"
+                StackName: !Sub "${ServiceName}-alarming-develop"
+                TemplatePath: "Source::cloudformation/infrastructure/alarming.yaml"
+              InputArtifacts:
+                - Name: Source
+              RoleArn: !Sub "arn:aws:iam::${NonliveAccountId}:role/${PipelineExecutorRoleName}"
+              RunOrder: 3
+            - Name: dashboard
+              ActionTypeId:
+                Category: Deploy
+                Owner: AWS
+                Provider: CloudFormation
+                Version: 1
+              Configuration:
+                ActionMode: CREATE_UPDATE
+                ParameterOverrides: |
+                  {
+                    "Account": "nonlive",
+                    "Environment": "develop"
+                  }
+                RoleArn: !Sub "arn:aws:iam::${NonliveAccountId}:role/${PipelineExecutorRoleName}"
+                StackName: !Sub "${ServiceName}-dashboard-develop"
+                TemplatePath: "Source::cloudformation/infrastructure/dashboard.yaml"
+              InputArtifacts:
+                - Name: Source
+              RoleArn: !Sub "arn:aws:iam::${NonliveAccountId}:role/${PipelineExecutorRoleName}"
+              RunOrder: 4
+Outputs:
+  CodeBuildId:
+    Export:
+      Name: !Sub "${ServiceName}-codebuild-id"
+    Value: !Ref ImageprocessingProject
+  PipelineId:
+    Export:
+      Name: !Sub "${ServiceName}-pipeline-id"
+    Value: !Ref ImageprocessingPipeline

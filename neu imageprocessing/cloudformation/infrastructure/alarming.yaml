@@ -1,0 +1,75 @@
+---
+AWSTemplateFormatVersion: 2010-09-09
+
+Parameters:
+  DeploymentStage:
+    Type: String
+    AllowedValues:
+      - LIVE
+      - DEVELOP
+  Environment:
+    Type: String
+    AllowedValues:
+      - live
+      - develop
+  ServiceName:
+    Type: String
+    Default: imageprocessing
+
+Resources:
+  4xxApiGatewayAlarm:
+    Type: "AWS::CloudWatch::Alarm"
+    Properties:
+      ActionsEnabled: true
+      AlarmName: !Sub "${ServiceName}-${Environment}-http-4XX-gateway-errors"
+      AlarmActions:
+        - !ImportValue {"Fn::Sub": "${Environment}-alarming-sns-topic"}
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      Dimensions:
+        - Name: ApiName
+          Value: !Sub "${ServiceName}-api-${Environment}"
+        - Name: Stage
+          Value: !Sub "${DeploymentStage}"
+      EvaluationPeriods: 1
+      MetricName: 4XXError
+      Namespace: "AWS/ApiGateway"
+      Period: 300
+      Statistic: Sum
+      Threshold: 10
+      TreatMissingData: missing
+  5xxApiGatewayAlarm:
+    Type: "AWS::CloudWatch::Alarm"
+    Properties:
+      AlarmName: !Sub "${ServiceName}-${Environment}-http-5XX-gateway-errors"
+      AlarmActions:
+        - !ImportValue {"Fn::Sub": "${Environment}-alarming-sns-topic"}
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      Dimensions:
+        - Name: ApiName
+          Value: !Sub "${ServiceName}-api-${Environment}"
+        - Name: Stage
+          Value: !Sub "${DeploymentStage}"
+      EvaluationPeriods: 1
+      MetricName: 5XXError
+      Namespace: AWS/ApiGateway
+      Period: 300
+      Statistic: Sum
+      Threshold: 10
+      TreatMissingData: missing
+  LambdaErrorsAlarm:
+    Type: "AWS::CloudWatch::Alarm"
+    Properties:
+      AlarmName: !Sub "${ServiceName}-${Environment}-lambda-function-errors"
+      AlarmActions:
+        - !ImportValue {"Fn::Sub": "${Environment}-alarming-sns-topic"}
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      Dimensions:
+        - Name: FunctionName
+          Value: !Sub "${ServiceName}-setFree"
+      EvaluationPeriods: 1
+      MetricName: Errors
+      Namespace: AWS/Lambda
+      Period: 300
+      Statistic: Sum
+      Threshold: 10
+      TreatMissingData: missing

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/util/imageMathUtil.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">common/util/</a> imageMathUtil.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">29.41% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>5/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">29.41% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>5/17</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+<span class="fstat-no" title="function not covered" >function sin(angle) {</span>
+<span class="cstat-no" title="statement not covered" >  return Math.sin(angle / 180 * Math.PI);</span>
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function cos(angle) {</span>
+<span class="cstat-no" title="statement not covered" >  return Math.cos(angle / 180 * Math.PI);</span>
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function transformToPositiveDegree(angle) {</span>
+<span class="cstat-no" title="statement not covered" >  return (angle + 360) % 360;</span>
+}
+&nbsp;
+class ImageMathUtil {
+  static toAbsolute(total, share) {
+    return Math.round(total * share / 100);
+  }
+&nbsp;
+  static calculateRotationOffset<span class="fstat-no" title="function not covered" >(rotation, partImageWidth, partImageHeight) {</span>
+<span class="cstat-no" title="statement not covered" >    let imageHeightAfterRotation = 0;</span>
+<span class="cstat-no" title="statement not covered" >    let imageWidthAfterRotation = 0;</span>
+<span class="cstat-no" title="statement not covered" >    const positiveRotation = transformToPositiveDegree(rotation);</span>
+<span class="cstat-no" title="statement not covered" >    if (positiveRotation &gt;= 0 &amp;&amp; positiveRotation &lt; 90 || positiveRotation &gt;= 180 &amp;&amp; positiveRotation &lt; 270) {</span>
+<span class="cstat-no" title="statement not covered" >      imageWidthAfterRotation = Math.abs(</span>
+        partImageWidth * cos(rotation) + partImageHeight * sin(rotation));
+<span class="cstat-no" title="statement not covered" >      imageHeightAfterRotation = Math.abs(</span>
+        partImageWidth * sin(rotation) + partImageHeight * cos(rotation));
+    } else {
+<span class="cstat-no" title="statement not covered" >      imageWidthAfterRotation = Math.abs(</span>
+        partImageHeight * cos(rotation - 90) + partImageWidth * sin(rotation - 90));
+<span class="cstat-no" title="statement not covered" >      imageHeightAfterRotation = Math.abs(</span>
+        partImageHeight * sin(rotation - 90) + partImageWidth * cos(rotation - 90));
+    }
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      x: (imageWidthAfterRotation - partImageWidth) / 2,
+      y: (imageHeightAfterRotation - partImageHeight) / 2
+    };
+  }
+}
+&nbsp;
+module.exports = ImageMathUtil;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jan 26 2018 12:57:32 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

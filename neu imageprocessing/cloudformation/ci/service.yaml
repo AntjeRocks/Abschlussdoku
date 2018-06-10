@@ -1,0 +1,65 @@
+---
+AWSTemplateFormatVersion: 2010-09-09
+
+Parameters:
+  DeploymentPackageKey:
+    Type: String
+  Environment:
+    Type: String
+    AllowedValues:
+      - live
+      - develop
+  LiveAccountId:
+    Type: String
+    AllowedPattern: "[0-9]*"
+    Default: "407420265679"
+    MaxLength: 12
+    MinLength: 12
+  NonliveAccountId:
+    Type: String
+    AllowedPattern: "[0-9]*"
+    Default: "545150822921"
+    MaxLength: 12
+    MinLength: 12
+  ServiceName:
+    Type: String
+    Default: "imageprocessing"
+  TeamName:
+    Type: String
+    Default: "social"
+  LambdaRunnerRoleName:
+    Type: String
+    Default: imageprocessing-pipeline-lambda-runner
+
+Conditions:
+  LiveAccount: !Equals [!Ref "AWS::AccountId", !Ref LiveAccountId]
+  NonliveAccount: !Equals [!Ref "AWS::AccountId", !Ref NonliveAccountId]
+
+Resources:
+  SetFreeLambdaFunction:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Code:
+        S3Bucket: de-otto-social-pipeline-artifact-store
+        S3Key: !Ref DeploymentPackageKey
+      Description: Social Imageprocessing setFree Service
+      FunctionName: imageprocessing-setFree
+      Handler: imageprocessing.setFree
+      Role: !Join ["", ["arn:aws:iam::", {"Ref": "AWS::AccountId"}, {"Fn::Sub": ":role/${LambdaRunnerRoleName}"}]]
+      Runtime: nodejs6.10
+      Tags:
+        - Key: team
+          Value: !Sub "${TeamName}"
+        - Key: vertical
+          Value: !Sub "${TeamName}"
+        - Key: service
+          Value: !Sub "${ServiceName}"
+        - Key: environment
+          Value: !Sub "${Environment}"
+      Timeout: 10
+
+Outputs:
+  SetFreeFunctionArn:
+    Export:
+      Name: imageprocessing-setFree-function-arn
+    Value: !GetAtt SetFreeLambdaFunction.Arn

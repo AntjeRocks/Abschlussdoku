@@ -1,0 +1,25 @@
+{
+  "env": {
+    "jasmine": true
+  },
+  "rules": {
+    "max-lines": "off",
+    "no-empty-function": "off",
+    "no-plusplus": "off",
+    "prefer-promise-reject-errors": "off",
+    "max-nested-callbacks": "off",
+    "new-cap": [
+      "error",
+      {
+        "newIsCap": true,
+        "newIsCapExceptions": [
+          "gm"
+        ],
+        "capIsNew": true,
+        "capIsNewExceptions": [
+          "Grid"
+        ]
+      }
+    ]
+  }
+}

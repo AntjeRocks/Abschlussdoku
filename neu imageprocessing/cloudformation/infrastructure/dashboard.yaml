@@ -1,0 +1,320 @@
+---
+AWSTemplateFormatVersion: 2010-09-09
+
+Parameters:
+  Account:
+    Type: String
+    AllowedValues:
+      - nonlive
+      - live
+  Environment:
+    Type: String
+    AllowedValues:
+      - live
+      - develop
+  LiveAccountId:
+    Type: String
+    AllowedPattern: "[0-9]*"
+    Default: "407420265679"
+    MaxLength: 12
+    MinLength: 12
+  NonliveAccountId:
+    Type: String
+    AllowedPattern: "[0-9]*"
+    Default: "545150822921"
+    MaxLength: 12
+    MinLength: 12
+  ServiceName:
+    Type: String
+    Default: imageprocessing
+
+Conditions:
+  LiveAccount: !Equals [!Ref "AWS::AccountId", !Ref LiveAccountId]
+  NonliveAccount: !Equals [!Ref "AWS::AccountId", !Ref NonliveAccountId]
+
+Resources:
+  ImageprocessingDevelopDashboard:
+    Type: "AWS::CloudWatch::Dashboard"
+    Condition: NonliveAccount
+    Properties:
+      DashboardName: imageprocessing-develop
+      DashboardBody:
+        '{
+          "widgets":[
+            {
+              "type":"metric",
+              "x":0,
+              "y":0,
+              "width":8,
+              "height":8,
+              "properties":{
+                "metrics":[
+                  [
+                    "AWS/ApiGateway",
+                    "Count",
+                    "ApiName",
+                    "imageprocessing-api-develop",
+                    "Stage",
+                    "DEVELOP"
+                  ]
+                ],
+                "period":300,
+                "stat":"Sum",
+                "region":"eu-central-1",
+                "title":"API Gateway Count"
+              }
+            },
+            {
+              "type":"metric",
+              "x":8,
+              "y":0,
+              "width":8,
+              "height":8,
+              "properties":{
+                "metrics":[
+                  [
+                    "AWS/ApiGateway",
+                    "4XXError",
+                    "ApiName",
+                    "imageprocessing-api-develop",
+                    "Stage",
+                    "DEVELOP"
+                  ]
+                ],
+                "period":300,
+                "stat":"Sum",
+                "region":"eu-central-1",
+                "title":"API-Gateway 4XX"
+              }
+            },
+            {
+              "type":"metric",
+              "x":16,
+              "y":0,
+              "width":8,
+              "height":8,
+              "properties":{
+                "metrics":[
+                  [
+                    "AWS/ApiGateway",
+                    "5XXError",
+                    "ApiName",
+                    "imageprocessing-api-develop",
+                    "Stage",
+                    "DEVELOP"
+                  ]
+                ],
+                "period":300,
+                "stat":"Sum",
+                "region":"eu-central-1",
+                "title":"API-Gateway 5XX"
+              }
+            },
+            {
+              "type":"metric",
+              "x":0,
+              "y":8,
+              "width":12,
+              "height":8,
+              "properties":{
+                "metrics":[
+                  [
+                    "AWS/Lambda",
+                    "Invocations",
+                    "FunctionName",
+                    "imageprocessing-setFree"
+                  ]
+                ],
+                "period":300,
+                "stat":"Sum",
+                "region":"eu-central-1",
+                "title":"imageprocessing-setfree Invocations"
+              }
+            },
+            {
+              "type":"metric",
+              "x":12,
+              "y":8,
+              "width":12,
+              "height":8,
+              "properties":{
+                "metrics":[
+                  [
+                    "AWS/Lambda",
+                    "Errors",
+                    "FunctionName",
+                    "imageprocessing-setFree"
+                  ]
+                ],
+                "period":300,
+                "stat":"Sum",
+                "region":"eu-central-1",
+                "title":"imageprocessing-setfree Errors"
+              }
+            },
+            {
+              "type":"metric",
+              "x":0,
+              "y":16,
+              "width":24,
+              "height":8,
+              "properties":{
+                "metrics":[
+                  [
+                    "AWS/Lambda",
+                    "Duration",
+                    "FunctionName",
+                    "imageprocessing-setFree"
+                  ]
+                ],
+                "period":300,
+                "stat":"Average",
+                "region":"eu-central-1",
+                "title":"imageprocessing-setfree Average Duration"
+              }
+            }
+          ]
+        }'
+
+  ImageprocessingLiveDashboard:
+      Type: "AWS::CloudWatch::Dashboard"
+      Condition: LiveAccount
+      Properties:
+        DashboardName: imageprocessing-live
+        DashboardBody:
+          '{
+            "widgets":[
+              {
+                "type":"metric",
+                "x":0,
+                "y":0,
+                "width":8,
+                "height":8,
+                "properties":{
+                  "metrics":[
+                    [
+                      "AWS/ApiGateway",
+                      "Count",
+                      "ApiName",
+                      "imageprocessing-api-live",
+                      "Stage",
+                      "LIVE"
+                    ]
+                  ],
+                  "period":300,
+                  "stat":"Sum",
+                  "region":"eu-central-1",
+                  "title":"API Gateway Count"
+                }
+              },
+              {
+                "type":"metric",
+                "x":8,
+                "y":0,
+                "width":8,
+                "height":8,
+                "properties":{
+                  "metrics":[
+                    [
+                      "AWS/ApiGateway",
+                      "4XXError",
+                      "ApiName",
+                      "imageprocessing-api-live",
+                      "Stage",
+                      "LIVE"
+                    ]
+                  ],
+                  "period":300,
+                  "stat":"Sum",
+                  "region":"eu-central-1",
+                  "title":"API-Gateway 4XX"
+                }
+              },
+              {
+                "type":"metric",
+                "x":16,
+                "y":0,
+                "width":8,
+                "height":8,
+                "properties":{
+                  "metrics":[
+                    [
+                      "AWS/ApiGateway",
+                      "5XXError",
+                      "ApiName",
+                      "imageprocessing-api-live",
+                      "Stage",
+                      "LIVE"
+                    ]
+                  ],
+                  "period":300,
+                  "stat":"Sum",
+                  "region":"eu-central-1",
+                  "title":"API-Gateway 5XX"
+                }
+              },
+              {
+                "type":"metric",
+                "x":0,
+                "y":8,
+                "width":12,
+                "height":8,
+                "properties":{
+                  "metrics":[
+                    [
+                      "AWS/Lambda",
+                      "Invocations",
+                      "FunctionName",
+                      "imageprocessing-setFree"
+                    ]
+                  ],
+                  "period":300,
+                  "stat":"Sum",
+                  "region":"eu-central-1",
+                  "title":"imageprocessing-setfree Invocations"
+                }
+              },
+              {
+                "type":"metric",
+                "x":12,
+                "y":8,
+                "width":12,
+                "height":8,
+                "properties":{
+                  "metrics":[
+                    [
+                      "AWS/Lambda",
+                      "Errors",
+                      "FunctionName",
+                      "imageprocessing-setFree"
+                    ]
+                  ],
+                  "period":300,
+                  "stat":"Sum",
+                  "region":"eu-central-1",
+                  "title":"imageprocessing-setfree Errors"
+                }
+              },
+              {
+                "type":"metric",
+                "x":0,
+                "y":16,
+                "width":24,
+                "height":8,
+                "properties":{
+                  "metrics":[
+                    [
+                      "AWS/Lambda",
+                      "Duration",
+                      "FunctionName",
+                      "imageprocessing-setFree"
+                    ]
+                  ],
+                  "period":300,
+                  "stat":"Average",
+                  "region":"eu-central-1",
+                  "title":"imageprocessing-setfree Average Duration"
+                }
+              }
+            ]
+          }'

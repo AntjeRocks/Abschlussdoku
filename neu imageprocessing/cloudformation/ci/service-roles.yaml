@@ -1,0 +1,337 @@
+---
+AWSTemplateFormatVersion: 2010-09-09
+
+Parameters:
+  LiveAccountId:
+    Type: String
+    Default: "407420265679"
+  NonliveAccountId:
+    Type: String
+    Default: "545150822921"
+
+  ServiceName:
+    Type: String
+    Default: imageprocessing
+  LambdaRunnerRoleName:
+    Type: String
+    Default: imageprocessing-pipeline-lambda-runner
+  RunnerRoleName:
+    Type: String
+    Default: imageprocessing-pipeline-runner
+  ExecutorRoleName:
+    Type: String
+    Default: imageprocessing-pipeline-executor
+  RegionId:
+    Type: String
+    Default: eu-central-1
+  KmsKeyId:
+    Type: String
+    Default: 87902172-04a0-4314-ae5a-805656251545
+
+Conditions:
+  LiveAccount: !Equals [!Ref "AWS::AccountId", !Ref LiveAccountId]
+  NonliveAccount: !Equals [!Ref "AWS::AccountId", !Ref NonliveAccountId]
+
+Resources:
+  RunnerRole:
+    Type: "AWS::IAM::Role"
+    Condition: NonliveAccount
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: "sts:AssumeRole"
+            Effect: Allow
+            Principal:
+              Service:
+                - codepipeline.amazonaws.com
+      ManagedPolicyArns:
+        - !Ref RunnerPolicy
+      Path: /
+      RoleName: !Sub "${ServiceName}-pipeline-runner"
+
+  RunnerPolicy:
+    Type: "AWS::IAM::ManagedPolicy"
+    Condition: NonliveAccount
+    Properties:
+      ManagedPolicyName: !Sub "${RunnerRoleName}"
+      Path: /
+      PolicyDocument:
+        Statement:
+          - Action:
+              - "cloudfront:UpdateDistribution"
+            Effect: Allow
+            Resource: "*"
+          - Action:
+              - "codebuild:CreateProject"
+              - "codebuild:BatchGet*"
+              - "codebuild:List*"
+              - "codebuild:StartBuild"
+              - "codebuild:StopBuild"
+              - "codebuild:UpdateProject"
+            Effect: Allow
+            Resource:
+              - !Sub "arn:aws:codebuild:${RegionId}:${NonliveAccountId}:project/${ServiceName}*"
+          - Action:
+              - "codecommit:BatchGet*"
+              - "codecommit:Describe*"
+              - "codecommit:Get*"
+              - "codecommit:GitPull"
+              - "codecommit:List*"
+              - "codecommit:UploadArchive"
+            Effect: Allow
+            Resource:
+              - !Sub "arn:aws:codecommit:${RegionId}:${NonliveAccountId}:${ServiceName}*"
+          - Action:
+              - "iam:GetRole"
+              - "iam:PassRole"
+            Effect: Allow
+            Resource:
+              - !Sub "arn:aws:iam::${NonliveAccountId}:role/${ExecutorRoleName}"
+          - Action:
+              - "kms:Decrypt"
+              - "kms:Encrypt"
+              - "kms:GenerateDataKey"
+              - "kms:ReEncrypt*"
+            Effect: Allow
+            Resource:
+              - !Sub "arn:aws:kms:${RegionId}:${NonliveAccountId}:key/${KmsKeyId}"
+          - Action:
+              - "s3:GetBucket*"
+              - "s3:GetObject*"
+              - "s3:List*"
+              - "s3:PutBucket*"
+              - "s3:PutObject*"
+            Effect: Allow
+            Resource:
+              - !Sub "arn:aws:s3:::de-otto-*"
+          - Action:
+              - "sts:AssumeRole"
+            Effect: Allow
+            Resource:
+              - !Sub "arn:aws:iam::${LiveAccountId}:role/${ExecutorRoleName}"
+              - !Sub "arn:aws:iam::${NonliveAccountId}:role/${ExecutorRoleName}"
+        Version: 2012-10-17
+
+  ExecutorPolicy:
+    Type: "AWS::IAM::ManagedPolicy"
+    Properties:
+      ManagedPolicyName: !Sub "${ExecutorRoleName}"
+      Path: /
+      PolicyDocument:
+        Statement:
+          - Action:
+              - "acm:AddTagsToCertificate"
+              - "acm:Describe*"
+              - "acm:RequestCertificate"
+            Effect: Allow
+            Resource: "*"
+          - Action:
+              - "apigateway:DELETE"
+              - "apigateway:GET"
+              - "apigateway:HEAD"
+              - "apigateway:OPTIONS"
+              - "apigateway:PATCH"
+              - "apigateway:POST"
+              - "apigateway:PUT"
+            Effect: Allow
+            Resource: "*"
+          - Action:
+              - "cloudformation:CreateChangeSet"
+              - "cloudformation:CreateStack"
+              - "cloudformation:DeleteChangeSet"
+              - "cloudformation:DeleteStack"
+              - "cloudformation:Describe*"
+              - "cloudformation:ExecuteChangeSet"
+              - "cloudformation:List*"
+              - "cloudformation:SetStackPolicy"
+              - "cloudformation:UpdateStack"
+              - "cloudformation:ValidateTemplate"
+            Effect: Allow
+            Resource: "*"
+          - Action:
+              - "cloudwatch:DeleteAlarms"
+              - "cloudwatch:DescribeAlarms"
+              - "cloudwatch:PutMetricAlarm"
+              - "cloudwatch:GetDashboard"
+              - "cloudwatch:ListDashboards"
+              - "cloudwatch:PutDashboard"
+              - "cloudwatch:DeleteDashboard"
+            Effect: Allow
+            Resource: "*"
+          - Action:
+              - "codebuild:CreateProject"
+              - "codebuild:DeleteProject"
+              - "codebuild:UpdateProject"
+            Effect: Allow
+            Resource:  !Sub "arn:aws:codebuild:${RegionId}:${NonliveAccountId}:project/${ServiceName}*"
+          - Action:
+              - "codepipeline:Get*"
+              - "codepipeline:List*"
+              - "codepipeline:StartPipelineExecution"
+              - "codepipeline:UpdatePipeline"
+            Effect: Allow
+            Resource:
+              - !Sub "arn:aws:codepipeline:${RegionId}:${NonliveAccountId}:${ServiceName}*"
+          - Action:
+              - "events:DeleteRule"
+              - "events:DescribeRule"
+              - "events:PutRule"
+              - "events:RemoveTargets"
+              - "events:PutTargets"
+            Effect: Allow
+            Resource:
+              - !Sub "arn:aws:events:${RegionId}:${NonliveAccountId}:rule/${ServiceName}*"
+          - Action:
+              - "iam:AttachRolePolicy"
+              - "iam:AttachUserPolicy"
+              - "iam:CreatePolicy"
+              - "iam:CreatePolicyVersion"
+              - "iam:CreateRole"
+              - "iam:CreateUser"
+              - "iam:DeletePolicy"
+              - "iam:DeletePolicyVersion"
+              - "iam:DetachRolePolicy"
+              - "iam:DetachUserPolicy"
+              - "iam:Get*"
+              - "iam:List*"
+              - "iam:PassRole"
+              - "iam:PutRolePolicy"
+              - "iam:PutUserPolicy"
+              - "iam:Update*"
+            Effect: Allow
+            Resource:
+              - !Sub "arn:aws:iam::${NonliveAccountId}:policy/${ServiceName}*"
+              - !Sub "arn:aws:iam::${LiveAccountId}:policy/${ServiceName}*"
+              - !Sub "arn:aws:iam::${NonliveAccountId}:role/${RunnerRoleName}"
+              - !Sub "arn:aws:iam::${NonliveAccountId}:role/${ExecutorRoleName}"
+              - !Sub "arn:aws:iam::${LiveAccountId}:role/${ExecutorRoleName}"
+              - !Sub "arn:aws:iam::${NonliveAccountId}:role/${LambdaRunnerRoleName}"
+              - !Sub "arn:aws:iam::${LiveAccountId}:role/${LambdaRunnerRoleName}"
+          - Action:
+              - "lambda:*" # use '*' since we already had to nearly add every right
+            Effect: Allow
+            Resource: "*"
+          - Action:
+              - "logs:CreateLogGroup"
+              - "logs:CreateLogStream"
+              - "logs:DeleteLogGroup"
+              - "logs:DescribeLogGroups"
+              - "logs:PutLogEvents"
+              - "logs:PutMetricFilter"
+              - "logs:PutRetentionPolicy"
+            Effect: Allow
+            Resource: "*"
+          - Action:
+              - "route53:ChangeResourceRecordSets"
+              - "route53:ChangeTagsForResource"
+              - "route53:CreateHostedZone"
+              - "route53:DeleteHostedZone"
+              - "route53:Get*"
+              - "route53:List*"
+            Effect: Allow
+            Resource: "*"
+          - Action:
+              - "sns:CreateTopic"
+              - "sns:DeleteTopic"
+              - "sns:GetTopicAttributes"
+              - "sns:ListTopics"
+              - "sns:Subscribe"
+              - "sns:Unsubscribe"
+            Effect: Allow
+            Resource: "*"
+          - Action:
+              - "kms:Decrypt"
+              - "kms:Encrypt"
+              - "kms:GenerateDataKey"
+              - "kms:ReEncrypt*"
+            Effect: Allow
+            Resource:
+              - !Sub "arn:aws:kms:${RegionId}:${NonliveAccountId}:key/${KmsKeyId}"
+          - Action:
+              - "s3:GetBucket*"
+              - "s3:GetObject*"
+              - "s3:List*"
+              - "s3:PutBucket*"
+              - "s3:PutObject*"
+            Effect: Allow
+            Resource:
+              - !Sub "arn:aws:s3:::de-otto-*"
+        Version: 2012-10-17
+
+  ExecutorRoleLive:
+    Type: "AWS::IAM::Role"
+    Condition: LiveAccount
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          Action: "sts:AssumeRole"
+          Effect: Allow
+          Principal:
+            AWS:
+              - !Sub "arn:aws:iam::${NonliveAccountId}:role/${RunnerRoleName}"
+            Service:
+              - cloudformation.amazonaws.com
+              - codebuild.amazonaws.com
+              - lambda.amazonaws.com
+      ManagedPolicyArns:
+        - !Ref ExecutorPolicy
+      Path: /
+      RoleName: !Sub "${ExecutorRoleName}"
+
+  ExecutorRoleNonlive:
+    Type: "AWS::IAM::Role"
+    Condition: NonliveAccount
+    DependsOn: RunnerRole
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          Action: "sts:AssumeRole"
+          Effect: Allow
+          Principal:
+            AWS:
+              - !Sub "arn:aws:iam::${NonliveAccountId}:role/${RunnerRoleName}"
+            Service:
+              - cloudformation.amazonaws.com
+              - codebuild.amazonaws.com
+              - lambda.amazonaws.com
+      ManagedPolicyArns:
+        - !Ref ExecutorPolicy
+      Path: /
+      RoleName: !Sub "${ExecutorRoleName}"
+
+  PipelineLambdaRunner:
+    Type: "AWS::IAM::Role"
+    Properties:
+      RoleName: !Sub "${LambdaRunnerRoleName}"
+      AssumeRolePolicyDocument:
+        Statement:
+          Effect: Allow
+          Principal:
+            AWS:
+              - !Sub "arn:aws:iam::${NonliveAccountId}:role/${ExecutorRoleName}"
+            Service: lambda.amazonaws.com
+          Action: "sts:AssumeRole"
+      ManagedPolicyArns:
+        - !Ref PipelineLambdaRunnerPolicy
+      Path: /
+
+  PipelineLambdaRunnerPolicy:
+    Type: "AWS::IAM::ManagedPolicy"
+    Properties:
+          Description: Additional Policy needed to invoke lambdas within a AWS codePipeline
+          ManagedPolicyName: !Sub "${LambdaRunnerRoleName}"
+          Path: /
+          PolicyDocument:
+            Statement:
+              - Action:
+                - "logs:*"
+                Effect: Allow
+                Resource: "arn:aws:logs:*:*:*"
+              - Action:
+                - "s3:GetObject"
+                - "s3:PutObject"
+                Effect: Allow
+                Resource:
+                  - !Sub "arn:aws:s3:::de-otto-*"
+            Version: 2012-10-17
+
