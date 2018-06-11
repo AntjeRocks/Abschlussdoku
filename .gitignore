@@ -1,2 +1,4 @@
-*.lyx~
-*.lyx#
+.idea
+target
+out
+projektdoku.lyx~

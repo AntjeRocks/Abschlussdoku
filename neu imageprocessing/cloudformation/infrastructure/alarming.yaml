@@ -1,20 +1,5 @@
 ---
-AWSTemplateFormatVersion: 2010-09-09
-
-Parameters:
-  DeploymentStage:
-    Type: String
-    AllowedValues:
-      - LIVE
-      - DEVELOP
-  Environment:
-    Type: String
-    AllowedValues:
-      - live
-      - develop
-  ServiceName:
-    Type: String
-    Default: imageprocessing
+AWSTemplateFormatVersion: "2010-09-09"
 
 Resources:
   4xxApiGatewayAlarm:
@@ -37,6 +22,9 @@ Resources:
       Statistic: Sum
       Threshold: 10
       TreatMissingData: missing
+
+
+
   5xxApiGatewayAlarm:
     Type: "AWS::CloudWatch::Alarm"
     Properties:
