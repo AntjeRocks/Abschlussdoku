@@ -1,0 +1,172 @@
+Folie 1 - Begrüßung
+Guten Morgen, mein Name ist Antje Radkiewicz.Ich bin Auszubildende als Fachinformatikerin für Systemintegration bei der OTTO Einzelhandels Gesellschaft.
+Ich möchte Ihnen, den technischen Mitarbeitern im Bereich E-Commerce von OTTO, meine Ergebnisse bezüglich der Migration eines Teil-Microservices in die AWS präsentieren.
+Des Weiteren möchte ich sie bitten mir eventuelle Fragen erst im Anschluss an die Präsentation zu stellen.
+
+Folie 2 - Agenda
+Ich würde Ihnen nun gerne die Agenda vorstellen.
+Einleitend werde ich die Projektbeschreibung erklären.
+Im Anschluss werde ich kurz den setFree Service erläutern.
+Um das Projektergebnis verständlich zu machen werde ich kurz die Projektplanung erläutern. Im Anschluss zeige ich Ihnen, wie ich das Projekt durchgeführt habe.
+Und zuletzt präsentiere ich dann die Ergebnisse.
+
+Folie 3 - Projektbeschreibung
+Okay, dann beginne ich jetzt mit der Projektbeschreibung
+
+Folie 4 - Projektbeschreibung: AWS
+Derzeit wird die Infrastruktur für den Webshop von otto.de über einen Dienstleister in dessen Rechenzentrum gehostet.
+In Zukunft soll die gesamte Infrastruktur für den Shop in der AWS gehostet werden.
+Jedes Team wird die Migration selbstverantwortet durchführen.Die Teams können sich selber für die zu verwendenden Tools und Services entscheiden.
+
+Folie 5 - Projektbeschreibung: Team Social
+Ich habe meine Projektarbeit in dem Team Social durchgeführt.
+Hier sollte der Microservice imageprocessing als nächstes migriert werden.
+Für mein Projekt sollte vorerst nur die Migration eines Teil-Services durchgeführt werden.
+Bei diesem Teil-Service handelt es sich im die setFree Funktion.
+Nach der erfolgreichen Migration sollte für den gesamten Microservice entschieden werden, ob sich diese Migrationsvorgehensweise anbietet.
+
+Folie 6 - SetFree Microservice
+Nun werde ich den setFree Microservice kurz beleuchten.
+
+Folie 7 + 8 - setFree: Freistellung
+In der Webapplikation StyleCreator auf otto.de ist es möglich Collagen aus Einzelbildern zu erstellen.
+Auf dem Bild hier sieht man eine Beispielcollage.
+Es können allerdings nur Bilder verwendet werden, die auf dem zentralen OTTO Imageserver verfügbar sind.
+Diese Einzelbilder können auch freigestellt werden.
+Ein Bild frei zu stellen bedeutet den Hintergrund eines Bildes zu entfernen. *klick* -> Folie 8
+Der setFree-Teil-Microservice lädt die Bilder herunter und schneidet sie dann man mit Imagemagick frei.
+Die Bilder werden dann direkt im Browser sichtbar gemacht.
+
+Folie 9 - setFree: ImageMagick
+ImageMagick ist ein freies Werkzeug zur Erstellung von Rastergrafiken.
+Der Code für den setFree Microservice ist in Node.js geschrieben.
+Es gibt ein Node.js Package mit dem man Imagemagick nutzen kann.
+Hierfür muss allerdings eines der Pakete auf dem ausführenden Gerät installiert sein.
+Es ist auf einigen Linux-Distribution bereits vorinstalliert.
+
+Folie 10 - Style Uni
+Hier sieht man die Services die der StyleCreator nutzt.
+
+Folie 11 - Style Uni imageprocessing
+Und von den diesen Services wird imageprocessing als nächstes migriert.
+
+Folie 12 - Style Uni setFree
+Und davon nur der freistellen Teil
+
+Folie 13 - Projektplanung
+Ich möchte nun weiterleiten auf den nächsten Abschnitt und kurz meine Porjektplanung erläutern.
+
+Folie 14 - Projektplanung: Zeitplan
+Auf der Tabelle rechts sieht man die von mir erstellte Zeitplanung.
+Als ich sie erstellt habe, hatte ich schon eine Idee wie ich ungefähr vorgehen werde und habe daher viele Arbeitsschritte optimistisch bewertet.
+Man sieht dass bei vielen Punkten nur eine Stunde Zeit geplant war.
+Das war natürlich kritisch, wenn an diesen Stellen unerwartete Blocker aufgetauscht wären, hätte es den Plan durcheinander gebracht.
+Zum Glück ist das nicht passiert.
+
+Folie 15 - Projektplanung: Technologie
+Während der Planungsphase habe ich mir überlegt, wie ich die Migration technisch umsetze.
+Ich hatte zwei Technologien zur Auswahl.
+Ich hätte den Teil-Microservice in einen EC2-Container oder als Lambda Funktion bereitstellen können.
+Ein EC2 Container ist eine Umgebung die dauerhaft läuft.
+Eine Lambda Funktion wird nur bei Bedarf ausgeführt und auch nur dann erzeugt sie Kosten.
+EC2 Instanzen sind feinteiliger Konfigurierbar.
+Lambda Funktionen können mit weniger Konfigurationsaufwand erzeugt werden.
+Zusätzlich ImageMagick ist bereits auf den Containern in der AWS installiert.
+Ich habe beide Möglichkeiten mittels einer Nutzwertanalyse verglichen.
+
+Folie 16 - Projektplanung: Auswahlkriterien
+Um die Varianten miteinander vergleichen zu können habe ich die Auswahlkriterien nach Vorgabe der Abteilung aufgestellt.
+Als Wertungsskala habe ich mich für das Schulnotensystem entschieden.
+
+Folie 17 - Projektplanung: Nutzwertanalyse
+Anschließend habe ich die Daten zusammengefasst und anhand der Fakten den Nutzwert errechnet.
+Das Resultat dieser Analyse war, dass sich die Implementierung als Lamdba Funktion anbietet.
+
+Folie 18 - Projektdurchführung
+Als nächstes möchte die Projektdurchführung veranschaulichen.
+
+Folie 19 - Inhaltsübersicht
+Hier ist erstmal die Reihenfolge zu sehen, in der ich die einzelnen Punkte in etwa abgearbeitet habe.
+Ich werde jetzt kurz jeden Punkt erläutern und auf den nächsten Folien habe ich kurze Code-Beispiel.
+Als erstes habe ich ein Repository in der AWS angelegt.
+Ich habe ein Pipeline-Template geschrieben und dieses manuell in die AWS deployed.
+Danach habe ich ein AWS Api-Gateway-Template erstellt und dieses in der Pipeline lauffähig gemacht.
+Nach einigem Troubleshooting habe ich dann noch die Binary Media Types Einstellung verändert.
+Der Service war dann zu diesem Zeitpunkt funktionsfähig.
+Anschließend habe ich noch Templates für das Alarming, das Logging und Monitoring geschrieben.
+
+Folie 20 - CloudFormation
+Bevor ich die einzelnen Template-Vorlagen zeige möchte ich gerne erklären was ich mit Template meine.In der AWS können Ressourcen über so genannte CloudFormation-Templates erzeugt und als Stacks zusammengefasst werden.
+CloudFormation-Templates können in json oder im yaml Format verfasst werden.
+Die kommenden Beispiele werden alle im yaml-Format sein, da sich das Team darauf verständigt hat dieses Format zu nutzen.
+
+Folie 21 - Repository
+Dieses ist das kleinste Beispiel.
+Hier wird genau eine Ressource innerhalb eines Stacks erzeugt und zwar ein AWS CodeCommit Repository.
+Dieses wird wie der Kommentar andeutet auch nur dann benötigt werden, wenn wir das Repository neu anlegen müssen.
+
+Folie 22 - Pipeline: Definition
+Hier sieht einen Teil des Pipeline-Templates welches ich geschrieben habe.
+Ich werde nicht auf jede einzelne Zeile eingehen, das würde den Rahmen sprengen.
+Interessant ist die Zeile mit dem RestartExecutionOnUpdate.
+Das sorgt dafür, dass die Pipeline sich immer wieder ausführt, wenn eine Veränderung hochgeladen wird.
+Dann können Stages definiert werden.
+Stages benötigen immer einen Namen und eine Action.
+
+Folie 23 - Pipeline: Stage
+Hier ist ein Beispiel Stage.
+Es ist der Build step durch den der Service gebaut wird.
+Ich habe ein CodeBuildProjekt als Configuration hinterlegt.
+
+Folie 24 - Pipeline: CodeBuildProjekt
+Ich habe für diesen Step die kleinste Ausführungsvariante gewählt.
+Zu sätzlich habe ich hier explizit eine builspec File hinterlegt.
+
+Folie 25 - Pipeline: buildspec
+Hier kann man sehen wie die Installations Phasen gemanaged werden.
+Der Service wird erst per npm test aufgerufen, dann werden im Build Step die node_modules entfernt und nur die für die notwednigen Pakete installiert.
+Am Ende wird die Datei als zip File in die AWS hochgeladen.
+
+Folie 26 - Api-Gateway:
+Ich habe hier ein ganz kleines Beispiel für das Api-Gateway dabei.
+Hier sieht man die Erstellung eines RestApi.
+Für die Lauffähigkeit sind eine Menge mehr Einstellungen nötig.
+Die werde ich nicht alle vorstellen.
+Was man hier aber sehen kann ist die Einstellung der Binary Media Types.
+
+Folie 27 - Binary Media Types
+Die Binary Media Types, erlauben es, über die Schnittstelle andere Daten außer Textformate zu übertragen.
+In der AWS Dokumentation ist beschrieben, dass man hier das gewünschte Format explizit angebene kann.
+Nach einigem Troubleshoot habe ich herausgefunden, dass man zwingend Sternchen angeben muss.
+
+Folie 28 - Alarming
+Als letztes Beispiel habe ich hier einen CloudWatch Alarm.
+Damit ist es möglich Alarmierungen zu definieren.
+In diesem Beispiel ist der Empfänger eine E-Mail Adresse.
+
+Folie 29 - Ergebnis
+Zuletzt komme ich dann zu meinem Projektergebnis
+
+Folie 30 - Timetable
+Ich konnte die gegebene Zeit einhalten.
+Positiv ist, dass ich für die Analyse des Services wesentlich weniger gebraucht habe als geplant.
+Leider hat mich aber das Problem mit den Binary Media Types lange aufgehalten.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
